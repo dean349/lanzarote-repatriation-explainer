@@ -1,0 +1,11 @@
+# Personal / sensitive documents — never push to GitHub
+Bank_Statements/
+Spanish_Deeds/
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Agent internals
+.agent/mcp/
