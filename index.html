@@ -1,565 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Personal AI Advisory Team — Lanzarote Property Repatriation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:        #0b0f1a;
-      --surface:   #111827;
-      --card:      #161f2e;
-      --border:    rgba(255,255,255,0.07);
-      --gold:      #f5c842;
-      --gold-dim:  #c9a82a;
-      --blue:      #3b82f6;
-      --blue-glow: rgba(59,130,246,0.15);
-      --green:     #10b981;
-      --purple:    #8b5cf6;
-      --text:      #e2e8f0;
-      --muted:     #94a3b8;
-      --radius:    16px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.7;
-    }
-
-    /* ── HERO ─────────────────────────────────────────── */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 80px 24px 60px;
-      text-align: center;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(59,130,246,0.18) 0%, transparent 70%),
-                  radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139,92,246,0.12) 0%, transparent 60%),
-                  var(--bg);
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-      pointer-events: none;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(245,200,66,0.1);
-      border: 1px solid rgba(245,200,66,0.3);
-      border-radius: 999px;
-      padding: 6px 16px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--gold);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(135deg, var(--gold) 0%, #f97316 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-sub {
-      font-size: 1.125rem;
-      color: var(--muted);
-      max-width: 600px;
-      margin: 0 auto 40px;
-    }
-
-    .hero-quote {
-      max-width: 620px;
-      margin: 0 auto;
-      background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1));
-      border: 1px solid rgba(59,130,246,0.25);
-      border-radius: var(--radius);
-      padding: 24px 32px;
-      font-size: 1.1rem;
-      font-style: italic;
-      color: #c7d6ef;
-      position: relative;
-    }
-
-    .hero-quote::before {
-      content: '"';
-      position: absolute;
-      top: -10px;
-      left: 24px;
-      font-size: 5rem;
-      line-height: 1;
-      color: var(--blue);
-      opacity: 0.3;
-      font-family: Georgia, serif;
-    }
-
-    /* ── CONTAINER ────────────────────────────────────── */
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
-    }
-
-    /* ── SECTION TITLE ────────────────────────────────── */
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 64px 0 28px;
-    }
-
-    .section-icon {
-      font-size: 1.75rem;
-      flex-shrink: 0;
-    }
-
-    .section-title h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, var(--border), transparent);
-      margin-bottom: 28px;
-    }
-
-    /* ── PROBLEM CARDS ────────────────────────────────── */
-    .problem-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
-
-    .problem-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .problem-card:hover {
-      border-color: rgba(245,200,66,0.3);
-      transform: translateY(-2px);
-    }
-
-    .problem-card .num {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--gold);
-      opacity: 0.25;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .problem-card h3 {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 8px;
-      color: #fff;
-    }
-
-    .problem-card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* ── ADVISERS TABLE ───────────────────────────────── */
-    .adviser-grid {
-      display: grid;
-      gap: 14px;
-    }
-
-    .adviser-card {
-      display: grid;
-      grid-template-columns: 64px 1fr;
-      gap: 20px;
-      align-items: start;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px 24px;
-      transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
-      cursor: default;
-    }
-
-    .adviser-card:hover {
-      border-color: rgba(59,130,246,0.4);
-      box-shadow: 0 0 0 1px rgba(59,130,246,0.15), 0 8px 32px rgba(0,0,0,0.3);
-      transform: translateY(-2px);
-    }
-
-    .adviser-card:nth-child(1):hover { border-color: rgba(239,68,68,0.4); box-shadow: 0 0 0 1px rgba(239,68,68,0.15), 0 8px 32px rgba(0,0,0,0.3); }
-    .adviser-card:nth-child(2):hover { border-color: rgba(59,130,246,0.4); box-shadow: 0 0 0 1px rgba(59,130,246,0.15), 0 8px 32px rgba(0,0,0,0.3); }
-    .adviser-card:nth-child(3):hover { border-color: rgba(245,200,66,0.4); box-shadow: 0 0 0 1px rgba(245,200,66,0.15), 0 8px 32px rgba(0,0,0,0.3); }
-    .adviser-card:nth-child(4):hover { border-color: rgba(16,185,129,0.4); box-shadow: 0 0 0 1px rgba(16,185,129,0.15), 0 8px 32px rgba(0,0,0,0.3); }
-    .adviser-card:nth-child(5):hover { border-color: rgba(139,92,246,0.4); box-shadow: 0 0 0 1px rgba(139,92,246,0.15), 0 8px 32px rgba(0,0,0,0.3); }
-    .adviser-card:nth-child(6):hover { border-color: rgba(249,115,22,0.4); box-shadow: 0 0 0 1px rgba(249,115,22,0.15), 0 8px 32px rgba(0,0,0,0.3); }
-
-    .adviser-emoji {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      flex-shrink: 0;
-    }
-
-    .adviser-body h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-
-    .adviser-body p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ── DOCUMENTS SECTION ────────────────────────────── */
-    .docs-box {
-      background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(59,130,246,0.08));
-      border: 1px solid rgba(16,185,129,0.2);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    .docs-icon {
-      font-size: 2.5rem;
-      flex-shrink: 0;
-    }
-
-    .docs-box h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 8px;
-    }
-
-    .docs-box p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .doc-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .doc-tag {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 4px 12px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-family: monospace;
-    }
-
-    /* ── HONEST SECTION ───────────────────────────────── */
-    .honest-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--gold);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-    }
-
-    .honest-box .quote-text {
-      font-size: 1.05rem;
-      font-style: italic;
-      color: var(--text);
-      margin-bottom: 28px;
-      line-height: 1.8;
-      border-left: none;
-      padding: 0;
-    }
-
-    /* ── SAVINGS ──────────────────────────────────────── */
-    .savings-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .saving-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px 20px;
-      transition: transform 0.2s;
-    }
-
-    .saving-item:hover { transform: translateY(-2px); }
-
-    .saving-item .amount {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--green);
-      margin-bottom: 4px;
-    }
-
-    .saving-item .label {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ── FOOTER ───────────────────────────────────────── */
-    .footer {
-      text-align: center;
-      padding: 40px 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .footer strong { color: var(--text); }
-
-    /* ── ANIMATIONS ───────────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero { animation: fadeUp 0.6s ease both; }
-    .problem-card, .adviser-card, .saving-item {
-      animation: fadeUp 0.5s ease both;
-    }
-
-    /* stagger children */
-    .problem-card:nth-child(1) { animation-delay: 0.05s; }
-    .problem-card:nth-child(2) { animation-delay: 0.10s; }
-    .problem-card:nth-child(3) { animation-delay: 0.15s; }
-    .adviser-card:nth-child(1) { animation-delay: 0.05s; }
-    .adviser-card:nth-child(2) { animation-delay: 0.10s; }
-    .adviser-card:nth-child(3) { animation-delay: 0.15s; }
-    .adviser-card:nth-child(4) { animation-delay: 0.20s; }
-    .adviser-card:nth-child(5) { animation-delay: 0.25s; }
-    .adviser-card:nth-child(6) { animation-delay: 0.30s; }
-
-    @media (max-width: 640px) {
-      .adviser-card { grid-template-columns: 52px 1fr; gap: 14px; }
-      .docs-box { flex-direction: column; }
-      .honest-box { padding: 22px 20px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philip Harrison - Financial & Divorce Settlement Report</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f5f5f7;
+        }
+        .container {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #1a202c;
+            margin-top: 2rem;
+        }
+        h1 {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            font-size: 2.25rem;
+        }
+        h2 {
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        blockquote {
+            border-left: 4px solid #4299e1;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background-color: #ebf8ff;
+            border-radius: 0 8px 8px 0;
+            color: #2b6cb0;
+        }
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        strong {
+            color: #2d3748;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #e2e8f0;
+            margin: 2rem 0;
+        }
+    </style>
 </head>
 <body>
-
-  <!-- ── HERO ── -->
-  <section class="hero">
-    <div class="hero-badge">🏠 Los Romeros Limited &nbsp;·&nbsp; Lanzarote Repatriation</div>
-    <h1>Dad, meet your<br /><span>AI Advisory Team</span></h1>
-    <p class="hero-sub">
-      We've built you a briefcase full of specialist advisers — accountants, solicitors, FX experts, tax planners — all working together, and none of them billing you by the hour.
-    </p>
-    <div class="hero-quote">
-      This doesn't replace a professional's signature. What it does is make sure you walk into any lawyer or accountant's office already knowing exactly what they should be doing — and whether their bill is reasonable.
+    <div class="container">
+        <h1>Confidential Financial &amp; Divorce Settlement Report: Philip Harrison</h1>
+<p><strong>Date:</strong> 31 March 2026
+<strong>Subject:</strong> Asset Division &amp; Offsetting Strategy for Later-Life Divorce
+<strong>Entities:</strong> Philip Harrison, Beryl Harrison, Los Romeros Limited (No. 06993349)</p>
+<blockquote>
+<p>[!IMPORTANT]
+<strong>Executive Summary:</strong> Your parents are facing a "later life" divorce with no dependents and no future earning capacity. The court's primary objective will be ensuring both have a secure home and enough income to survive retirement, ideally through a "clean break." The existence of two major, distinct capital assets—the jointly-owned £200k UK property and the liquid cash inside Los Romeros Limited from the €315k Lanzarote sale—makes achieving this clean break highly feasible via <strong>offsetting</strong>.</p>
+</blockquote>
+<hr />
+<h2>1. The Matrimonial Asset Pool</h2>
+<p>In a UK divorce, all assets built up during the marriage are considered part of the "matrimonial pot," regardless of whose name is on the deed or the share certificate. </p>
+<p>Based on the files from the Los Romeros forensic workspace, the primary capital assets are:</p>
+<ol>
+<li><strong>The UK Family Home:</strong> <ul>
+<li>Jointly owned.</li>
+<li>Estimated net equity: <strong>£200,000</strong>.</li>
+<li>Asset type: Highly secure, illiquid (housing).</li>
+</ul>
+</li>
+<li><strong>Los Romeros Limited (The Lanzarote Proceeds):</strong> <ul>
+<li>Philip is the named Director.</li>
+<li>Following the Lanzarote sale for €315,000, settling Spanish CGT (~€18,783), and extracting the funds via a Members' Voluntary Liquidation (MVL), Philip will receive a substantial liquid capital payout (estimated in the region of <strong>£230,000 - £250,000</strong> net of MVL and CGT costs).</li>
+<li>This includes the tax-free return of Philip's £25,069 Director's Loan.</li>
+<li>Asset type: Liquid cash (post-MVL).</li>
+</ul>
+</li>
+<li><strong>Pensions &amp; Savings:</strong><ul>
+<li>Any private/workplace pensions and other bank accounts will also be added to this pot.</li>
+</ul>
+</li>
+</ol>
+<h2>2. The Impact of "Later Life" Divorce Principles</h2>
+<p>Because Philip and Beryl are retired, UK family courts apply different priorities than they would for a younger working couple:</p>
+<ul>
+<li><strong>No Earning Capacity:</strong> They cannot easily work to earn more money or secure new mortgages. The capital assets they hold right now must fund the rest of their lives.</li>
+<li><strong>Housing is Paramount:</strong> The court will not allow either party to be made homeless. </li>
+<li><strong>A "Clean Break" is Favored:</strong> The court prefers to divide physical assets and cash completely so the couple is permanently severed, rather than ordering one to pay the other an ongoing monthly allowance.</li>
+</ul>
+<h2>3. The "Offsetting" Solution</h2>
+<p>The current financial picture provides a near-perfect scenario for <strong>Offsetting</strong>. Because the two primary assets are roughly equal in value, a clean break can be negotiated without forcing the sale of either underneath them.</p>
+<blockquote>
+<p>[!TIP]
+<strong>Proposed Structure for Negotiation:</strong>
+*   <strong>Beryl retains 100% of the UK Family Home.</strong> She removes Philip's name from the deed. She gains housing security for the rest of her life (£200,000 value).
+*   <strong>Philip retains 100% of Los Romeros Limited and its cash proceeds.</strong> Beryl signs away any claim to the company shares or the MVL extraction. Philip gains ~£230,000+ in liquid cash to purchase a new property for himself or fund his retirement.</p>
+</blockquote>
+<p><strong>Why this works:</strong>
+It perfectly addresses the court's goals. Beryl's housing need is met immediately. Philip receives liquid capital to secure his own housing. The clean break is achieved instantly. </p>
+<h3>Visual Offsetting Flowchart</h3>
+<p>Below is a visual map of how this strategy works to secure the clean break:</p>
+<p><img alt="Visual Offsetting Flowchart" src="graph.png" /></p>
+<h2>4. Income, Pensions &amp; The "Needs" Principle</h2>
+<p>Because Beryl worked most of her life (as a professional figure skater and field sales rep), she is almost certainly entitled to a full UK State Pension (currently ~£11,500/year). However, her modest final salary (£15,000 - £18,000) suggests she holds very little, if any, substantial private pension provision.</p>
+<p>In UK family law, the court applies the <strong>"Needs Principle."</strong> They will not approve an offsetting agreement (like her keeping the house) if it leaves her unable to afford basic living costs like council tax, heating, and food. A State Pension alone is rarely sufficient to run a house. </p>
+<ul>
+<li><strong>Pension Sharing:</strong> To ensure Beryl can afford to live without relying on your dad every month, the court will likely look to his pensions. Your dad's solicitor should expect the court to order a <strong>Pension Sharing Order</strong>. This carves out a percentage of Philip's private or workplace pensions and transfers it into a new, independent pension fund for Beryl to draw an income from.</li>
+<li><strong>Securing the Clean Break:</strong> Giving up a slice of pension isn't ideal for Philip, but it is a highly strategic move. By satisfying the court that Beryl's monthly "Needs" are met through her State Pension plus a shared slice of his pension, the court will approve the clean break. This guarantees no ongoing Spousal Maintenance payments.</li>
+</ul>
+<h2>5. Addressing Beryl's Alcoholism &amp; Deliberate Dissipation of Assets</h2>
+<p>You mentioned that Beryl is a closet alcoholic and her excessive spending is often deliberate, designed specifically to diminish the financial pot and adversely affect the divorce outcome. This changes the legal and strategic approach significantly.</p>
+<ul>
+<li><strong>Financial Misconduct ("Add-Back" Strategy):</strong> In UK family law, general overspending is rarely penalized. However, <strong>"wanton or reckless dissipation of assets"</strong> is a major exception. If Beryl is intentionally spending out of spite to deplete the matrimonial pot, Philip's solicitor can argue for an "add-back." This means the court calculates the final split as if she <em>hadn't</em> spent that money, directly reducing her share of the remaining assets to compensate for the cash she deliberately wasted.</li>
+<li><strong>Mental Capacity &amp; Consent:</strong> If Beryl is frequently under the influence, it raises critical legal issues regarding her "capacity" to agree to a financial settlement. A solicitor must ensure any final consent order is legally watertight and cannot be later challenged by her claiming she was intoxicated when she agreed to it.</li>
+<li><strong>Strategic Protection:</strong> The offsetting strategy is the ultimate defense against this behavior. Allowing someone with an alcohol dependency and malicious spending tendencies access to liquid cash is highly dangerous. By forcing her to take her share via the <em>house</em> (an illiquid asset that is hard to squander quickly), Philip protects the Lanzarote <em>cash</em> completely for himself and limits her ability to inflict further financial damage.</li>
+</ul>
+<blockquote>
+<p>[!CAUTION]
+<strong>Immediate Action Required to Freeze Joint Access:</strong>
+Because there is a proven risk of malicious, spiteful spending, Philip must act immediately. Most importantly, he must ensure he is the <strong>sole signatory</strong> on the Los Romeros Limited UK bank account where the €315,000 sale proceeds will land. He must explicitly revoke any mandates that would allow his wife access to this cash while the divorce is being finalized.</p>
+</blockquote>
+<h2>6. Next Steps for Philip</h2>
+<ol>
+<li><strong>Do NOT Finalize the MVL Yet:</strong> Philip should immediately instruct an independent Family Law Solicitor and explain the situation. He should ask whether he should leave the cash safely locked inside Los Romeros Limited until the financial consent order is signed by the judge, or whether he should proceed with the MVL extraction now.</li>
+<li><strong>Assemble Documents:</strong> Bring the Los Romeros Accounts, the Spanish CGT Forensic Report, and a valuation of the UK family home to the initial solicitor meeting.</li>
+<li><strong>Pension Valuations:</strong> Request "Cash Equivalent Transfer Values" (CETVs) for all pensions held by both Philip and Beryl, as these must be factored into the final offsetting math.</li>
+</ol>
+<hr />
+<p><em>Disclaimer: This report synthesizes existing workspace data with UK family law principles. It is for strategic planning purposes only and does not constitute formal legal advice. Philip must engage a qualified UK family solicitor to ratify any settlement.</em></p>
     </div>
-  </section>
-
-  <!-- ── MAIN CONTENT ── -->
-  <div class="container">
-
-    <!-- Problem Section -->
-    <div class="section-title">
-      <div class="section-icon">💡</div>
-      <h2>The Problem With Paying £1,000s to Lawyers</h2>
-    </div>
-    <div class="section-divider"></div>
-    <p style="color:var(--muted); margin-bottom:24px;">
-      When you instruct a solicitor or accountant for something like this, you're essentially paying for three things:
-    </p>
-    <div class="problem-grid">
-      <div class="problem-card">
-        <div class="num">01</div>
-        <h3>Their knowledge</h3>
-        <p>Of the law, tax thresholds, Spanish compliance deadlines, and the UK–Spain Double Taxation Agreement.</p>
-      </div>
-      <div class="problem-card">
-        <div class="num">02</div>
-        <h3>Their time</h3>
-        <p>Applying that knowledge to your specific situation — at £250–£400 per hour.</p>
-      </div>
-      <div class="problem-card">
-        <div class="num">03</div>
-        <h3>Their indemnity</h3>
-        <p>Someone to blame if it goes wrong. Bills of £3,000–£8,000+ are normal for a cross-border disposal like this.</p>
-      </div>
-    </div>
-
-    <!-- Advisers Section -->
-    <div class="section-title" style="margin-top:72px;">
-      <div class="section-icon">🤖</div>
-      <h2>What We've Built in This Workspace</h2>
-    </div>
-    <div class="section-divider"></div>
-    <p style="color:var(--muted); margin-bottom:24px;">
-      Six specialist advisers, each trained on your exact situation — Los Romeros Limited, Philip &amp; Beryl Harrison, and the Lanzarote property sale. Hover over each one to see them light up.
-    </p>
-    <div class="adviser-grid">
-
-      <div class="adviser-card">
-        <div class="adviser-emoji">🇪🇸</div>
-        <div class="adviser-body">
-          <h3>Spanish Property Compliance Adviser</h3>
-          <p>Tracks every Spanish tax deadline — the 3% buyer's retention (€9,600 withheld at the Notary), the Modelo 210 filing within 3 months of sale, the Plusvalía municipal tax, and the AEAT refund timeline. Produces a dated checklist for everything.</p>
-        </div>
-      </div>
-
-      <div class="adviser-card">
-        <div class="adviser-emoji">🧮</div>
-        <div class="adviser-body">
-          <h3>UK Cross-Border Tax Adviser</h3>
-          <p>Calculates exactly what UK Corporation Tax and CGT is owed. Applies the Spain-UK Double Taxation Agreement so you're not taxed twice on the same gain. Models the best way to extract the money from Los Romeros Limited — dividend vs capital distribution.</p>
-        </div>
-      </div>
-
-      <div class="adviser-card">
-        <div class="adviser-emoji">💷</div>
-        <div class="adviser-body">
-          <h3>IHT Calculator</h3>
-          <p>Runs Inheritance Tax scenarios — how much of the estate passes free of IHT under the Nil-Rate Band and Residence Nil-Rate Band, what gifting strategies could reduce the bill, and exactly how the £320,000 affects Philip &amp; Beryl's overall estate position.</p>
-        </div>
-      </div>
-
-      <div class="adviser-card">
-        <div class="adviser-emoji">💱</div>
-        <div class="adviser-body">
-          <h3>FX Risk Adviser</h3>
-          <p>Warns against using Barclays or HSBC (which would cost €6,400–€12,800 in unnecessary spread on €320,000) and recommends FCA-regulated specialist brokers like Currencies Direct or TorFX. Also advises on locking in a forward contract on the AEAT refund.</p>
-        </div>
-      </div>
-
-      <div class="adviser-card">
-        <div class="adviser-emoji">⚖️</div>
-        <div class="adviser-body">
-          <h3>MVL Process Tracker</h3>
-          <p>Guides the Members' Voluntary Liquidation — the tax-efficient way to close Los Romeros Limited and get the cash into Philip &amp; Beryl's hands as a capital distribution (taxed at 18-24% CGT) rather than a dividend (taxed at up to 39.35% income tax).</p>
-        </div>
-      </div>
-
-      <div class="adviser-card">
-        <div class="adviser-emoji">🏛️</div>
-        <div class="adviser-body">
-          <h3>UK Private Client Solicitor</h3>
-          <p>Advises on Wills, trusts, and estate planning once the cash lands in the UK. STEP-registered specialist — covers lasting powers of attorney, trust structures, and ensuring the estate transfer is as clean and tax-efficient as possible for the next generation.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Documents Section -->
-    <div class="section-title" style="margin-top:72px;">
-      <div class="section-icon">📁</div>
-      <h2>All Your Documents Are Already Here</h2>
-    </div>
-    <div class="section-divider"></div>
-    <div class="docs-box">
-      <div class="docs-icon">📂</div>
-      <div>
-        <h3>Your file library is loaded and ready</h3>
-        <p>
-          The actual company documents from Companies House, the accounts, the certificates of incorporation — they're all stored in this workspace. The AI advisers can read them, cross-reference them, and give advice that's already personalised to <strong style="color:var(--text);">Los Romeros Limited</strong>, Philip and Beryl's situation, and the Lanzarote property.
-        </p>
-        <div class="doc-tags">
-          <span class="doc-tag">CERTIFICATE OF INCORPORATION.pdf</span>
-          <span class="doc-tag">Unaudited Financial Statements 2025.pdf</span>
-          <span class="doc-tag">Companies House Annual Return.pdf</span>
-          <span class="doc-tag">LOS ROMEROS LIMITED Overview.pdf</span>
-          <span class="doc-tag">Bank Statements/</span>
-          <span class="doc-tag">Spanish Deeds/</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Honest Section -->
-    <div class="section-title" style="margin-top:72px;">
-      <div class="section-icon">🛡️</div>
-      <h2>The Right Way to Use This — Being Honest</h2>
-    </div>
-    <div class="section-divider"></div>
-    <div class="honest-box">
-      <p class="quote-text">
-        "This doesn't replace a professional's signature on a legal document. What it does is make sure you walk into any lawyer or accountant's office already knowing what they should be doing, why they're doing it, and whether their bill is reasonable."
-      </p>
-
-      <p style="color:var(--muted); font-size:0.9rem; margin-bottom:20px;">
-        A well-prepared client with clear, targeted questions takes <strong style="color:var(--text);">2–3 hours</strong> of a professional's time instead of 10–15. Here's what that means in real money:
-      </p>
-
-      <div class="savings-grid">
-        <div class="saving-item">
-          <div class="amount">£2,000–£4,500</div>
-          <div class="label">Saved on solicitor / accountant time — arriving prepared vs starting from zero at £250–£400/hr</div>
-        </div>
-        <div class="saving-item">
-          <div class="amount">£8,000–£10,000</div>
-          <div class="label">Saved by using a specialist FX broker instead of a high street bank for transferring €320,000</div>
-        </div>
-        <div class="saving-item">
-          <div class="amount">£10,000+</div>
-          <div class="label">Potential combined saving — before any tax optimisation strategies are even applied</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ── FOOTER ── -->
-  <footer class="footer">
-    <strong>Los Romeros Limited — Lanzarote Repatriation Project</strong><br />
-    Built with Antigravity AI &nbsp;·&nbsp; All figures are estimates for planning purposes and require formal professional verification.
-  </footer>
-
 </body>
 </html>
