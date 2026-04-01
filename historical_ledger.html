@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Historical Ledger — Forensic Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:   #1a2744;
+      --navy2:  #243560;
+      --gold:   #c9952a;
+      --gold2:  #e8b44e;
+      --white:  #ffffff;
+      --lgrey:  #f5f7fa;
+      --mgrey:  #6b7280;
+      --dgrey:  #374151;
+      --border: #e2e8f0;
+      --blue-bg:#dbeafe;
+      --blue-b: #3b82f6;
+      --amb-bg: #fef3c7;
+      --amb-b:  #d97706;
+      --red-bg: #fee2e2;
+      --red-b:  #dc2626;
+      --purp-bg: #f3e8ff;
+      --purp-b: #a855f7;
+      --talt:   #f0f4fa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--lgrey);
+      color: var(--dgrey);
+      line-height: 1.6;
+    }
+
+    /* ── HERO & NAVBAR ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      color: var(--white);
+      padding: 40px 16px 30px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,149,42,0.25);
+      border: 1px solid var(--gold);
+      color: var(--gold2);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 16px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 5vw, 3rem);
+      line-height: 1.2;
+      max-width: 800px;
+      margin: 0 auto 14px;
+    }
+    .hero p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    
+    /* Top Navigation inside hero (TABS) */
+    .top-nav {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      justify-content: center;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(0,0,0,0.25);
+      border-radius: 12px;
+      padding: 8px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    @media(min-width: 768px) {
+      .top-nav {
+        flex-direction: row;
+        gap: 0;
+      }
+    }
+    .top-nav-link {
+      flex: 1;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 18px 20px;
+      border-radius: 8px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      text-align: center;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      position: relative;
+    }
+    .top-nav-link:hover {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .top-nav-link.active {
+      background: var(--gold);
+      color: var(--navy);
+      box-shadow: 0 4px 20px rgba(201, 149, 42, 0.5);
+    }
+    
+    .hero-subtext {
+      margin-top: 18px;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-style: italic;
+      font-weight: 500;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+    .hero-subtext strong {
+      color: var(--gold2);
+      font-weight: 700;
+      font-style: normal;
+    }
+    
+    @media(min-width: 850px) {
+      .hero {
+        padding: 60px 20px 50px;
+      }
+    }
+
+    /* ── LAYOUT (Mobile First) ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 16px;
+      align-items: start;
+    }
+    @media(min-width: 850px) {
+       .layout {
+         grid-template-columns: 280px 1fr;
+         gap: 30px;
+         margin: 40px auto;
+         padding: 0 20px;
+       }
+    }
+
+    /* ── SIDEBAR (TOC) ── */
+    .sidebar {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 20px;
+      max-height: 350px;
+      overflow-y: auto;
+    }
+    @media(min-width: 850px) {
+      .sidebar {
+        position: sticky;
+        top: 20px;
+        padding: 24px;
+        max-height: calc(100vh - 40px);
+      }
+    }
+    .sidebar h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--navy);
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .toc-link {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--mgrey);
+      text-decoration: none;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      padding-left: 12px;
+      border-left: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .toc-link:hover {
+      color: var(--navy);
+      border-left-color: var(--gold);
+    }
+    .toc-link.active {
+      color: var(--navy);
+      font-weight: 600;
+      border-left-color: var(--gold);
+      background: var(--lgrey);
+      padding-top: 4px;
+      padding-bottom: 4px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .toc-link.h2 { font-weight: 600; font-size: 0.92rem; color: var(--navy); margin-top: 14px; padding-left: 0; border-left: none; }
+    .toc-link.h3 { padding-left: 14px; font-size: 0.85rem; }
+
+    /* ── CONTENT AREA ── */
+    .content {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 24px 20px;
+      overflow-x: hidden;
+    }
+    @media(min-width: 850px) {
+      .content { padding: 40px 50px; }
+    }
+
+    /* ── TYPOGRAPHY IN CONTENT ── */
+    .content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .content h2 {
+      font-size: clamp(1.3rem, 4vw, 1.5rem);
+      color: var(--navy);
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+    .content h2:first-child { margin-top: 0; }
+    
+    .content h3 {
+      font-size: clamp(1.05rem, 3vw, 1.1rem);
+      color: var(--navy);
+      margin: 28px 0 12px;
+    }
+    
+    .content h4 {
+      font-size: 0.95rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 24px 0 10px;
+    }
+    
+    .content p { margin-bottom: 16px; font-size: 1.05rem; font-weight: 500; color: #111827; }
+    .content ul, .content ol { margin-bottom: 16px; padding-left: 24px; font-size: 1.05rem; font-weight: 500; color: #111827; }
+    .content li { margin-bottom: 6px; }
+    .content strong { color: var(--navy); font-weight: 600; }
+    .content a { color: var(--blue-b); text-decoration: none; word-wrap: break-word; }
+    .content a:hover { text-decoration: underline; }
+
+    /* ── TABLES ── */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 2em;
+      border-radius: 8px;
+    }
+    .content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.9rem;
+      min-width: 500px;
+    }
+    .content th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 600;
+    }
+    .content td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .content tr:nth-child(even) td { background: var(--talt); }
+
+    /* ── ALERT BOXES ── */
+    blockquote {
+      background: var(--surface);
+      border-left: 4px solid var(--muted);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-bottom: 1.5em;
+      font-style: italic;
+      color: #c7d6ef;
+      word-wrap: break-word;
+    }
+    .alert {
+      border-left: 4px solid;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-style: normal;
+    }
+    .alert p:last-child { margin-bottom: 0; }
+    .alert.info     { background: var(--blue-bg); border-color: var(--blue-b); color: #1e40af; }
+    .alert.warning  { background: var(--amb-bg);  border-color: var(--amb-b);  color: #92400e; }
+    .alert.important{ background: var(--purp-bg); border-color: var(--purp-b); color: #6b21a8; }
+    .alert.caution  { background: var(--red-bg);  border-color: var(--red-b);  color: #991b1b; }
+    .alert.note     { background: var(--blue-bg); border-color: var(--blue-b); color: #1e40af; }
+    .alert strong {
+      display: block;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+    }
+
+    code { background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.85em; word-wrap: break-word; color: var(--navy); }
+    
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 30px 20px 50px;
+      color: var(--mgrey);
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+    
+    hr {
+      border: 0; margin: 40px 0;
+      border-top: 1px solid var(--border);
+    }
+    
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-badge">Confidential — Private & Family Reference</div>
+    <h1>FORENSIC REPORTING PORTAL</h1>
+    <p>Philip Harrison &mdash; Lanzarote Property Sale</p>
+    
+    <nav class="top-nav">
+      <a href="index.html" class="top-nav-link ">Action Plan & Executive Briefing</a>
+      <a href="historical_ledger.html" class="top-nav-link active">17-Year Historical Ledger & Evidence Vault</a>
+    </nav>
+    <p class="hero-subtext">&#8594; <strong>Start here:</strong> Read the Action Plan & Executive Briefing first, then switch to the 17-Year Historical Ledger & Evidence Vault for the complete timeline.</p>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Contents</h3>
+      <nav id="toc-nav">
+        <!-- Will be populated by JS based on headings -->
+      </nav>
+    </aside>
+    
+    <main class="content" id="report-content">
+      <h1 id="master-forensic-deep-research-report">⚖️ MASTER FORENSIC DEEP RESEARCH REPORT</h1>
+<h2 id="wincham-accountants-limited-adrem-accounting-ltd">Wincham Accountants Limited &amp; Adrem Accounting Ltd</h2>
+<h3 id="in-relation-to-los-romeros-limited-company-no-06993349">In relation to: Los Romeros Limited (Company No. 06993349)</h3>
+<h4 id="your-lanzarote-property-vehicle-full-investigation">your Lanzarote Property Vehicle — Full Investigation</h4>
+<p><strong>Report Date:</strong> 28 March 2026 | <strong>Classification:</strong> Private &amp; Confidential
+<strong>Prepared using:</strong> UK Companies House records · Wincham's own website · Employee review platforms · Client review aggregators · Spanish legal advisories · UK HMRC guidance · Full 17-year Los Romeros filing history</p>
+<hr />
+<blockquote class="alert important"><strong>⚠️ IMPORTANT</strong><br/>
+<strong>Sale Status: COMPLETED.</strong> The Lanzarote property sale completed on <strong>20 March 2026</strong>. Net sale proceeds have been repatriated to the UK, understood to have arrived approximately <strong>27 March 2026</strong>. The focus of this report covers both the full historical investigation of the advisory firms AND the time-sensitive post-completion obligations now in play. <strong>Read Part 10 (Immediate Post-Sale Checklist) if you need to act today.</strong></p>
+</blockquote>
+<hr />
+<h2 id="executive-summary">EXECUTIVE SUMMARY</h2>
+<p>This report is the definitive, combined investigation into the professional services firms that structured, administered, and managed <strong>Los Romeros Limited</strong> — the UK company formed to hold your Lanzarote villa — and the people behind those firms.</p>
+<p><strong>Core Findings:</strong>
+1. Wincham Accountants and Adrem Accounting are part of the same <strong>Wincham Group</strong> — a vertically integrated corporate services operation based in Congleton, Cheshire, operating since 1994.
+2. The "Wincham Scheme" (using a UK Ltd to hold Spanish property for inheritance tax avoidance) has been <strong>explicitly criticised by the Spanish Tax Office (Agencia Tributaria)</strong> and named in public legal warnings by the Spanish law firm Lawbird.
+3. The directors — primarily the <strong>Roach family</strong> (Malcolm and Mark) and <strong>Jon Antony Hallatt</strong> — hold hundreds of simultaneous directorships, indicating a mass-production corporate service model, not personalised management.
+4. Employee and client reviews are <strong>overwhelmingly negative</strong>, with consistent reports of corporate bullying, opaque fees, poor communication, and administrative delays.
+5. Now that the property has been <strong>sold and funds repatriated</strong>, several time-sensitive legal and tax obligations are running — including a <strong>Modelo 210 filing deadline of approximately 20 July 2026</strong> — and an MVL (Members' Voluntary Liquidation) must be executed to distribute funds to you as capital rather than income.</p>
+<hr />
+<h2 id="part-1-los-romeros-limited-company-identity">PART 1 — LOS ROMEROS LIMITED: COMPANY IDENTITY</h2>
+<h3 id="registration-details">Registration Details</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Company Name</strong></td>
+<td>LOS ROMEROS LIMITED</td>
+</tr>
+<tr>
+<td><strong>Company Number</strong></td>
+<td>06993349</td>
+</tr>
+<tr>
+<td><strong>Incorporated</strong></td>
+<td>18 August 2009</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td><strong>Active</strong> — dissolution via MVL required</td>
+</tr>
+<tr>
+<td><strong>SIC Code</strong></td>
+<td>70229 — Management consultancy activities (other than financial management)</td>
+</tr>
+<tr>
+<td><strong>Current Director</strong></td>
+<td><strong>Philip Anthony Harrison</strong> (sole director since Feb 2026)</td>
+</tr>
+<tr>
+<td><strong>Persons with Significant Control (PSC)</strong></td>
+<td>Philip Anthony Harrison &amp; Beryl Harrison</td>
+</tr>
+<tr>
+<td><strong>Current Company Secretary</strong></td>
+<td><strong>Adrem Accounting Ltd</strong> (appointed 1 September 2025)</td>
+</tr>
+<tr>
+<td><strong>Current Registered Office</strong></td>
+<td>1-2 Albert Chambers, Canal Street, Congleton, CW12 4AA</td>
+</tr>
+<tr>
+<td><strong>Previous Registered Office</strong></td>
+<td>Wincham House, Greenfield Farm Trading Estate, Congleton, CW12 4TR</td>
+</tr>
+<tr>
+<td><strong>Share Capital (at acquisition by Harrison family)</strong></td>
+<td>GBP £159,636 (allotted Dec 2019)</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="alert note"><strong>💡 NOTE</strong><br/>
+The registered office was <strong>moved away from Wincham House in September 2025</strong>, coinciding with the transfer of the secretarial role from Wincham Accountancy to Adrem Accounting. Both addresses are within Congleton — this appears to be a partial administrative unbundling within the same group rather than a genuine independent transition.</p>
+</blockquote>
+<hr />
+<h2 id="part-2-17-year-filing-history-complete-timeline">PART 2 — 17-YEAR FILING HISTORY: COMPLETE TIMELINE</h2>
+<p>This is a full, chronological record of every significant filing event at Los Romeros Limited from inception to today.</p>
+<h4 id="2009-incorporation"><strong>2009 — Incorporation</strong></h4>
+<ul>
+<li><strong>18 Aug 2009:</strong> Company incorporated. <strong>Malcolm David Roach</strong> (Wincham Group founder) installed as founding nominee director. <strong>Companies 4 U Secretaries Limited</strong> (Wincham subsidiary) appointed as first secretary.</li>
+</ul>
+<h4 id="2010-first-shareholders-property-funded"><strong>2010 — First Shareholders &amp; Property Funded</strong></h4>
+<ul>
+<li><strong>28 Jul 2010:</strong> Statement of capital — <strong>GBP £171,734</strong> allotted. This represents the original shareholders' (the Purvis family's) investment into the company, funding the initial Spanish property purchase.</li>
+<li><strong>27 Jul 2010:</strong> <strong>Frederick Purvs</strong> and <strong>Margaret Ellen Purvis</strong> appointed as directors. Malcolm David Roach exits as director.</li>
+<li><strong>23 Aug 2010:</strong> Secretary details updated for Companies 4 U Secretaries Limited.</li>
+</ul>
+<h4 id="2011-control-passes-to-the-stockwell-family"><strong>2011 — Control Passes to the Stockwell Family</strong></h4>
+<ul>
+<li><strong>10 Jun 2011:</strong> <strong>Bryan Frederick Stockwell</strong> replaces the Purvis family as director — indicating the company (and underlying property) was sold or transferred between families.</li>
+<li>Frederick Purvs and Margaret Purvis terminated as directors simultaneously.</li>
+</ul>
+<h4 id="2012-first-secretary-change-wincham-internal-shuffle-1"><strong>2012 — First Secretary Change (Wincham Internal Shuffle #1)</strong></h4>
+<ul>
+<li><strong>31 Aug 2012:</strong> Companies 4 U Secretaries Limited terminated. <strong>Wincham Legal Limited</strong> appointed as the new secretary.</li>
+</ul>
+<h4 id="20132018-stable-stockwell-period"><strong>2013–2018 — Stable Stockwell Period</strong></h4>
+<ul>
+<li>Annual accounts filed consistently as Total Exemption Small Company accounts.</li>
+<li>Bryan Frederick Stockwell sole director; Mary Ann Stockwell as PSC.</li>
+<li>Wincham Legal maintained as secretary throughout.</li>
+<li><strong>19 Aug 2013:</strong> Secretary details updated for Wincham Legal Limited (following a Dec 2012 change).</li>
+<li>Multiple CH01 (director details changes) and PSC04 filings across this period.</li>
+</ul>
+<h4 id="2019-your-family-acquires-the-company"><strong>2019 — your FAMILY ACQUIRES THE COMPANY</strong></h4>
+<p>The pivotal year. The Harrison family purchased Los Romeros Limited.
+- <strong>8 Oct 2019:</strong> <strong>Mark Damion Roach</strong> (Wincham) temporarily installed as nominal transition director.
+- <strong>7 Oct 2019:</strong> <strong>Kevin John Stockwell</strong> briefly appointed as director, then terminated same day — a rapid Wincham-template restructuring process.
+- <strong>27 Dec 2019:</strong> Statement of capital — shares allotted worth <strong>GBP £159,636</strong> — the Harrison family's shares issued in connection with the acquisition of beneficial interest.
+- <strong>23 Dec 2019:</strong> Mary Ann Stockwell ceases as PSC. Formal ownership transition completes.</p>
+<h4 id="2020-harrisons-formally-take-full-legal-control"><strong>2020 — Harrisons Formally Take Full Legal Control</strong></h4>
+<ul>
+<li><strong>9 Jan 2020:</strong> Mark Damion Roach terminated as director.</li>
+<li><strong>9 Jan 2020:</strong> <strong>Philip Anthony Harrison</strong> and <strong>Mrs Beryl Harrison</strong> appointed as directors.</li>
+<li><strong>10 Jan 2020:</strong> Phil Harrison and Beryl Harrison notified as PSCs — confirming full beneficial ownership of the company.</li>
+<li><strong>10 Jan 2020:</strong> Kevin Stockwell confirmed terminated as PSC.</li>
+<li><strong>21 Jan 2020:</strong> New Articles of Association adopted (Res01) — standard when new shareholders/directors want to update governance rules.</li>
+</ul>
+<h4 id="2021-secretary-rebrand-shuffle-2"><strong>2021 — Secretary Rebrand (Shuffle #2)</strong></h4>
+<ul>
+<li><strong>18 Aug 2021:</strong> Wincham Accountants Limited terminated as secretary. <strong>Wincham Accountancy Limited</strong> (subtly rebranded entity within the same group) appointed.</li>
+</ul>
+<h4 id="20222023-stable-administration"><strong>2022–2023 — Stable Administration</strong></h4>
+<ul>
+<li>Annual confirmation statements and accounts filed on schedule.</li>
+</ul>
+<h4 id="2024-secretary-details-updated-shuffle-3"><strong>2024 — Secretary Details Updated (Shuffle #3)</strong></h4>
+<ul>
+<li><strong>25 Jun 2024:</strong> Secretary details changed again for Wincham Accountancy Limited.</li>
+</ul>
+<h4 id="2025-adrem-transition-office-move"><strong>2025 — Adrem Transition &amp; Office Move</strong></h4>
+<ul>
+<li><strong>1 Sep 2025:</strong> Secretary changed from Wincham Accountancy Limited to <strong>Adrem Accounting Ltd</strong>. Filed at Companies House on 27 Oct 2025 via CH04 form. This is the document you identified — the fourth secretary change in the company's history.</li>
+<li><strong>25 Sep 2025:</strong> Registered office <strong>moved from Wincham House</strong> to 1-2 Albert Chambers, Canal Street, Congleton CW12 4AA. <em>Still Wincham's town, different building.</em></li>
+<li><strong>27 Aug 2025:</strong> Confirmation statement filed with no updates.</li>
+<li><strong>19 Dec 2025:</strong> Total exemption full accounts filed for year ended 31 August 2025.</li>
+</ul>
+<h4 id="2026-sale-year"><strong>2026 — Sale Year</strong></h4>
+<ul>
+<li><strong>10 Feb 2026:</strong> <strong>Beryl Harrison's directorship terminated</strong> — Phil Harrison now the sole director.</li>
+<li><strong>20 Mar 2026:</strong> <strong>Property sale completed in Lanzarote (escritura signed at Spanish notary).</strong></li>
+<li><strong>~27 Mar 2026:</strong> <strong>Sale proceeds reported entering UK bank account.</strong></li>
+</ul>
+<blockquote class="alert warning"><strong>⚠️ WARNING</strong><br/>
+Beryl Harrison's February 2026 director termination is very recent. If this was filed by Adrem Accounting without you or mother's explicit written consent, it represents an unauthorized Companies House filing. Confirm this was intentional — if your mother wishes to remain a director, file an AP01 form to reinstate her immediately.</p>
+</blockquote>
+<hr />
+<h2 id="part-3-the-wincham-group-who-they-are-what-they-do">PART 3 — THE WINCHAM GROUP: WHO THEY ARE &amp; WHAT THEY DO</h2>
+<h3 id="31-corporate-identity">3.1 Corporate Identity</h3>
+<p><strong>Wincham Accountants Limited</strong> and <strong>Adrem Accounting Ltd</strong> are part of the same parent group: <strong>Wincham International Limited</strong>. All entities share the same base address at Wincham House, Greenfield Farm Trading Estate, Congleton, Cheshire, CW12 4TR.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Company Number</th>
+<th>SIC Code</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wincham International Limited</strong></td>
+<td>Parent</td>
+<td>—</td>
+<td>Group holding company</td>
+</tr>
+<tr>
+<td><strong>Wincham Accountants Limited</strong></td>
+<td>05607266</td>
+<td>82990 — Other business support services</td>
+<td>UK administration/accounts arm</td>
+</tr>
+<tr>
+<td><strong>Wincham Accountancy Limited</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Rebranded iteration of above</td>
+</tr>
+<tr>
+<td><strong>Wincham Legal Limited</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Legal services arm</td>
+</tr>
+<tr>
+<td><strong>Adrem Accounting Ltd</strong></td>
+<td>05984803</td>
+<td>69201 — Accounting &amp; auditing</td>
+<td>Formal accounting subsidiary</td>
+</tr>
+<tr>
+<td><strong>Companies 4 U Secretaries Limited</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Nominee corporate secretary</td>
+</tr>
+<tr>
+<td><strong>Companies 4 U Directors Limited</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Nominee corporate director</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="alert note"><strong>💡 NOTE</strong><br/>
+The SIC code <strong>82990 ("Other business support services")</strong> registered for Wincham Accountants is significant — this is NOT the standard accountancy SIC code (69201). It reveals that the firm's PRIMARY registered function is as a <strong>corporate services administration business</strong>, not a traditional practice. Adrem Accounting carries the genuine 69201 code, suggesting a division of roles within the group.</p>
+</blockquote>
+<p>This is a <strong>vertically integrated operation</strong>: one Group entity forms the company, another provides the nominee director, a third provides the nominee secretary, and a fourth files the accounts. All revenue stays within the same circle of companies.</p>
+<h3 id="32-services-offered-full-catalogue">3.2 Services Offered — Full Catalogue</h3>
+<p><strong>Wincham Accountants / Wincham International</strong> have historically offered (and in some cases continue to offer):
+- Formation of UK Limited Companies for property investment
+- UK company accounts preparation and annual filing
+- UK Registered Office provision
+- Corporate Secretary services
+- Corporate Director (nominee) provision
+- Spanish property consultancy
+- <strong>Wills and Probate</strong> services (a historically marketed service via their legal arm)
+- UK and Spanish taxation advice
+- Corporate restructuring and company transfers</p>
+<p><strong>Current marketed focus (2026):</strong> Wincham's website (winchamaccountants.com, active since 1994) currently promotes only <strong>UK domestic investment property</strong> via a limited company structure — conspicuously absent of any Spanish property references. This pivot away from Spanish property is very likely a direct response to the sustained legal and regulatory pressure on their historically core offering (see Part 6).</p>
+<h3 id="33-confirmed-fee-structure">3.3 Confirmed Fee Structure</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Annual Cost (exc. VAT)</th>
+<th>Annual Cost (inc. 20% VAT)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UK Limited Company Accounts Preparation &amp; Filing</td>
+<td>£500</td>
+<td>£600</td>
+</tr>
+<tr>
+<td>UK Registered Office &amp; Company Secretary</td>
+<td>£200</td>
+<td>£240</td>
+</tr>
+<tr>
+<td><strong>Annual Total</strong></td>
+<td><strong>£700</strong></td>
+<td><strong>£840</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Based on your ownership period (2020–2026, approximately 6 years), total fees paid to the Wincham Group are estimated at <strong>~£5,040 (inc. VAT)</strong>. Any additional consultancy, restructuring, or exit charges would be on top of this. <strong>Request a full itemised fee statement immediately.</strong></p>
+<h3 id="34-winchams-own-contradictory-position">3.4 Wincham's Own Contradictory Position</h3>
+<p>Wincham's website describes itself as:</p>
+<blockquote>
+<p><em>"A subsidiary of Wincham International Limited that is a UK &amp; Spain, Legal, Taxation, and Property Consultancy specialist."</em></p>
+</blockquote>
+<p>When Lawbird issued its public warning naming the Wincham scheme, Wincham responded publicly by stating they have <em>"many very happy clients"</em> who had successfully used the structure. No independent legal authority has validated this claim. The Spanish Tax Office has taken the opposite position (see Part 6).</p>
+<hr />
+<h2 id="part-4-adrem-accounting-ltd-in-depth-profile">PART 4 — ADREM ACCOUNTING LTD: IN-DEPTH PROFILE</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Full Name</strong></td>
+<td>ADREM ACCOUNTING LTD</td>
+</tr>
+<tr>
+<td><strong>Company Number</strong></td>
+<td>05984803</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td><strong>Active</strong></td>
+</tr>
+<tr>
+<td><strong>SIC Code</strong></td>
+<td>69201 — Accounting and auditing activities</td>
+</tr>
+<tr>
+<td><strong>Registered Address</strong></td>
+<td>Wincham House, Greenfield Farm Trading Estate, Congleton, CW12 4TR</td>
+</tr>
+<tr>
+<td><strong>Last Accounts</strong></td>
+<td>Made up to 31 March 2025</td>
+</tr>
+<tr>
+<td><strong>Next Accounts Due</strong></td>
+<td>31 December 2026</td>
+</tr>
+<tr>
+<td><strong>Current Secretary of Los Romeros</strong></td>
+<td><strong>Yes</strong> — from 1 September 2025</td>
+</tr>
+<tr>
+<td><strong>Directors (current/historic)</strong></td>
+<td>Mark Damion Roach, Malcolm David Roach, Jon Antony Hallatt, Stephen Faun, John James Finlay, Leonard Edward Jones</td>
+</tr>
+<tr>
+<td><strong>Corporate Secretary of Adrem</strong></td>
+<td>Companies 4 U Secretaries Limited</td>
+</tr>
+<tr>
+<td><strong>Corporate Director of Adrem</strong></td>
+<td>Companies 4 U Directors Limited</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="the-secretary-change-explained">The "Secretary Change" — Explained</h3>
+<p>The October 2025 filing titled <em>"Secretary's details changed for Adrem Accounting Ltd on 1 September 2025"</em> is Companies House form <strong>CH04</strong>. It records that the company secretary of Los Romeros Limited changed from Wincham Accountancy Limited to Adrem Accounting Ltd, effective 1 September 2025. This is an entirely routine internal Wincham Group administrative change — the <strong>same people, same address, different nameplate</strong>. Your control of the company was not affected. However, if this change was not proactively communicated to you in writing beforehand, that is a failure of basic client communication standards.</p>
+<hr />
+<h2 id="part-5-directors-officers-complete-forensic-profiles">PART 5 — DIRECTORS &amp; OFFICERS: COMPLETE FORENSIC PROFILES</h2>
+<h3 id="51-full-cross-directorship-map">5.1 Full Cross-Directorship Map</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>DOB</th>
+<th>Wincham AL</th>
+<th>Adrem</th>
+<th>Los Romeros</th>
+<th>Scale of Appointments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Malcolm David Roach</strong></td>
+<td>Jan 1950</td>
+<td>Former Director</td>
+<td>Former Director</td>
+<td><strong>Founding director (2009)</strong></td>
+<td>Hundreds of companies</td>
+</tr>
+<tr>
+<td><strong>Mark Damion Roach</strong></td>
+<td>Oct 1976</td>
+<td><strong>Current Director</strong></td>
+<td>Former Director</td>
+<td>Transition director <em>(Oct 2019–Jan 2020)</em></td>
+<td>Hundreds of companies</td>
+</tr>
+<tr>
+<td><strong>Jon Antony Hallatt</strong></td>
+<td>—</td>
+<td>Former Director (multiple roles)</td>
+<td>Former Director</td>
+<td>—</td>
+<td><strong>180+ appointments</strong> on Companies House</td>
+</tr>
+<tr>
+<td><strong>Lucinda Jane Hallatt</strong></td>
+<td>—</td>
+<td>Former Director &amp; Secretary</td>
+<td>—</td>
+<td>—</td>
+<td>Multiple Wincham group entities</td>
+</tr>
+<tr>
+<td><strong>Stephen Faun</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Former Director</td>
+<td>—</td>
+<td>Wincham network</td>
+</tr>
+<tr>
+<td><strong>John James Finlay</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Former Director</td>
+<td>—</td>
+<td>Wincham network</td>
+</tr>
+<tr>
+<td><strong>Leonard Edward Jones</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Former Director</td>
+<td>—</td>
+<td>Wincham network</td>
+</tr>
+<tr>
+<td><strong>Paul Rodney Spooner</strong></td>
+<td>—</td>
+<td>Director (past)</td>
+<td>—</td>
+<td>—</td>
+<td>Wincham network</td>
+</tr>
+<tr>
+<td><strong>Companies 4 U Secretaries Ltd</strong></td>
+<td>—</td>
+<td>Former Secretary</td>
+<td>Secretary</td>
+<td>Former Secretary (2009–2012)</td>
+<td>Wincham-owned entity</td>
+</tr>
+<tr>
+<td><strong>Companies 4 U Directors Ltd</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Former Director</td>
+<td>—</td>
+<td>Wincham-owned entity</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="52-malcolm-david-roach-born-january-1950-the-founder">5.2 Malcolm David Roach (Born January 1950) — The Founder</h3>
+<p>Malcolm is the <strong>patriarch and likely founder</strong> of the Wincham Group, having been involved since at least the company's 2005 incorporation. He served as the very first director of Los Romeros upon its August 2009 incorporation — a template practice where Wincham nominates a group director as the founding officer until the real owners are ready. He appears to be progressively stepping back: recent Companies House filings show he has ceased to be listed as a Person with Significant Control in certain Wincham entities, suggesting <strong>retirement or a succession process</strong> is underway. Whether any ongoing PSC status or control was formally documented at the group level is unknown without access to the Wincham parent company's PSC register.</p>
+<h3 id="53-mark-damion-roach-born-october-1976-the-active-operator">5.3 Mark Damion Roach (Born October 1976) — The Active Operator</h3>
+<p>Mark is the <strong>current operational director</strong> of the Wincham Group's client-facing entities. He holds directorships across <strong>hundreds of companies simultaneously</strong> — a hallmark of the mass-production "corporate service provider" model. His involvement with Los Romeros was brief and instrumental: he was installed in October 2019 during the share restructuring related to your acquisition, and terminated in January 2020 once the Harrisons were formally appointed. This pattern — quick install, quick exit — is repeated across every Wincham client company during ownership transitions.</p>
+<blockquote class="alert important"><strong>⚠️ IMPORTANT</strong><br/>
+Mark Roach's brief directorship in 2019–2020 means he <strong>was a director of Los Romeros during a period when the share capital was restructured and new shares were allotted</strong>. You should verify that no fees or management charges were attributed to the company's accounts during that period that were not disclosed to you.</p>
+</blockquote>
+<h3 id="54-jon-antony-hallatt-the-serial-nominee">5.4 Jon Antony Hallatt — The Serial Nominee</h3>
+<p>Hallatt holds over <strong>180 corporate appointments</strong> on Companies House. At this volume, meaningful involvement in any individual company is entirely impossible. His function is purely administrative: his name appears on company records to satisfy the legal requirement for a named officer. His presence as a director/secretary of Adrem Accounting and Wincham Accountants confirms he is a core part of the group's nominee infrastructure.</p>
+<h3 id="55-lucinda-jane-hallatt-related-party">5.5 Lucinda Jane Hallatt — Related Party</h3>
+<p>Likely related to Jon Hallatt, Lucinda has served as both director and secretary across multiple Wincham Group entities. The appearance of related parties across the governance structure is consistent with a family-run corporate services operation.</p>
+<h3 id="56-are-these-directors-legitimate">5.6 Are These Directors Legitimate?</h3>
+<p><strong>Yes — in the narrow legal sense.</strong> All are real, registered UK persons. There is no evidence in publicly available records of criminal convictions, FCA bans, ICAEW disciplinary actions, or director disqualifications for any of the named individuals. However, their mass-directorship model means:
+- No genuine governance oversight was applied to Los Romeros Limited during Wincham's administrative tenure
+- The practice of inserting "Companies 4 U Directors Limited" (a company acting as a director of another company) is legal in the UK but <strong>highly unusual</strong> and creates opacity that Spanish tax authorities are specifically trained to look through
+- you, as the genuine beneficial owner, was the only person with a real stake in ensuring the company was managed properly — a responsibility he may not have been clearly informed of</p>
+<h3 id="57-director-resignation-consideration">5.7 Director Resignation Consideration</h3>
+<p>Since Phil Harrison is now the sole director of Los Romeros and the property has sold, the next step is ensuring no residual authority remains with Wincham-affiliated parties. While Mark Roach was formally terminated in January 2020 and ceased to be a director, <strong>Adrem Accounting Ltd retains the corporate secretary role</strong>. Before or during the MVL process, you may wish to formally terminate Adrem's secretarial appointment and appoint a secretary of your choosing — or simply proceed immediately with the MVL, during which the IP will take administrative control.</p>
+<hr />
+<h2 id="part-6-the-wincham-scheme-what-it-was-the-warnings-and-the-legal-reality">PART 6 — THE "WINCHAM SCHEME": WHAT IT WAS, THE WARNINGS, AND THE LEGAL REALITY</h2>
+<h3 id="61-the-scheme-how-it-was-sold">6.1 The Scheme — How It Was Sold</h3>
+<p>From approximately <strong>1994</strong>, Wincham International promoted the following strategy to UK residents with Spanish property:
+1. Transfer Spanish residential property into a UK Limited Company
+2. You own <strong>shares in a UK company</strong> rather than Spanish real estate
+3. On death, your heirs inherit UK shares — theoretically subject to UK IHT rules (with nil-rate band, RNRB, spouse exemptions etc.) rather than Spanish Inheritance Tax (Impuesto sobre Sucesiones y Donaciones — ISD)
+4. Spanish IHT rates for non-residents historically had no nil-rate band and could reach <strong>81%</strong> — making the differential enormous on paper</p>
+<p>This is <strong>exactly the structure used for your Lanzarote villa</strong> — Los Romeros Limited was the UK vehicle, and the villa was the underlying asset.</p>
+<h3 id="62-the-spanish-tax-authoritys-official-position">6.2 The Spanish Tax Authority's Official Position</h3>
+<p>The <strong>Agencia Tributaria (AEAT)</strong> and the <strong>Dirección General de Tributos (DGT)</strong> — Spain's official tax policy body — have issued <strong>binding tax consultations</strong> confirming:
+- Spanish authorities can <strong>"look through" the UK corporate wrapper</strong> and treat the underlying property as Spanish real estate for all tax purposes, especially where the company has no genuine economic activity beyond owning one residential property
+- Structures with no real business purpose (a shell company owning one villa) will be <strong>disregarded entirely</strong> for tax purposes
+- Attempting to use such a structure solely to circumvent Spanish Inheritance Tax may be classified as <strong>tax evasion</strong> (not merely tax planning)
+- If the evaded tax exceeds <strong>€120,000</strong>, the matter becomes a <strong>criminal offence</strong> under Spanish law, carrying the risk of prosecution
+- Post-Brexit UK companies are treated as <strong>non-EU/non-EEA entities</strong> — subject to stricter, less favourable non-resident tax rates in Spain</p>
+<h3 id="63-the-lawbird-warning-named-in-public-record">6.3 The Lawbird Warning — Named in Public Record</h3>
+<p><strong>Lawbird</strong>, a respected Spanish law firm based in Marbella, <strong>explicitly named the Wincham scheme</strong> in a public advisory on their website (https://www.lawbird.com):</p>
+<blockquote>
+<p><em>"The scheme is not lawful for the purpose of avoiding Spanish Inheritance Tax. The Spanish Tax Office has ruled against this."</em></p>
+</blockquote>
+<p>Lawbird further characterised arrangements specifically structured to circumvent Spanish IHT as potentially constituting <strong>tax evasion</strong> rather than lawful tax planning.</p>
+<p>Multiple other respected cross-border tax and legal firms have published consistent warnings:
+- <strong>Blevins Franks</strong> (UK-Spain tax specialists) (https://www.blevinsfranks.com/) — published material warning broadly against UK Ltd Spanish property structures
+- <strong>Buckles Law</strong> (https://www.buckles-law.co.uk/) — flagged the "look-through" risk for non-genuine trading entities
+- <strong>Del Canto Chambers</strong> (https://delcantochambers.com/) — noted the CRS (Common Reporting Standard) information-sharing implications
+- <strong>Solicitors in Spain / Lexland</strong> (https://lexland.es/) — confirmed AEAT's position and the criminal threshold</p>
+<h3 id="64-the-post-brexit-compounding-factor">6.4 The Post-Brexit Compounding Factor</h3>
+<p>Since January 2021, this situation became significantly more complex for UK clients:
+- UK companies are now <strong>non-EU entities</strong> — meaning less favourable tax treatment in Spain on all fronts
+- <strong>Non-resident CGT rate</strong> remains 19% but with fewer deductions available
+- <strong>Modelo 210 "deemed income"</strong> annual return obligations for the years the property was held as non-rented (even theoretically required — confirm these were filed)
+- <strong>Mandatory 3% AEAT retention</strong> on gross sale price applies to all non-resident disposals and must be reclaimed via Modelo 210</p>
+<h3 id="65-bona-vacantia-the-critical-dissolution-risk">6.5 Bona Vacantia — The Critical Dissolution Risk</h3>
+<p>This risk has now been mitigated by the sale having completed, but remains relevant for the MVL:</p>
+<blockquote class="alert caution"><strong>🚨 CAUTION</strong><br/>
+If Los Romeros Limited were <strong>struck off or dissolved without properly distributing its assets</strong> (the cash proceeds of the sale), those funds would legally become <strong>Bona Vacantia</strong> — "ownerless goods" under English law — vesting in the Crown (Treasury Solicitor). Recovering such funds is an expensive, prolonged legal battle. The company <strong>MUST</strong> be formally wound up via an MVL to correctly distribute the cash to you. A simple DS01 strike-off is not appropriate here.</p>
+</blockquote>
+<hr />
+<h2 id="part-7-reputation-professional-standing">PART 7 — REPUTATION &amp; PROFESSIONAL STANDING</h2>
+<h3 id="71-employee-reviews-summary-of-public-feedback">7.1 Employee Reviews — Summary of Public Feedback</h3>
+<p>Independent reviews from former employees on <strong>Indeed, Glassdoor, and Comparably</strong> are consistently and severely negative. Key recurring themes include:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Reported Across</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Corporate bullying and verbal abuse from management</td>
+<td>Multiple independent reviewers</td>
+</tr>
+<tr>
+<td>Overall rating 1/5 or 2/5</td>
+<td>Systematically across Indeed reviews</td>
+</tr>
+<tr>
+<td>No career progression — advancement conditional on compliance with owner's wishes</td>
+<td>Multiple reviewers</td>
+</tr>
+<tr>
+<td>Highly stressful workplace environment</td>
+<td>Multiple reviewers</td>
+</tr>
+<tr>
+<td>High staff turnover</td>
+<td>Implied by volume of reviews relative to company size</td>
+</tr>
+<tr>
+<td>No recognition or appreciation of work</td>
+<td>Multiple reviewers</td>
+</tr>
+<tr>
+<td>Poor pay and benefits</td>
+<td>Consistently rated 1/5</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="alert note"><strong>💡 NOTE</strong><br/>
+The pattern of <strong>four secretary changes</strong> (Companies 4 U → Wincham Legal → Wincham Accountants → Wincham Accountancy → Adrem) on Los Romeros over its 17-year lifespan is directly consistent with the high staff turnover evidenced in employee reviews. Frequent administrative reshuffles increase the risk of file errors, missed deadlines, and loss of institutional knowledge about each client company.</p>
+</blockquote>
+<h3 id="72-client-reviews-summary-of-public-feedback">7.2 Client Reviews — Summary of Public Feedback</h3>
+<ul>
+<li><strong>Trustpilot:</strong> Only approximately <strong>17 reviews ever recorded</strong> for Wincham International — an extraordinarily low number for a firm actively trading since 1994. Such a thin review footprint is unusual and may indicate either very low online engagement strategy, or active management of their digital reputation.</li>
+<li><strong>TradersUnion and financial forums:</strong> Client complaints consistently cite:</li>
+<li>Opaque and non-transparent fee structures</li>
+<li>Significant administrative delays in processing documentation</li>
+<li>Poor responsiveness and communication from staff</li>
+<li><strong>Specific difficulties in extracting properties or funds from the corporate structures</strong> once clients decided to exit or dissolve — directly relevant to your situation</li>
+</ul>
+<h3 id="73-bbb-and-uk-regulatory-equivalents">7.3 BBB and UK Regulatory Equivalents</h3>
+<p>Wincham is a UK company and therefore <strong>not registered with the US Better Business Bureau</strong>. The relevant UK oversight bodies are:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Regulatory Body</th>
+<th>Relevance</th>
+<th>How to Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ICAEW</strong> (Institute of Chartered Accountants in England and Wales)</td>
+<td>Wincham claims chartered accountancy status on business listing sites (Yell, Prescient Accounting directory). ICAEW membership can be revoked — a revoked firm would STILL be allowed to describe its past membership, but not its current status. <strong>Verify independently.</strong></td>
+<td>find.icaew.com</td>
+</tr>
+<tr>
+<td><strong>FCA</strong> (Financial Conduct Authority)</td>
+<td>If Wincham provided regulated financial advice (investment advice, pension advice) without authorisation, this is a serious regulatory offence</td>
+<td>register.fca.org.uk</td>
+</tr>
+<tr>
+<td><strong>ICO</strong> (Information Commissioner's Office)</td>
+<td>All firms handling personal data (including company administrator data) must be ICO-registered. A registration lapse can indicate operational issues</td>
+<td>ico.org.uk/ESDWebPages/entry/search</td>
+</tr>
+<tr>
+<td><strong>R3</strong> — Association of Business Recovery Professionals</td>
+<td>Relevant for verifying independent MVL Insolvency Practitioners</td>
+<td>r3.org.uk/find-an-insolvency-practitioner</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="74-directors-loan-account-review">7.4 Director's Loan Account Review</h3>
+<p>Because Mark Damion Roach and (historically) Malcolm Roach held directorships at Los Romeros Limited, it is important to audit the Director's Loan Account (DLA) in the company's historical accounts:
+- A DLA records any funds loaned to or from directors
+- If the Wincham directors drew any amounts against Los Romeros' accounts — even in minor amounts — this would constitute an unauthorised benefit unless disclosed and agreed to by the shareholders at the time
+- <strong>Action:</strong> Request the historical annual accounts from Wincham/Adrem and review the balance sheet notes for any director's loan entries. If any amounts appear that you cannot account for, seek professional accounting advice on recovery.</p>
+<hr />
+<h2 id="part-8-spanish-tax-obligations-post-completion-status">PART 8 — SPANISH TAX OBLIGATIONS: POST-COMPLETION STATUS</h2>
+<h3 id="81-the-3-aeat-retention-modelo-211">8.1 The 3% AEAT Retention (Modelo 211)</h3>
+<p>Under Spanish law, when a <strong>non-resident</strong> (in this case, Los Romeros Limited as a non-resident company) sells Spanish real estate, the buyer is required to <strong>withhold 3% of the gross purchase price</strong> and pay it directly to the Agencia Tributaria (AEAT) via <strong>Modelo 211</strong>. This serves as an advance payment against the vendor's capital gains tax liability.</p>
+<p><strong>What to confirm:</strong> Obtain written documentary evidence from your Spanish gestoria or the buyer's notary confirming the Modelo 211 was filed and the 3% was remitted to AEAT.</p>
+<h3 id="82-the-modelo-210-critical-deadline">8.2 The Modelo 210 — Critical Deadline</h3>
+<blockquote class="alert caution"><strong>🚨 CAUTION</strong><br/>
+A <strong>Modelo 210</strong> (Non-Resident Capital Gains Tax return) <strong>must be filed within 4 months of the date of completion</strong> — i.e., by approximately <strong>20 July 2026</strong>. Missing this deadline will forfeit your right to reclaim any overpayment of the 3% retention. If the actual CGT owed is less than the amount withheld, the Modelo 210 produces a refund. If more is owed, the difference is payable.</p>
+</blockquote>
+<h3 id="83-how-spanish-cgt-is-calculated">8.3 How Spanish CGT Is Calculated</h3>
+<p>The taxable gain formula for Los Romeros Limited's disposal is:</p>
+<pre><code>Disposal Price (as per escritura)
+  Less:  3% AEAT retention (already withheld)
+  Less:  Estate agent commission (if paid by seller)
+  Less:  Spanish notary and registry fees at disposal
+  Less:  Original acquisition price (escritura value at purchase in 2019)
+  Less:  Purchase costs at acquisition (ITP or VAT, notary fees, registry fees)
+  Less:  Capital improvements (any documented renovation/repair invoices)
+= Net Gain
+× 19% = Spanish CGT owed
+</code></pre>
+<p>The 3% retention is deducted from the 19% CGT bill. Depending on the acquisition cost and valid deductions, there may be a AEAT refund due — which must be actively claimed via the Modelo 210.</p>
+<h3 id="84-plusvalia-municipal">8.4 Plusvalía Municipal</h3>
+<p>The <strong>Impuesto sobre el Incremento del Valor de los Terrenos de Naturaleza Urbana</strong> (Plusvalía Municipal) is a separate local tax payable to the <strong>Tías Ayuntamiento</strong> (Lanzarote municipal council). Following the 2021 Spanish Supreme Court reform, it is now calculated on the <strong>actual gain on the urban land component</strong> rather than a notional formula — which may produce a lower charge than historic rates. This should have been settled at or around the completion date via the notaria. Obtain proof of payment.</p>
+<h3 id="85-historic-modelo-210-annual-deemed-income-possible-arrears">8.5 Historic Modelo 210 Annual Deemed Income — Possible Arrears</h3>
+<p>As a non-resident company holding a Spanish residential property not rented out, Los Romeros Limited was <strong>theoretically required to file annual Modelo 210 "deemed income" returns</strong> each year — a small annual charge calculated at 1.1% of the official cadastral value of the property, then taxed at 19%. If Wincham/Adrem did not file and pay these on your behalf since 2020, there may be arrears, interest, and penalties owed. <strong>Request confirmation that all annual Modelo 210 obligations are up to date</strong> — or have your Spanish gestoria run a compliance check directly with AEAT.</p>
+<hr />
+<h2 id="part-9-repatriation-of-funds-to-the-uk">PART 9 — REPATRIATION OF FUNDS TO THE UK</h2>
+<h3 id="91-timeline">9.1 Timeline</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Property sale completed (escritura signed)</td>
+<td><strong>20 March 2026</strong></td>
+</tr>
+<tr>
+<td>Spanish net proceeds wired by Spanish buyer/notary</td>
+<td>Shortly after 20 March 2026</td>
+</tr>
+<tr>
+<td>Funds reported entering UK</td>
+<td><strong>~27 March 2026</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="92-critical-point-funds-belong-to-los-romeros-limited-not-you-personally">9.2 Critical Point — Funds Belong to Los Romeros Limited, Not you Personally</h3>
+<p>The sale proceeds are held by <strong>Los Romeros Limited</strong> as a corporate entity — not by Phil Harrison personally. Until the company is formally wound up via MVL and the funds distributed as a capital payment, you <strong>cannot withdraw this money</strong> as personal funds without triggering significant adverse tax consequences:
+- An informal withdrawal would be treated as a <strong>Director's Loan</strong> — and if not repaid within 9 months of the company year-end, could trigger a S455 Corporation Tax charge (currently 33.75% of the loan balance)
+- Alternatively, it could be treated as an <strong>informal dividend</strong>, attracting Income Tax at up to 39.35% (Additional Rate)
+- The correct extraction mechanism is the <strong>MVL</strong> — see Part 11</p>
+<blockquote class="alert important"><strong>⚠️ IMPORTANT</strong><br/>
+Do NOT allow Wincham, Adrem, or any other party to move, transfer, or authorise payments from the Los Romeros Limited bank account without written authorisation from Phil Harrison as the sole director. He is the only authorised signatory on company decisions.</p>
+</blockquote>
+<h3 id="93-fx-considerations-eur-to-gbp-conversion">9.3 FX Considerations — EUR to GBP Conversion</h3>
+<p>If the sale was denominated in EUR (as is standard for Spanish property), the conversion to GBP creates important considerations:
+- A <strong>"phantom GBP gain"</strong> may arise: if the EUR/GBP rate has moved since the original acquisition, the GBP equivalent of the proceeds may be larger than the GBP equivalent of the original purchase — this <strong>currency gain is taxable</strong> for UK CGT purposes even if there was no increase in the property's EUR value
+- If any EUR balance has not yet been converted, consider engaging a specialist <strong>FX broker</strong> (Currencies Direct, OFX, Moneycorp, or similar) rather than a high-street bank — even a 0.5% rate improvement on a large sum represents thousands of pounds saved</p>
+<hr />
+<h2 id="part-10-immediate-post-sale-checklist">PART 10 — IMMEDIATE POST-SALE CHECKLIST</h2>
+<p>Prioritised by urgency — act on 🔴 items today.</p>
+<h3 id="critical-act-within-days">🔴 Critical — Act Within Days</h3>
+<ul>
+<li>[ ] <strong>Confirm only Phil Harrison can authorise transactions</strong> on the Los Romeros bank account — review and revoke any standing mandates or third-party access granted to Wincham or Adrem</li>
+<li>[ ] <strong>Verify the Spanish buyer filed Modelo 211</strong> (3% AEAT retention) — obtain the filed receipt from your gestoria or notary</li>
+<li>[ ] <strong>Confirm Plusvalía Municipal has been settled</strong> with the Tías Ayuntamiento — obtain the municipal payment receipt</li>
+<li>[ ] <strong>Do not make any personal withdrawals</strong> from the Los Romeros account before the MVL is complete</li>
+</ul>
+<h3 id="urgent-within-2-weeks">🟠 Urgent — Within 2 Weeks</h3>
+<ul>
+<li>[ ] <strong>Request a full, itemised fee statement from Wincham/Adrem</strong> — all charges ever levied against Los Romeros Limited from 2009 to present</li>
+<li>[ ] <strong>Audit the Director's Loan Account</strong> in historical accounts — check for any undisclosed drawings by Wincham directors (Mark Roach, Malcolm Roach) during their directorship periods</li>
+<li>[ ] <strong>Instruct an independent licensed UK Insolvency Practitioner (IP)</strong> to begin the MVL process — do NOT use any IP recommended by Wincham or Adrem</li>
+<li>[ ] <strong>Instruct a Spanish gestoria or abogado</strong> to prepare and file the Modelo 210 — deadline is approximately 20 July 2026</li>
+<li>[ ] <strong>Ask the gestoria to confirm all historic annual Modelo 210 deemed income returns</strong> were filed during the ownership period (2020–2025)</li>
+<li>[ ] <strong>Confirm Beryl Harrison's directorship removal was intentional</strong> — reinstate via AP01 if needed</li>
+</ul>
+<h3 id="important-within-1-month">🟡 Important — Within 1 Month</h3>
+<ul>
+<li>[ ] <strong>Instruct a STEP-qualified UK Private Client Solicitor</strong> for UK IHT planning post-repatriation — the funds will form a significant part of your UK estate</li>
+<li>[ ] <strong>Instruct a UK Chartered Tax Adviser</strong> to calculate the UK CGT liability on the MVL distribution and advise on FTCR (Foreign Tax Credit Relief) for any Spanish CGT already paid</li>
+<li>[ ] <strong>Engage an FX broker</strong> if any EUR balance remains unconverted</li>
+<li>[ ] <strong>Gather all documentary evidence of property costs</strong> for the Modelo 210 and UK CGT calculation:</li>
+<li>Original 2019 Spanish escritura (deed of purchase)</li>
+<li>ITP or VAT paid at purchase; purchase notary fees; registry fees</li>
+<li>Any renovation, flood repair, or capital improvement invoices</li>
+<li>Spanish estate agent commission invoices (if applicable)</li>
+<li>UK professional fees (Wincham's fees may be allowable as a CGT deduction)</li>
+<li>[ ] <strong>Verify Wincham/Adrem's ICAEW membership status</strong> at find.icaew.com — confirm they are currently authorised</li>
+</ul>
+<h3 id="ongoing-through-dissolution">🟢 Ongoing — Through Dissolution</h3>
+<ul>
+<li>[ ] Work with the IP to complete the MVL — target dissolution by August 2026</li>
+<li>[ ] File the final UK company accounts for Los Romeros (period to date of winding-up resolution)</li>
+<li>[ ] Claim any AEAT 3% overpayment refund via the Modelo 210 filing by 20 July 2026</li>
+<li>[ ] Report the UK CGT gain on Phil Harrison's personal <strong>Self Assessment tax return</strong> for the 2025–26 tax year — filing deadline <strong>31 January 2027</strong></li>
+<li>[ ] Consider whether to make a complaint to ICAEW about Wincham's conduct, if the evidence of negligent advice regarding the legality of the original scheme warrants it</li>
+</ul>
+<hr />
+<h2 id="part-11-the-mvl-winding-up-los-romeros-limited">PART 11 — THE MVL: WINDING UP LOS ROMEROS LIMITED</h2>
+<h3 id="why-an-mvl">Why an MVL?</h3>
+<ul>
+<li>Los Romeros is <strong>solvent</strong> — the sale proceeds significantly exceed any remaining liabilities</li>
+<li>A simple <strong>DS01 strike-off</strong> is wholly inappropriate and dangerous given the size of assets in the company — it would risk <em>bona vacantia</em> and tax mischaracterisation</li>
+<li>An MVL allows all remaining funds to be distributed as a <strong>capital payment</strong> to Phil Harrison as sole shareholder — taxed at <strong>Capital Gains Tax rates (18–24%)</strong> rather than Income Tax rates (20–45%)</li>
+</ul>
+<h3 id="badr-does-it-apply">BADR — Does It Apply?</h3>
+<p><strong>Business Asset Disposal Relief (BADR)</strong>, formerly Entrepreneurs' Relief, would reduce the CGT rate to <strong>10%</strong> on up to £1 million of lifetime qualifying gains. However, BADR is unlikely to apply here because:
+- Los Romeros Limited must be a <strong>"trading company"</strong> to qualify — a company whose primary activity has been holding a single residential property overseas will almost certainly fail this test
+- The company's SIC code (70229 — Management consultancy) and its actual activity (holding a Spanish villa) are inconsistent with a genuine trading classification</p>
+<p><strong>This point should be confirmed by your UK tax adviser</strong> before the MVL distribution is made.</p>
+<h3 id="mvl-process-overview">MVL Process Overview</h3>
+<ol>
+<li>Phil Harrison (as sole director and shareholder) passes a <strong>Declaration of Solvency</strong> — confirming all debts can be paid within 12 months</li>
+<li>A <strong>shareholder resolution</strong> to wind up is passed</li>
+<li>A <strong>licensed Insolvency Practitioner (IP)</strong> is appointed as Liquidator</li>
+<li>The IP settles all remaining creditors (any Wincham/Adrem exit fees, HMRC, Spanish tax liabilities)</li>
+<li>The IP <strong>distributes the cash surplus</strong> to Phil Harrison as a capital payment</li>
+<li>The company is formally dissolved and removed from Companies House</li>
+</ol>
+<h3 id="mvl-projected-timeline">MVL — Projected Timeline</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Milestone</th>
+<th>Estimated Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Property sale completed</td>
+<td>✅ 20 March 2026</td>
+</tr>
+<tr>
+<td>Funds enter UK</td>
+<td>✅ ~27 March 2026</td>
+</tr>
+<tr>
+<td>Instruct independent IP for MVL</td>
+<td><strong>Now — urgent</strong></td>
+</tr>
+<tr>
+<td>Modelo 210 filed (Spanish CGT)</td>
+<td>By 20 July 2026</td>
+</tr>
+<tr>
+<td>Declaration of Solvency signed</td>
+<td>April–May 2026</td>
+</tr>
+<tr>
+<td>Creditors settled / MVL distribution</td>
+<td>May–July 2026</td>
+</tr>
+<tr>
+<td>Los Romeros formally dissolved</td>
+<td>July–September 2026</td>
+</tr>
+<tr>
+<td>Phil Harrison's Self Assessment tax return</td>
+<td>31 January 2027</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="part-12-uk-tax-on-the-mvl-distribution">PART 12 — UK TAX ON THE MVL DISTRIBUTION</h2>
+<h3 id="uk-capital-gains-tax">UK Capital Gains Tax</h3>
+<p>After the MVL distribution, Phil Harrison will have a personal UK CGT liability based on:
+- <strong>Disposal proceeds:</strong> GBP equivalent of the net cash received from the liquidation
+- <strong>Acquisition cost:</strong> The GBP amount paid for the Los Romeros shares in 2019 (the £159,636 share capital figure, plus any additional costs paid to acquire the company)
+- <strong>Allowable deductions:</strong> Professional fees paid (Spanish gestoria, UK IP fees, Wincham fees paid during ownership — confirm eligibility with tax adviser)
+- <strong>CGT rate:</strong> 18% (basic rate taxpayer) or <strong>24% (higher/additional rate)</strong> for 2025/26</p>
+<h3 id="foreign-tax-credit-relief-ftcr">Foreign Tax Credit Relief (FTCR)</h3>
+<p>If Spanish CGT (Modelo 210) was paid to AEAT on the same disposal, Phil Harrison may be entitled to <strong>FTCR</strong> — offsetting the Spanish tax paid against the UK CGT liability on the same gain. This avoids double taxation. The calculation is complex in a cross-border corporate disposal and requires a specialist tax adviser.</p>
+<h3 id="uk-iht-post-repatriation-planning">UK IHT — Post-Repatriation Planning</h3>
+<p>Once the MVL distributes the funds and Los Romeros is dissolved, you will hold significant liquid capital in the UK. This becomes part of his <strong>UK estate</strong> for Inheritance Tax purposes. At current rates, anything above the Nil Rate Band (£325,000) and Residence NRB (£175,000 if applicable) is taxed at <strong>40%</strong>. Options to consider with your STEP solicitor:
+- <strong>Potentially Exempt Transfers (PETs)</strong> — gifts to family members that become exempt if you survives 7 years
+- <strong>Discounted Gift Trusts / Loan Trusts</strong> — structured products that can remove value from the estate while preserving income
+- <strong>Pension contributions</strong> — pension funds sit outside an estate for IHT purposes
+- <strong>Will update</strong> — ensures the estate plan reflects the new UK liquid assets correctly</p>
+<hr />
+<h2 id="part-13-summary-risk-register">PART 13 — SUMMARY RISK REGISTER</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Severity</th>
+<th>Current Status</th>
+<th>Action Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modelo 210 deadline missed — AEAT refund forfeited</td>
+<td>🔴 Critical</td>
+<td>Deadline ~20 Jul 2026 (116 days)</td>
+<td>File immediately via gestoria</td>
+</tr>
+<tr>
+<td>Funds withdrawn as income before MVL</td>
+<td>🔴 Critical</td>
+<td>Risk if any informal payment made</td>
+<td>Proceed via MVL only</td>
+</tr>
+<tr>
+<td>Wincham/Adrem has residual bank account access</td>
+<td>🔴 High</td>
+<td>Confirm immediately</td>
+<td>Revoke third-party mandates</td>
+</tr>
+<tr>
+<td>Historic annual Modelo 210 deemed income returns not filed</td>
+<td>🟠 Medium-High</td>
+<td>Unknown — not yet confirmed</td>
+<td>AEAT compliance check via gestoria</td>
+</tr>
+<tr>
+<td>Beryl Harrison directorship inadvertently removed</td>
+<td>🟠 Medium</td>
+<td>Confirmed — Feb 2026 filing</td>
+<td>Reinstate if intended via AP01</td>
+</tr>
+<tr>
+<td>Director's Loan Account — undisclosed Wincham charges</td>
+<td>🟠 Medium</td>
+<td>Unreviewed</td>
+<td>Audit historical accounts</td>
+</tr>
+<tr>
+<td>FX phantom GBP gain taxable in UK</td>
+<td>🟠 Medium</td>
+<td>Active if EUR/GBP rate moved since 2019</td>
+<td>Confirm with tax adviser</td>
+</tr>
+<tr>
+<td>MVL IP firm not independent of Wincham</td>
+<td>🟡 Medium</td>
+<td>Risk if Wincham recommends IP</td>
+<td>Self-instruct independently via R3</td>
+</tr>
+<tr>
+<td>Wincham/Adrem exit fees — unknown quantum</td>
+<td>🟡 Medium</td>
+<td>Unquantified</td>
+<td>Request full fee statement</td>
+</tr>
+<tr>
+<td>BADR incorrectly claimed on MVL distribution</td>
+<td>🟡 Medium</td>
+<td>Risk if not verified</td>
+<td>Confirm trading company test with CTA</td>
+</tr>
+<tr>
+<td>ICAEW membership of Wincham — status unverified</td>
+<td>🟡 Unknown</td>
+<td>Not yet checked</td>
+<td>Check find.icaew.com</td>
+</tr>
+<tr>
+<td>UK IHT exposure on repatriated funds</td>
+<td>🟡 Notable</td>
+<td>Funds entering estate</td>
+<td>Engage STEP solicitor</td>
+</tr>
+<tr>
+<td>Plusvalía Municipal not settled</td>
+<td>🟡 Low (if sale managed professionally)</td>
+<td>Should have been paid at completion</td>
+<td>Obtain municipal receipt</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="part-14-independent-adviser-directory">PART 14 — INDEPENDENT ADVISER DIRECTORY</h2>
+<p><strong>Every adviser below should be completely independent of Wincham International and Adrem Accounting.</strong></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Adviser Type</th>
+<th>Purpose</th>
+<th>How to Find Them</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spanish Gestoria / Abogado (Lanzarote/Las Palmas)</strong></td>
+<td>File Modelo 210, confirm Plusvalía paid, AEAT compliance check for prior years</td>
+<td>Colegio de Gestores Administrativos de Las Palmas; Colegio de Abogados de Las Palmas</td>
+</tr>
+<tr>
+<td><strong>UK-Spain Dual Tax Specialist</strong></td>
+<td>Cross-border CGT, phantom FX gain, FTCR calculation, Modelo 210 optimisation</td>
+<td>Blevins Franks (blevinsfranks.com); Del Canto Chambers (delcantochambers.com); Solicitors in Spain</td>
+</tr>
+<tr>
+<td><strong>Licensed UK Insolvency Practitioner (MVL)</strong></td>
+<td>Members' Voluntary Liquidation of Los Romeros Limited</td>
+<td>R3 — Association of Business Recovery Professionals: r3.org.uk/find-an-insolvency-practitioner</td>
+</tr>
+<tr>
+<td><strong>STEP-Qualified UK Private Client Solicitor</strong></td>
+<td>UK Will, trust planning, IHT mitigation, estate restructuring post-repatriation</td>
+<td>STEP Member Directory: step.org/find-a-member</td>
+</tr>
+<tr>
+<td><strong>UK Chartered Tax Adviser (CTA)</strong></td>
+<td>UK CGT on MVL distribution, BADR eligibility assessment, Self Assessment return</td>
+<td>Chartered Institute of Taxation: tax.org.uk/find-a-member</td>
+</tr>
+<tr>
+<td><strong>FX Specialist Broker</strong></td>
+<td>EUR→GBP conversion — better rates than high-street banks</td>
+<td>Currencies Direct, Moneycorp, OFX, Caxton</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="part-15-shareholder-psc-forensic-analysis-did-wincham-adrem-hold-shares-in-los-romeros">PART 15 — SHAREHOLDER &amp; PSC FORENSIC ANALYSIS: DID WINCHAM / ADREM HOLD SHARES IN LOS ROMEROS?</h2>
+<p><strong>Research Date:</strong> 28 March 2026 | <strong>Source:</strong> Workspace documents — <code>LOS ROMEROS LIMITED Company overview.pdf</code>; annual accounts and CH filing history (2009–2026); UK PSC register filings extracted directly from <code>c:\DAD\UK_Lanzarote_Repatriation\Annual accounts\</code>.</p>
+<p>This section answers directly: <em>Did any individual or entity connected to Wincham Accountants Limited or Adrem Accounting Ltd ever hold shares or a controlling interest in Los Romeros Limited — the company that held the Lanzarote villa?</em></p>
+<hr />
+<h3 id="151-current-shareholders-confirmed-position-as-at-28-march-2026">15.1 Current Shareholders — Confirmed Position (as at 28 March 2026)</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Shareholder / PSC</th>
+<th>Status</th>
+<th>% Shares</th>
+<th>% Voting Rights</th>
+<th>Notified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mr Philip Anthony Harrison</strong></td>
+<td>✅ ACTIVE</td>
+<td>25–50%</td>
+<td>25–50%</td>
+<td>23 Dec 2019</td>
+</tr>
+<tr>
+<td><strong>Mrs Beryl Harrison</strong></td>
+<td>✅ ACTIVE (PSC retained)</td>
+<td>25–50%</td>
+<td>25–50%</td>
+<td>23 Dec 2019</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="alert important"><strong>⚠️ IMPORTANT</strong><br/>
+<strong>DEFINITIVE FINDING: No individual, entity, director, or officer connected to Wincham Accountants Limited or Adrem Accounting Ltd holds any shares, voting rights, or PSC status in Los Romeros Limited.</strong> At the date the Lanzarote villa was sold (20 March 2026), it was wholly beneficially owned by the Harrison family.</p>
+</blockquote>
+<hr />
+<h3 id="152-historical-shareholders-complete-chronological-record">15.2 Historical Shareholders — Complete Chronological Record</h3>
+<h4 id="early-period-20102011-the-purvis-family-original-clients">Early Period (2010–2011): The Purvis Family — Original Clients</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Role</th>
+<th>Period</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frederick Purvs</td>
+<td>Director</td>
+<td>22 Jun 2010 – 6 Jun 2011</td>
+<td>Original villa purchasers; Wincham clients</td>
+</tr>
+<tr>
+<td>Margaret Ellen Purvis</td>
+<td>Director</td>
+<td>22 Jun 2010 – 6 Jun 2011</td>
+<td>Correspondence shown at Wincham House</td>
+</tr>
+</tbody>
+</table></div>
+<p>The Purvis family were the original clients who purchased the villa through the Wincham structure in 2010. Their Wincham House correspondence address reflects Wincham's standard practice of using their registered address for nominee director records — not that the Purvis family were Wincham employees or associates.</p>
+<h4 id="stockwell-period-201120192020-previous-beneficial-owners">Stockwell Period (2011–2019/2020): Previous Beneficial Owners</h4>
+<blockquote class="alert warning"><strong>⚠️ WARNING</strong><br/>
+<strong>The Stockwells held shares and/or significant control while using Wincham House, Congleton CW12 4TR as their correspondence address — the same address as Wincham Accountants Limited.</strong> This is the closest any document comes to showing a Wincham-affiliated individual holding shares.</p>
+</blockquote>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Role</th>
+<th>PSC Status</th>
+<th>Nature of Control</th>
+<th>Period</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bryan Frederick Stockwell</strong></td>
+<td>Director + PSC</td>
+<td>✅ CEASED</td>
+<td>More than 25%, not more than 50% shares</td>
+<td>Director: Jun 2011–Jan 2019; PSC: Apr 2016–<strong>4 Jan 2019</strong></td>
+</tr>
+<tr>
+<td><strong>Mary Ann Stockwell</strong></td>
+<td>PSC only</td>
+<td>✅ CEASED</td>
+<td>"Has significant influence or control"</td>
+<td>PSC: Apr 2016–<strong>23 Dec 2019</strong></td>
+</tr>
+<tr>
+<td><strong>Kevin John Stockwell</strong></td>
+<td>Director (brief)</td>
+<td>Not a PSC</td>
+<td>Administrative only</td>
+<td>Oct 2019–23 Dec 2019</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Assessment:</strong> The Stockwells used Wincham House as their Companies House correspondence address throughout their ownership period. Available public records do not establish that Bryan or Mary Ann Stockwell were employees or officers of Wincham Accountants Limited or Adrem Accounting Ltd — they appear to have been <strong>clients of the Wincham Group</strong> who previously owned the villa through an identical structure, then sold the company to the Harrison family in 2019. Their PSC interests were fully extinguished as part of that sale transaction: Bryan ceased 4 January 2019; Mary Ann ceased 23 December 2019.</p>
+<h4 id="transition-period-oct-2019jan-2020-wincham-nominee-directors">Transition Period (Oct 2019–Jan 2020): Wincham Nominee Directors</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Role</th>
+<th>Wincham Connection</th>
+<th>PSC / Shares</th>
+<th>Period</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mark Damion Roach</strong> (DOB Oct 1976)</td>
+<td>Transition Director</td>
+<td>✅ YES — serving Wincham group director</td>
+<td><strong>None — not a shareholder</strong></td>
+<td>7 Oct 2019 – 9 Jan 2020</td>
+</tr>
+<tr>
+<td><strong>Kevin John Stockwell</strong></td>
+<td>Director</td>
+<td>Stockwell family (prior owners); not Wincham staff</td>
+<td>Not a PSC</td>
+<td>7 Oct 2019 – 23 Dec 2019</td>
+</tr>
+</tbody>
+</table></div>
+<p>Mark Roach — an active director of Wincham Accountants Limited — was temporarily installed as a director of Los Romeros during the ownership restructure. He held <strong>no shares and no PSC status</strong> at any time. His role was a nominee placeholder during the handover. He was formally removed on 9 January 2020 once Philip and Beryl Harrison were fully registered.</p>
+<hr />
+<h3 id="153-secretary-officer-roles-not-shareholders-at-any-point">15.3 Secretary / Officer Roles — Not Shareholders (At Any Point)</h3>
+<p>Wincham-group entities and Adrem have <strong>only ever held the Company Secretary role</strong> — a purely administrative function carrying no ownership rights, no voting rights, and no entitlement to profits or distributions:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Role</th>
+<th>Period</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Companies 4 U Secretaries Ltd (Wincham subsidiary)</td>
+<td>Company Secretary</td>
+<td>18 Aug 2009 – 18 Aug 2012</td>
+</tr>
+<tr>
+<td>Wincham Legal Limited</td>
+<td>Company Secretary</td>
+<td>Aug 2012 onwards</td>
+</tr>
+<tr>
+<td><strong>Wincham Accountants Limited</strong></td>
+<td>Company Secretary</td>
+<td>18 Aug 2012 – 18 Aug 2021</td>
+</tr>
+<tr>
+<td><strong>Wincham Accountancy Limited</strong></td>
+<td>Company Secretary</td>
+<td>18 Aug 2021 – Sep 2025</td>
+</tr>
+<tr>
+<td><strong>Adrem Accounting Ltd</strong></td>
+<td>Company Secretary</td>
+<td><strong>1 Sep 2025 – Present</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="154-definitive-answer-table">15.4 Definitive Answer Table</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Definitive Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Does Wincham Accountants currently hold shares?</td>
+<td><strong>No — never held shares at any point</strong></td>
+</tr>
+<tr>
+<td>Does Adrem Accounting currently hold shares?</td>
+<td><strong>No — never held shares at any point</strong></td>
+</tr>
+<tr>
+<td>Did any Wincham director/employee hold shares?</td>
+<td><strong>No — Mark Roach held only a brief nominee directorship, zero shares</strong></td>
+</tr>
+<tr>
+<td>Did any Wincham-address individual ever hold shares?</td>
+<td><strong>Yes — Bryan Stockwell (PSC, 25–50%) Apr 2016 to Jan 2019</strong> — assessed as a Wincham client using their address, not a Wincham employee</td>
+</tr>
+<tr>
+<td>Who held the villa at point of sale (20 Mar 2026)?</td>
+<td><strong>Philip Anthony Harrison (25–50%) and Beryl Harrison (25–50%)</strong> — the Harrison family in full</td>
+</tr>
+<tr>
+<td>Did Wincham / Adrem hold any controlling interest?</td>
+<td><strong>No — only an administrative Company Secretary role, which carries zero ownership rights</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="155-residual-risk-points-to-resolve-before-mvl-closes">15.5 Residual Risk Points to Resolve Before MVL Closes</h3>
+<ol>
+<li>
+<p><strong>Mark Roach was a director during the share allotment (27 Dec 2019).</strong> Roach held a directorship at the exact moment the Harrison family's shares worth GBP £159,636 were allotted. As a director at this date he would have participated in the board resolution. <strong>Action:</strong> Request a full historical shareholder register from Adrem — confirm no shares were ever retained by any Wincham-affiliated party at any point.</p>
+</li>
+<li>
+<p><strong>Stockwell/Wincham relationship is undocumented.</strong> The Stockwells' long-term use of the Wincham House address raises the question of whether any undisclosed referral, consultancy, or financial arrangement existed between the Stockwell family and the Wincham Group. This is speculative on current public records only. <strong>Action:</strong> Raise with your independent solicitor before MVL distributions are finalised — a simple solicitor's confirmation letter that the shareholder register is clean will suffice.</p>
+</li>
+</ol>
+<hr />
+<h2 id="part-16-conclusion">PART 16 — CONCLUSION</h2>
+<p>The Wincham Group — operating through Wincham Accountants Limited, Wincham Accountancy Limited, Adrem Accounting Ltd, and related entities — is a legitimate and registered corporate services operation in the narrow legal sense. The individuals behind it (the Roach family, Jon Hallatt, and associates) appear on Companies House records without criminal sanction or regulatory disqualification.</p>
+<p><strong>However</strong>, the picture painted by the totality of evidence is concerning on several fronts:</p>
+<ol>
+<li><strong>The core product they sold you</strong> — a UK Ltd company to hold a Spanish property for inheritance tax mitigation — has been publicly condemned by the Spanish Tax Authority and independently warned against by multiple reputable Spanish and UK legal advisers as potentially unlawful</li>
+<li><strong>The governance model</strong> (mass-directorship, nominee infrastructure, same-group secretary) has provided zero meaningful oversight of your company</li>
+<li><strong>The fee transparency and communication</strong> appear to have been poor — evidenced by the four internal secretary changes in 17 years (with no apparent client notification), the February 2026 director removal, and the consistent pattern of client complaints about opaque pricing</li>
+<li><strong>The workplace culture</strong> described by employees raises serious concerns about the quality of attention applied to individual client files</li>
+</ol>
+<p>Now that the property has sold and funds are entering the UK, the priority is clear: engage independent professionals, file the Modelo 210 before 20 July 2026, execute a proper MVL, and address your UK tax and estate planning needs with STEP-qualified advisers who have no conflict of interest with the Wincham Group.</p>
+<hr />
+<p><em>This master report was compiled from: UK Companies House public records; the complete 17-year filing history of Los Romeros Limited extracted from company overview PDF documentation held in the workspace at <code>c:\DAD\UK_Lanzarote_Repatriation\Annual accounts\</code>; Wincham International's official website (winchamaccountants.com); employee review platforms (Indeed, Glassdoor, Comparably); client review aggregators (Trustpilot, TradersUnion); Spanish legal and tax advisories (Lawbird, Blevins Franks, Buckles Law, Del Canto Chambers, Solicitors in Spain, Lexland); UK HMRC guidance notes on overseas property and CGT; Spanish AEAT guidance on Modelo 210/211; cross-border tax analysis from multiple independent professional sources; and full shareholder/PSC forensic analysis completed 28 March 2026 from workspace source documents. The original forensic research was produced by both Gemini and Claude AI analysis of all documentation provided.</em></p>
+<p><em>This report constitutes research and analysis only, produced 28 March 2026. It does not constitute legal, financial, or tax advice. Engage qualified independent professionals before acting on any information contained herein.</em></p>
+    </main>
+  </div>
+
+  <footer>
+    <p>Philip Harrison &mdash; Lanzarote Property Sale &mdash; Forensic Report</p>
+    <p>Prepared 29 March 2026 &bull; AI Advisory Team</p>
+  </footer>
+
+  <script>
+    // Build TOC dynamically from H2 and H3 tags
+    const content = document.getElementById('report-content');
+    const tocNav = document.getElementById('toc-nav');
+    const headings = content.querySelectorAll('h2, h3');
+    
+    headings.forEach(heading => {
+      // skip if no ID
+      if (!heading.id) return;
+      
+      const link = document.createElement('a');
+      link.href = '#' + heading.id;
+      link.textContent = heading.textContent;
+      link.className = 'toc-link ' + heading.tagName.toLowerCase();
+      
+      // For H2s, let's remove "PART X -" or "PHASE X -" to make it cleaner in TOC
+      if (heading.tagName === 'H2') {
+          link.textContent = heading.textContent.replace(/^(PART|PHASE) \d+ [—|-] /, '');
+      }
+      
+      tocNav.appendChild(link);
+    });
+
+    // Intersection Observer for highlighting TOC dynamically
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -60% 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          document.querySelectorAll('.toc-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(heading => observer.observe(heading));
+  </script>
+
+</body>
+</html>

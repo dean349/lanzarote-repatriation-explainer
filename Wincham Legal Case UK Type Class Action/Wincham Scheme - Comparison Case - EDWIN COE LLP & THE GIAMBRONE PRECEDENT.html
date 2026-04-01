@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wincham Scheme — Comparison Case: Edwin Coe LLP &amp; The Giambrone Precedent</title>
+<meta name="description" content="Intelligence brief: Edwin Coe LLP and Penningtons Manches Cooper LLP prosecuted the Giambrone group action — the closest legal precedent to the Wincham professional negligence matter.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  :root {
+    --navy: #0d1b2a; --navy2: #1b2d42; --navy3: #12233a;
+    --gold: #c9933a; --gold2: #e8b45a; --gold3: #f5d08a;
+    --red: #d94f4f; --amber: #e07c2a; --green: #3aad6e;
+    --blue: #3a8fd9; --purple: #7c5cbf;
+    --text: #e8eaf0; --muted: #9aa3b2; --card: #1e2f45; --border: #2a3f58;
+    --font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--navy); color: var(--text); font-family: var(--font); line-height: 1.7; }
+
+  /* NAV */
+  .tab-nav { position: sticky; top: 0; z-index: 100; background: var(--navy2);
+    border-bottom: 2px solid var(--border); display: flex; overflow-x: auto; }
+  .tab-btn { padding: 14px 22px; font-size: 0.88rem; font-weight: 600;
+    border: none; background: none; color: var(--muted); cursor: pointer;
+    border-bottom: 3px solid transparent; transition: all .2s; white-space: nowrap; font-family: var(--font); }
+  .tab-btn.active { color: var(--gold2); border-bottom-color: var(--gold); }
+  .tab-btn:hover { color: var(--text); }
+
+  /* LAYOUT */
+  .section { display: none; max-width: 960px; margin: 0 auto; padding: 40px 20px 80px; }
+  .section.active { display: block; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, var(--navy2), #0a1520);
+    border: 1px solid var(--border); border-radius: 14px;
+    padding: 44px 40px; margin-bottom: 32px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -60px; right: -60px;
+    width: 200px; height: 200px; background: radial-gradient(circle, rgba(201,147,58,.08) 0%, transparent 70%); }
+  .hero .stamp { display: inline-block; background: var(--red);
+    color: #fff; font-size: 0.68rem; font-weight: 700; letter-spacing: 2px;
+    padding: 4px 14px; border-radius: 4px; margin-bottom: 18px; text-transform: uppercase; }
+  .hero .stamp-blue { background: var(--blue); }
+  .hero h1 { font-size: 1.85rem; font-weight: 800; color: var(--gold2); margin-bottom: 10px; line-height: 1.3; }
+  .hero .sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 6px; }
+  .hero .sum { font-size: 2.6rem; font-weight: 800; color: var(--gold); margin: 20px 0 4px; }
+  .hero .sum-label { font-size: 0.85rem; color: var(--muted); }
+  .hero .vs { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 28px; flex-wrap: wrap; }
+  .hero .vs-box { background: rgba(255,255,255,.04); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 24px; text-align: center; min-width: 180px; }
+  .hero .vs-box .label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .hero .vs-box .name { font-size: 1.05rem; font-weight: 700; color: var(--gold2); }
+  .hero .vs-arrow { font-size: 1.4rem; color: var(--gold); font-weight: 800; }
+
+  /* CARDS */
+  .card { background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 28px; margin-bottom: 20px; }
+  .card h2 { font-size: 1.15rem; font-weight: 700; color: var(--gold2); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px; }
+  .card h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 20px 0 8px; }
+  .card h4 { font-size: 0.9rem; font-weight: 600; color: var(--gold3); margin: 14px 0 6px; }
+  .card p { color: #c8d0dc; margin-bottom: 10px; font-size: 0.94rem; line-height: 1.75; }
+  .card ul, .card ol { padding-left: 22px; color: #c8d0dc; font-size: 0.94rem; }
+  .card li { margin-bottom: 7px; line-height: 1.65; }
+  .card a { color: var(--gold2); text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+
+  /* SECTION HEADER */
+  .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+
+  /* ALERTS */
+  .alert { padding: 16px 20px; border-radius: 8px; margin: 16px 0; font-size: 0.9rem; line-height: 1.6; }
+  .alert-red { background: rgba(217,79,79,.1); border-left: 4px solid var(--red); }
+  .alert-amber { background: rgba(224,124,42,.1); border-left: 4px solid var(--amber); }
+  .alert-green { background: rgba(58,173,110,.1); border-left: 4px solid var(--green); }
+  .alert-blue { background: rgba(58,143,217,.1); border-left: 4px solid var(--blue); }
+  .alert-gold { background: rgba(201,147,58,.1); border-left: 4px solid var(--gold); }
+  .alert strong { display: block; margin-bottom: 5px; font-size: 0.88rem; letter-spacing: 0.5px; }
+  .alert-red strong { color: var(--red); }
+  .alert-amber strong { color: var(--amber); }
+  .alert-green strong { color: var(--green); }
+  .alert-blue strong { color: var(--blue); }
+  .alert-gold strong { color: var(--gold2); }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; font-size: 0.87rem; margin: 14px 0; }
+  th { background: var(--navy2); color: var(--gold2); padding: 11px 14px;
+    text-align: left; border-bottom: 2px solid var(--border); font-weight: 600; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: #c8d0dc; vertical-align: top; line-height: 1.6; }
+  tr:last-child td { border-bottom: none; }
+  tr.highlight-row td { background: rgba(201,147,58,.06); }
+  tr.total-row td { background: var(--navy2); font-weight: 700; }
+
+  /* BADGES */
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px;
+    font-size: 0.73rem; font-weight: 700; letter-spacing: 0.3px; white-space: nowrap; }
+  .badge-red { background: rgba(217,79,79,.18); color: #f08080; border: 1px solid rgba(217,79,79,.3); }
+  .badge-amber { background: rgba(224,124,42,.18); color: #f0a060; border: 1px solid rgba(224,124,42,.3); }
+  .badge-green { background: rgba(58,173,110,.18); color: #70d0a0; border: 1px solid rgba(58,173,110,.3); }
+  .badge-blue { background: rgba(58,143,217,.18); color: #80c0f0; border: 1px solid rgba(58,143,217,.3); }
+  .badge-gold { background: rgba(201,147,58,.18); color: var(--gold2); border: 1px solid rgba(201,147,58,.3); }
+  .badge-purple { background: rgba(124,92,191,.18); color: #b090e0; border: 1px solid rgba(124,92,191,.3); }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(to bottom, var(--gold), var(--border)); }
+  .tl-item { position: relative; margin-bottom: 24px; }
+  .tl-dot { position: absolute; left: -24px; top: 4px; width: 12px; height: 12px;
+    border-radius: 50%; border: 2px solid var(--gold); background: var(--navy); }
+  .tl-dot.red { border-color: var(--red); }
+  .tl-dot.green { border-color: var(--green); }
+  .tl-dot.amber { border-color: var(--amber); }
+  .tl-year { font-size: 0.75rem; font-weight: 700; color: var(--gold); letter-spacing: 1px; margin-bottom: 3px; }
+  .tl-title { font-weight: 600; color: var(--text); font-size: 0.95rem; margin-bottom: 4px; }
+  .tl-body { color: #c8d0dc; font-size: 0.88rem; line-height: 1.65; }
+
+  /* FIRM PROFILE */
+  .firm-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 24px; }
+  .firm-header { background: linear-gradient(135deg, var(--navy2), var(--navy3));
+    padding: 22px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; }
+  .firm-icon { width: 48px; height: 48px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; flex-shrink: 0; }
+  .firm-icon-gold { background: rgba(201,147,58,.15); border: 1px solid rgba(201,147,58,.3); }
+  .firm-icon-blue { background: rgba(58,143,217,.15); border: 1px solid rgba(58,143,217,.3); }
+  .firm-title { font-size: 1.2rem; font-weight: 800; color: var(--gold2); }
+  .firm-sub { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+  .firm-body { padding: 24px 28px; }
+  .firm-contact { background: var(--navy2); border-radius: 8px; padding: 16px 18px; margin-top: 16px; font-size: 0.88rem; }
+  .firm-contact .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--gold); margin-bottom: 8px; }
+  .firm-contact p { color: #c8d0dc; margin-bottom: 3px; font-size: 0.88rem; }
+  .firm-contact a { color: var(--gold2); }
+
+  /* PITCH BOX */
+  .pitch-box { background: rgba(201,147,58,.06); border: 1px solid rgba(201,147,58,.2);
+    border-radius: 10px; padding: 20px 22px; margin-top: 18px; }
+  .pitch-box .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--gold); margin-bottom: 10px; }
+  .pitch-box blockquote { font-size: 0.91rem; color: #d8dfe8; font-style: italic; line-height: 1.75; }
+
+  /* COMPARISON */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .compare-box { border-radius: 10px; padding: 20px; }
+  .compare-box.left { background: rgba(217,79,79,.07); border: 1px solid rgba(217,79,79,.2); }
+  .compare-box.right { background: rgba(58,173,110,.07); border: 1px solid rgba(58,173,110,.2); }
+  .compare-box .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 10px; }
+  .compare-box.left .label { color: var(--red); }
+  .compare-box.right .label { color: var(--green); }
+  .compare-box ul { padding-left: 18px; color: #c8d0dc; font-size: 0.88rem; }
+  .compare-box li { margin-bottom: 7px; }
+
+  /* CONTACTS GRID */
+  .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .contact-card { background: var(--navy2); border-radius: 10px; padding: 18px 20px; border: 1px solid var(--border); }
+  .contact-card .name { font-weight: 700; color: var(--gold2); font-size: 1rem; margin-bottom: 4px; }
+  .contact-card .role { font-size: 0.8rem; color: var(--muted); margin-bottom: 10px; }
+  .contact-card .detail { font-size: 0.84rem; color: #c8d0dc; line-height: 1.5; }
+
+  /* KILL SHOT */
+  .killshot { background: linear-gradient(135deg, rgba(201,147,58,.12), rgba(201,147,58,.04));
+    border: 1px solid rgba(201,147,58,.35); border-radius: 12px; padding: 28px 30px; margin: 24px 0; }
+  .killshot .heading { font-size: 1.05rem; font-weight: 800; color: var(--gold2); margin-bottom: 14px; }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 40px 20px; color: var(--muted); font-size: 0.8rem;
+    border-top: 1px solid var(--border); max-width: 960px; margin: 0 auto; }
+
+  /* RESPONSIVE */
+  @media (max-width: 680px) {
+    .hero h1 { font-size: 1.3rem; }
+    .hero .vs { flex-direction: column; gap: 12px; }
+    .compare-grid, .contacts-grid { grid-template-columns: 1fr; }
+    .section { padding: 24px 14px 60px; }
+    .card { padding: 18px; }
+    .firm-body, .firm-header { padding: 18px; }
+  }
+  @media print {
+    .tab-nav { display: none; }
+    .section { display: block !important; page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('overview')">⚖️ Case Overview</button>
+  <button class="tab-btn" onclick="showTab('giambrone')">📋 The Giambrone Case</button>
+  <button class="tab-btn" onclick="showTab('firms')">🏛️ Target Firms</button>
+  <button class="tab-btn" onclick="showTab('comparison')">🔍 Side-by-Side</button>
+  <button class="tab-btn" onclick="showTab('pitch')">📨 Pitch Strategy</button>
+</nav>
+
+<!-- ═══════════════════════════════════════ TAB 1 — OVERVIEW ═══════════════════════════════════════ -->
+<div id="tab-overview" class="section active">
+
+  <div class="hero">
+    <div class="stamp stamp-blue">PRIVATE &amp; CONFIDENTIAL — 1 APRIL 2026</div>
+    <h1>Wincham Scheme — Comparison Case<br>Edwin Coe LLP &amp; The Giambrone Precedent</h1>
+    <p class="sub">Intelligence Brief prepared by Dean Harrison for Group Litigation Outreach</p>
+    <div class="vs">
+      <div class="vs-box">
+        <div class="label">Comparison Case</div>
+        <div class="name">Giambrone &amp; Law</div>
+      </div>
+      <div class="vs-arrow">→</div>
+      <div class="vs-box">
+        <div class="label">Target Defendant</div>
+        <div class="name">Wincham Accountants</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🎯 Why This Document Exists</h2>
+    <p>This brief identifies <strong>Edwin Coe LLP</strong> and <strong>Penningtons Manches Cooper LLP</strong> as the two highest-priority law firms to approach with the Wincham Group Litigation Order commercial pitch — because they are the same firms that successfully prosecuted the <em>Giambrone</em> group action, the closest available legal precedent to the Wincham matter.</p>
+    <p>The pitch is not "please help us sue Wincham." The pitch is: <strong>"We are offering you a pre-packaged £25–£88M group litigation pipeline with a <strong>1,564-record victim database across 782 confirmed companies</strong> at two registered addresses, built on an archetype your firm has already won."</strong></p>
+    <div class="alert alert-gold">
+      <strong>⚡ The Single Most Powerful Opening Line</strong>
+      "This is Giambrone without the AIG recovery problem. The defendant is still active and solvent. Their PI insurer cannot play the aggregation game."
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📌 Key Facts at a Glance</h2>
+    <table>
+      <tr><th>Element</th><th>Giambrone Group Action</th><th>Wincham Matter</th></tr>
+      <tr><td>Prosecuted by</td><td>Edwin Coe LLP + Penningtons Manches</td><td><em>You are offering this to them</em></td></tr>
+      <tr><td>Victims</td><td>80–185 British / Irish investors</td><td><strong>1,564 identified director households across 782 confirmed companies</strong> (CW12 4TR: 585; CW12 4AA: 197 — forensically verified April 2026)</td></tr>
+      <tr><td>Defendant type</td><td>Professional firm (solicitors)</td><td>Professional firm (accountants)</td></tr>
+      <tr><td>Core failure</td><td>Failed to warn of known risks; fees collected throughout</td><td>Failed to warn of Brexit tax consequences; fees collected throughout</td></tr>
+      <tr><td>Defendant status</td><td><span class="badge badge-red">Insolvent — collapsed 2009</span></td><td><span class="badge badge-green">Active &amp; solvent — trading today</span></td></tr>
+      <tr><td>PI insurer behaviour</td><td>AIG fought aggregation for 15+ years</td><td>Existing OOC settlements confirm live insurer nervous of exposure</td></tr>
+      <tr><td>Pre-existing precedent</td><td>None — Giambrone was the precedent</td><td><em>Vilintone v Wincham International</em>; <em>Bushwood v Wincham</em> — both settled OOC</td></tr>
+      <tr class="highlight-row"><td><strong>Settlement prognosis</strong></td><td>Slow — insolvency + AIG aggregation battle</td><td><strong>Fast</strong> — solvent defendant, active policy, existing OOC pattern</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🗂️ Document Structure</h2>
+    <ul>
+      <li><strong>Tab 2 — The Giambrone Case:</strong> Full facts, litigation timeline, and why it ran into recovery problems that Wincham does not have</li>
+      <li><strong>Tab 3 — Target Firms:</strong> Verified profiles for Edwin Coe LLP and Penningtons Manches Cooper LLP — confirmed contacts, phone numbers, email addresses</li>
+      <li><strong>Tab 4 — Side-by-Side Comparison:</strong> Point-by-point table for use in the introductory meeting — demonstrates command of the legal landscape</li>
+      <li><strong>Tab 5 — Pitch Strategy:</strong> Exact scripts, opening paragraphs, and the two killer commercial pitch points</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════ TAB 2 — GIAMBRONE ═══════════════════════════════════════ -->
+<div id="tab-giambrone" class="section">
+
+  <div class="hero">
+    <div class="stamp">The Precedent Case</div>
+    <h1>Giambrone &amp; Law — The Group Action</h1>
+    <p class="sub">Calabria, Italy | 2007–2025 | High Court, Court of Appeal, PI Insurer Battles</p>
+  </div>
+
+  <div class="card">
+    <h2>🏛️ The Scheme</h2>
+    <p>In the mid-2000s, the Italian law firm <strong>Giambrone &amp; Law</strong> — with offices in London, Milan, and Palermo — marketed off-plan luxury holiday apartments in Calabria, southern Italy, to hundreds of British and Irish investors. The key developments were:</p>
+    <ul>
+      <li><strong>"Jewel of the Sea"</strong> — Calabria</li>
+      <li><strong>"El Caribe"</strong> — Calabria</li>
+    </ul>
+    <p>UK investors — predominantly middle-class retirees and pre-retirees — paid deposits of <strong>£30,000 to £105,000 each</strong>, expecting completion by 2009.</p>
+    <div class="alert alert-red">
+      <strong>🔑 The Critical Structural Fact</strong>
+      Giambrone &amp; Law acted as the <em>clients' own solicitors</em> throughout — i.e., the firm trusted by the investors to protect them was the same firm that failed to warn of the catastrophic risks it was aware of. This is the precise archetype of the Wincham matter.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ The Four Failures Courts Found</h2>
+    <ul>
+      <li><strong>Failure to advise on risks:</strong> Giambrone knew the Calabrian construction sector had links to the <em>'Ndrangheta</em> (Calabrian Mafia) and the Provisional IRA. It failed to disclose this.</li>
+      <li><strong>Failure of due diligence:</strong> Inadequate investigation of planning permissions, title, and developer financial stability.</li>
+      <li><strong>Breach of trust / fiduciary duty:</strong> Released client deposits to developers without obtaining contractually-required guarantees — when the developments failed, the money was gone.</li>
+      <li><strong>Continued to act without warning:</strong> Even as red flags mounted, the firm kept billing and taking fees.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📅 Litigation Timeline</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot amber"></div>
+        <div class="tl-year">2007–2008</div>
+        <div class="tl-title">British investors purchase off-plan properties</div>
+        <div class="tl-body">Giambrone acts as their solicitors. Deposits of £30k–£105k paid per investor.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot red"></div>
+        <div class="tl-year">2009</div>
+        <div class="tl-title">Developments fail to complete</div>
+        <div class="tl-body">Criminal investigations begin into developer financing and organised crime links. Investor complaints commence.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot amber"></div>
+        <div class="tl-year">2009–2013</div>
+        <div class="tl-title">Early individual cases + SRA strike-off</div>
+        <div class="tl-body">Some confidential early settlements. Senior partner Gabriele Giambrone struck off as a Registered European Lawyer by the SRA in 2013.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot green"></div>
+        <div class="tl-year">July 2015</div>
+        <div class="tl-title">🏆 High Court Judgment — Claimants Win</div>
+        <div class="tl-body"><strong>Mr Justice Foskett</strong> rules in favour of the group. Giambrone found liable for professional negligence and breach of trust. Ordered to compensate investors for lost deposits. <strong>Edwin Coe LLP and Penningtons Manches Cooper</strong> acted for the claimants.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot green"></div>
+        <div class="tl-year">2017</div>
+        <div class="tl-title">🏆 Court of Appeal upholds the decision</div>
+        <div class="tl-body">Liability confirmed. Giambrone ordered to compensate for the full consequential loss flowing from its failure to advise.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot amber"></div>
+        <div class="tl-year">2019</div>
+        <div class="tl-title">PI Insurer costs order — AIG ordered to pay 50%</div>
+        <div class="tl-body">Mr Justice Foskett grants a <strong>non-party costs order against AIG</strong> (Giambrone's PI insurer), finding AIG had funded the defence in a way that dramatically increased claimants' legal costs. AIG ordered to pay 50% of claimants' costs.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot red"></div>
+        <div class="tl-year">2025</div>
+        <div class="tl-title">Still litigating — Roger Leggett &amp; 40 Others v AIG</div>
+        <div class="tl-body">Claimants are <em>still</em> fighting to recover money from AIG 16 years after the scheme collapsed. This is the recovery problem the Wincham matter does not have.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🚧 The Giambrone Recovery Problem — And Why Wincham Is Different</h2>
+    <p>The Giambrone case hit a wall that made recovery extremely difficult and prolonged:</p>
+    <ul>
+      <li><strong>Giambrone &amp; Law went insolvent.</strong> This meant claimants who won in court still couldn't access the money easily.</li>
+      <li><strong>AIG attempted to aggregate all claims</strong> into a single £3M policy limit — which would have paid each claimant pennies. This fight alone lasted years.</li>
+      <li><strong>The result:</strong> Claimants won in 2015–2017 and are still in recovery litigation in 2025. That is 16 years.</li>
+    </ul>
+    <div class="compare-grid">
+      <div class="compare-box left">
+        <div class="label">⛔ Giambrone Recovery</div>
+        <ul>
+          <li>Firm insolvent — no direct assets</li>
+          <li>AIG aggregation dispute lasted years</li>
+          <li>£3M policy limit vs. multi-million loss</li>
+          <li>Still litigating in 2025</li>
+          <li>Many claimants never fully recovered</li>
+        </ul>
+      </div>
+      <div class="compare-box right">
+        <div class="label">✅ Wincham Recovery</div>
+        <ul>
+          <li>Active, solvent, trading firm</li>
+          <li>Live PI policy — paying insurer</li>
+          <li>PI insurer already settled OOC twice</li>
+          <li>GLO = existential threat to firm</li>
+          <li>Insurer cannot play the aggregation game</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════ TAB 3 — FIRMS ═══════════════════════════════════════ -->
+<div id="tab-firms" class="section">
+
+  <div class="hero">
+    <div class="stamp">Verified Firm Intelligence</div>
+    <h1>The Two Firms That Won Giambrone</h1>
+    <p class="sub">Confirmed contacts, named partners, and approach strategy</p>
+  </div>
+
+  <div class="alert alert-amber">
+    <strong>⚠️ Correction to Earlier Documents</strong>
+    David Niven is a partner at <strong>Penningtons Manches Cooper</strong> — not Edwin Coe. Both firms acted together on Giambrone and are separate targets. Edwin Coe's group action lead is <strong>David Greene</strong> (Senior Partner).
+  </div>
+
+  <!-- FIRM 1: EDWIN COE -->
+  <div class="firm-card">
+    <div class="firm-header">
+      <div class="firm-icon firm-icon-gold">⚖️</div>
+      <div>
+        <div class="firm-title">Edwin Coe LLP</div>
+        <div class="firm-sub">Priority 1A — Group Action Lead — Lincoln's Inn, London</div>
+      </div>
+    </div>
+    <div class="firm-body">
+      <div class="badge-row">
+        <span class="badge badge-gold">Legal 500: Group Litigation (Claimant)</span>
+        <span class="badge badge-gold">Chambers UK: Group Litigation</span>
+        <span class="badge badge-green">~150 Lawyers</span>
+        <span class="badge badge-blue">Claimant-Side Only</span>
+      </div>
+
+      <table style="margin: 16px 0;">
+        <tr><th style="width:180px">Detail</th><th>Information</th></tr>
+        <tr><td>Full registered name</td><td>Edwin Coe LLP</td></tr>
+        <tr><td>Address</td><td>2 Stone Buildings, Lincoln's Inn, London, WC2A 3TH</td></tr>
+        <tr><td>Main telephone</td><td>+44 (0)20 7691 4000</td></tr>
+        <tr><td>General email</td><td><a href="mailto:enquiries@edwincoe.com">enquiries@edwincoe.com</a></td></tr>
+        <tr><td>Website</td><td><a href="https://www.edwincoe.com" target="_blank">edwincoe.com</a></td></tr>
+        <tr><td>Giambrone role</td><td>Acted for the group of British claimants — secured multi-million pound recoveries</td></tr>
+      </table>
+
+      <h3>Key Named Partners</h3>
+      <div class="contacts-grid">
+        <div class="contact-card">
+          <div class="name">David Greene</div>
+          <div class="role">Senior Partner — Group Action Litigation Lead</div>
+          <div class="detail">Leading figure in UK class actions and group litigation. Decades of experience in high-profile multi-party cases including competition, shareholder, and collective redress. <strong>Primary contact for the Wincham pitch.</strong></div>
+        </div>
+        <div class="contact-card">
+          <div class="name">Roger Franklin</div>
+          <div class="role">Head of Insurance Litigation</div>
+          <div class="detail">Handles commercial insurance disputes including PI insurer battles — directly relevant to the post-judgment recovery phase. Key contact for the insurer negotiation strategy.</div>
+        </div>
+        <div class="contact-card">
+          <div class="name">Nicola Maher</div>
+          <div class="role">Partner — Insurance &amp; Professional Negligence</div>
+          <div class="detail">Expertise in professional negligence claims and insurance coverage disputes.</div>
+        </div>
+        <div class="contact-card">
+          <div class="name">Joanna Osborne</div>
+          <div class="role">Head of Property Disputes</div>
+          <div class="detail">All types of property-related professional negligence — relevant for the Spanish property dimension of the Wincham matter.</div>
+        </div>
+      </div>
+
+      <div class="firm-contact">
+        <div class="label">📬 Formal Correspondence Address</div>
+        <p><strong>David Greene — Senior Partner</strong></p>
+        <p>Edwin Coe LLP, 2 Stone Buildings, Lincoln's Inn, London WC2A 3TH</p>
+        <p>T: +44 (0)20 7691 4000 | E: <a href="mailto:enquiries@edwincoe.com">enquiries@edwincoe.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIRM 2: PENNINGTONS -->
+  <div class="firm-card">
+    <div class="firm-header">
+      <div class="firm-icon firm-icon-blue">🏛️</div>
+      <div>
+        <div class="firm-title">Penningtons Manches Cooper LLP</div>
+        <div class="firm-sub">Priority 1B — Group Actions Named Partners — 125 Wood Street, London</div>
+      </div>
+    </div>
+    <div class="firm-body">
+      <div class="badge-row">
+        <span class="badge badge-gold">Legal 500: Group Action (Claimant)</span>
+        <span class="badge badge-gold">Legal 500: Professional Negligence</span>
+        <span class="badge badge-blue">~400 Lawyers</span>
+        <span class="badge badge-green">David Niven — Named Partner</span>
+      </div>
+
+      <table style="margin: 16px 0;">
+        <tr><th style="width:180px">Detail</th><th>Information</th></tr>
+        <tr><td>Full registered name</td><td>Penningtons Manches Cooper LLP</td></tr>
+        <tr><td>London address</td><td>125 Wood Street, London, EC2V 7AW</td></tr>
+        <tr><td>Main telephone</td><td>+44 (0)20 7457 3000</td></tr>
+        <tr><td>General email</td><td><a href="mailto:info@penningtonslaw.com">info@penningtonslaw.com</a></td></tr>
+        <tr><td>Website</td><td><a href="https://www.penningtonslaw.com" target="_blank">penningtonslaw.com</a></td></tr>
+        <tr><td>Other offices</td><td>Reading, Cambridge, Guildford, Geneva</td></tr>
+        <tr><td>Giambrone role</td><td>Acted alongside Edwin Coe for the claimant group — named in High Court and Court of Appeal proceedings</td></tr>
+      </table>
+
+      <h3>Key Named Partners</h3>
+      <div class="contacts-grid">
+        <div class="contact-card">
+          <div class="name">David Niven</div>
+          <div class="role">Partner — Commercial Dispute Resolution</div>
+          <div class="detail">Leads professional negligence and group actions at Penningtons. Legal 500 and Chambers UK ranked. Confirmed involvement in Giambrone litigation and other failed property investment scheme group actions. <strong>Primary contact.</strong></div>
+        </div>
+        <div class="contact-card">
+          <div class="name">Kamran Rehman</div>
+          <div class="role">Partner — Group Actions</div>
+          <div class="detail">Co-lead alongside David Niven on group actions practice. Legal 500 confirmed.</div>
+        </div>
+        <div class="contact-card">
+          <div class="name">David O'Brien</div>
+          <div class="role">Partner — Group Actions</div>
+          <div class="detail">Group actions team member. Legal 500 confirmed.</div>
+        </div>
+      </div>
+
+      <div class="firm-contact">
+        <div class="label">📬 Formal Correspondence Address</div>
+        <p><strong>David Niven — Partner / Group Actions</strong></p>
+        <p>Penningtons Manches Cooper LLP, 125 Wood Street, London EC2V 7AW</p>
+        <p>T: +44 (0)20 7457 3000 | E: <a href="mailto:info@penningtonslaw.com">info@penningtonslaw.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAMBERS -->
+  <div class="card">
+    <h2>⚡ The Single Most Valuable Tactical Move</h2>
+    <p>Before approaching either firm above, or simultaneously with outreach, contact:</p>
+    <div class="firm-contact" style="margin:0;">
+      <div class="label">👁️ Crown Office Chambers — Clerks' Room</div>
+      <p><strong>Email:</strong> <a href="mailto:clerks@crownofficechambers.com">clerks@crownofficechambers.com</a></p>
+      <p><strong>Barrister of interest:</strong> Michael Harper</p>
+      <p><strong>Cases:</strong> <em>Vilintone &amp; ors v Wincham International</em>; <em>Bushwood v Wincham International</em> (both settled OOC)</p>
+      <p style="margin-top:10px;font-style:italic;color:#c8d0dc;">Ask: "Which solicitors instructed Michael Harper on the Vilintone and Bushwood cases?" Those solicitors already hold the winning legal argument and will immediately recognise the commercial value of <strong>1,564 additional potential claimants across 782 confirmed companies</strong> (CW12 4TR and CW12 4AA combined — April 2026). They are your most motivated target and do not appear on any public shortlist.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════ TAB 4 — COMPARISON ═══════════════════════════════════════ -->
+<div id="tab-comparison" class="section">
+
+  <div class="hero">
+    <div class="stamp">For Use in Introductory Meetings</div>
+    <h1>Giambrone vs. Wincham — Side-by-Side</h1>
+    <p class="sub">Present this table to demonstrate command of the legal landscape and position the Wincham matter as a known, proven litigation archetype</p>
+  </div>
+
+  <div class="card">
+    <h2>📊 Full Comparison Table</h2>
+    <table>
+      <tr><th>Element</th><th>Giambrone — Italy, 2007–2025</th><th>Wincham — Spain, 2021–present</th></tr>
+      <tr>
+        <td><strong>The victims</strong></td>
+        <td>British / Irish retirees and near-retirees</td>
+        <td>British retirees and near-retirees</td>
+      </tr>
+      <tr>
+        <td><strong>The professional</strong></td>
+        <td>Clients' own <em>solicitors</em></td>
+        <td>Clients' own <em>accountants</em></td>
+      </tr>
+      <tr>
+        <td><strong>The product</strong></td>
+        <td>Off-plan Italian property purchased via a professional adviser</td>
+        <td>Spanish residential property held inside a UK Ltd company on professional advice</td>
+      </tr>
+      <tr>
+        <td><strong>Core failure</strong></td>
+        <td>Failed to warn of known risks; released deposits without guarantee; continued billing throughout</td>
+        <td>Failed to warn of Brexit tax consequences; failed to ensure corporate banking; continued billing throughout</td>
+      </tr>
+      <tr>
+        <td><strong>Pattern evidence</strong></td>
+        <td>Same two developments; same solicitor; same failure for 80–185 clients</td>
+        <td>Same registered address (CW12 4TR); same company secretary; same nominal director with 431 simultaneous appointments</td>
+      </tr>
+      <tr>
+        <td><strong>Prior litigation</strong></td>
+        <td>Giambrone was the scheme operator; no prior cases against them</td>
+        <td><em>Vilintone v Wincham International</em>; <em>Bushwood v Wincham International</em> — both settled OOC via PI insurer</td>
+      </tr>
+      <tr>
+        <td><strong>Key legal theory</strong></td>
+        <td>Prof. negligence (<em>Hedley Byrne</em>); breach of trust; fiduciary duty</td>
+        <td>Prof. negligence (<em>Hedley Byrne</em>); CA 2006 ss.172/174; SGSA 1982 s.13</td>
+      </tr>
+      <tr>
+        <td><strong>Limitation</strong></td>
+        <td>6 years from breach; date of knowledge extension used</td>
+        <td>Jan 2027 primary; extending to 2031–2032 via s.14A date of knowledge</td>
+      </tr>
+      <tr>
+        <td><strong>Regulatory action</strong></td>
+        <td>Gabriele Giambrone struck off by SRA, 2013</td>
+        <td>FCA false-claim (FRN 615817) documented; ICAEW verification underway for Leonard Jones / Adrem</td>
+      </tr>
+      <tr class="highlight-row">
+        <td><strong>Defendant solvency</strong></td>
+        <td><span class="badge badge-red">Insolvent — collapsed 2009</span></td>
+        <td><span class="badge badge-green">Active &amp; solvent — trading April 2026</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td><strong>PI insurer behaviour</strong></td>
+        <td><span class="badge badge-red">AIG — aggregation fight, 15+ years, still ongoing</span></td>
+        <td><span class="badge badge-green">Existing OOC settlements — insurer scared of public GLO</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td><strong>Recovery difficulty</strong></td>
+        <td><span class="badge badge-red">Very high — AIG fought every penny</span></td>
+        <td><span class="badge badge-green">Significantly lower — solvent firm, live policy, PI insurer motivated to settle</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td><strong>Victim database</strong></td>
+        <td>Claimants had to be found organically — advertising, word of mouth</td>
+        <td><span class="badge badge-green">1,564 records across 782 companies — Companies House-sourced — available Day 1</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>💡 Two Improvements Over Giambrone</h2>
+    <div class="compare-grid">
+      <div class="compare-box right" style="grid-column: 1;">
+        <div class="label">✅ Improvement 1: Solvent Defendant</div>
+        <ul>
+          <li>Giambrone collapsed; money locked in insolvency for 16 years</li>
+          <li>Wincham is <em>still billing clients today</em></li>
+          <li>Active firm + active PI policy = faster, cleaner settlement</li>
+          <li>No aggregation fight — insurer can't hide behind insolvency</li>
+        </ul>
+      </div>
+      <div class="compare-box right" style="grid-column: 2;">
+        <div class="label">✅ Improvement 2: Pre-Built Pipeline</div>
+        <ul>
+          <li>Giambrone claimants found organically — slow, expensive</li>
+          <li>Wincham: 1,564 records across 782 companies — Companies House-sourced — Day 1</li>
+          <li>Database sourced from UK Government filings — irrefutable</li>
+          <li>Zero lead acquisition cost — already paid</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════ TAB 5 — PITCH ═══════════════════════════════════════ -->
+<div id="tab-pitch" class="section">
+
+  <div class="hero">
+    <div class="stamp">Commercial Outreach Strategy</div>
+    <h1>Pitch Strategy &amp; Scripts</h1>
+    <p class="sub">How to approach Edwin Coe LLP and Penningtons Manches Cooper LLP</p>
+  </div>
+
+  <div class="alert alert-red">
+    <strong>⚠️ Strategic Framing Reminder</strong>
+    You are NOT approaching these firms as a victim seeking help. You are approaching them as a <strong>commercial marketing partner</strong> with a pre-built pipeline worth £25–£88M in aggregate claim value. Lead with the commercial proposition. Philip Harrison's individual case is evidence of product quality — not the opening line.
+  </div>
+
+  <div class="killshot">
+    <div class="heading">⚡ The Killer Opening Line</div>
+    <p style="color:#c8d0dc; font-size:0.94rem; line-height:1.75; font-style:italic;">
+      "We are bringing you a case that is structurally identical to the Giambrone group action your firm prosecuted — British retirees, their own professional firm that failed to warn them of known risks, fees collected throughout — but with one critical difference: our defendant is still active and solvent. Their PI insurer cannot play the aggregation game. This is Giambrone without the AIG recovery problem."
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>📨 Pitch to Edwin Coe LLP — David Greene</h2>
+    <div class="section-label">Opening Paragraph — Formal Letter or Email</div>
+    <div class="pitch-box">
+      <div class="label">✍️ Suggested Opening</div>
+      <blockquote>
+        "We are writing to bring to your attention a packaged group litigation opportunity against a UK accountancy firm whose systemic professional negligence towards British property owners in Spain is structurally analogous to the Giambrone matter your firm successfully prosecuted. We have pre-identified approximately <strong>1,564 individual victim households across 782 confirmed companies</strong> at two registered addresses (CW12 4TR and CW12 4AA — forensically verified April 2026), quantified the aggregate claim value at £25–£88 million, and have an anchor claimant with a drafted Pre-Action Protocol Letter of Claim ready to issue. The defendant is an active, solvent firm — this is Giambrone without the AIG recovery problem. We believe this is a matter for a 30-minute introductory meeting at your convenience."
+      </blockquote>
+    </div>
+    <div class="firm-contact" style="margin-top:18px;">
+      <div class="label">📬 Send To</div>
+      <p><strong>David Greene — Senior Partner, Group Action Litigation</strong></p>
+      <p>Edwin Coe LLP, 2 Stone Buildings, Lincoln's Inn, London WC2A 3TH</p>
+      <p>T: +44 (0)20 7691 4000 | E: enquiries@edwincoe.com</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📨 Pitch to Penningtons Manches Cooper — David Niven</h2>
+    <div class="section-label">Opening Paragraph — Formal Letter or Email</div>
+    <div class="pitch-box">
+      <div class="label">✍️ Suggested Opening</div>
+      <blockquote>
+        "We are writing to David Niven's attention. We are bringing a packaged group litigation opportunity that is directly analogous to the Giambrone matter — British retirees failed by a professional firm that set up property-related corporate structures without adequately advising on the risks, and who continued collecting fees while the clients' exposure worsened. The defendant carries £25–£88M in aggregate exposure, is actively solvent with a live PI policy, and we have pre-built the victim database (<strong>1,564 records across 782 confirmed companies</strong> — forensically verified April 2026 from Companies House) and drafted the anchor claimant's Letter of Claim. We believe this warrants an introductory meeting at your convenience."
+      </blockquote>
+    </div>
+    <div class="firm-contact" style="margin-top:18px;">
+      <div class="label">📬 Send To</div>
+      <p><strong>David Niven — Partner, Commercial Dispute Resolution / Group Actions</strong></p>
+      <p>Penningtons Manches Cooper LLP, 125 Wood Street, London EC2V 7AW</p>
+      <p>T: +44 (0)20 7457 3000 | E: info@penningtonslaw.com</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📅 4-Week Outreach Sequencing</h2>
+    <table>
+      <tr><th>Week</th><th>Action</th></tr>
+      <tr><td><strong>Week 1</strong></td><td>Send pitch packs to <strong>Edwin Coe LLP</strong> (David Greene) and <strong>Penningtons Manches Cooper</strong> (David Niven) simultaneously. Contact Crown Office Chambers clerks' room in parallel.</td></tr>
+      <tr><td><strong>Week 2</strong></td><td>Send to <strong>Stephensons Solicitors LLP</strong> (Manchester, 0161 696 6178) and <strong>Slater Heelis LLP</strong> (Mark Gough, 0161 969 3131) — the Manchester corridor closest to Wincham's Congleton office.</td></tr>
+      <tr><td><strong>Week 3</strong></td><td>Send to <strong>Shoosmiths LLP</strong> and <strong>Walker Morris LLP</strong> — Leeds corridor for Business and Property Courts (Leeds) access.</td></tr>
+      <tr><td><strong>Week 4</strong></td><td>Evaluate responses. If no Tier 1/2 engagement, approach Levi Solicitors LLP (Leeds boutique) as test pitch. Identify FCA-authorised CMC partners as backup route.</td></tr>
+    </table>
+
+    <div class="alert alert-amber" style="margin-top: 16px;">
+      <strong>⏰ Limitation Urgency — Use This in Every Pitch</strong>
+      The 6-year primary limitation window for the Brexit advisory failure (Head 1) expires in <strong>January 2027</strong>. This creates genuine urgency for any firm considering instruction — they must move within months, not years. Make this clear in every communication.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🎯 The Commercial Models to Offer</h2>
+    <table>
+      <tr><th>Model</th><th>Structure</th><th>Best For</th></tr>
+      <tr><td><span class="badge badge-gold">Model A — Raw Data</span></td><td>One-time sale of the 1,564-record verified database (782 companies × 2 directors avg)</td><td>Shoosmiths / Walker Morris (institutional buyers)</td></tr>
+      <tr><td><span class="badge badge-blue">Model B — CPL</span></td><td>Cost-per-lead: firm pays per qualified claimant introduced</td><td>Firms with existing group action infrastructure</td></tr>
+      <tr><td><span class="badge badge-green">Model C — CPA</span></td><td>Cost-per-acquisition: share of settlement on successful claims</td><td>Edwin Coe / Penningtons (high confidence in outcome)</td></tr>
+      <tr class="highlight-row"><td><span class="badge badge-amber">Model D — Retainer + CPA</span></td><td>Monthly marketing retainer + CPA on recoveries — recommended</td><td>All Tier 1 and Tier 2 firms — maximum ongoing revenue</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  <p>Wincham Scheme — Comparison Case Intelligence Brief | Edwin Coe LLP &amp; The Giambrone Precedent</p>
+  <p style="margin-top:6px;">Prepared 1 April 2026 | Private &amp; Confidential | Dean Harrison</p>
+  <p style="margin-top:6px;">This document is for internal strategic use only and does not constitute legal advice.</p>
+</footer>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

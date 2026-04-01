@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Philip Harrison — Los Romeros Limited: Scenario Planning Model</title>
+  <meta name="description" content="Comprehensive financial scenario planning model for Philip Harrison following the Lanzarote property sale via Los Romeros Limited. MVL strategy, tax waterfall, and property reinvestment analysis."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:    #1a2744;
+      --navy2:   #243560;
+      --gold:    #c9952a;
+      --gold2:   #e8b44e;
+      --white:   #ffffff;
+      --lgrey:   #f5f7fa;
+      --mgrey:   #6b7280;
+      --dgrey:   #374151;
+      --border:  #e2e8f0;
+      --blue-bg: #dbeafe;
+      --blue-b:  #3b82f6;
+      --amb-bg:  #fef3c7;
+      --amb-b:   #d97706;
+      --red-bg:  #fee2e2;
+      --red-b:   #dc2626;
+      --grn-bg:  #d1fae5;
+      --grn-b:   #059669;
+      --purp-bg: #f3e8ff;
+      --purp-b:  #a855f7;
+      --talt:    #f0f4fa;
+      --radius:  10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--lgrey);
+      color: var(--dgrey);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      color: var(--white);
+      padding: 48px 16px 44px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,149,42,0.25);
+      border: 1px solid var(--gold);
+      color: var(--gold2);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.2;
+      max-width: 760px;
+      margin: 0 auto 14px;
+    }
+    .hero .meta { color: #94a3b8; font-size: 0.9rem; margin-bottom: 6px; }
+
+    /* ── KPI STRIP ── */
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      background: var(--white);
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    @media(min-width: 640px) {
+      .kpi-strip { grid-template-columns: repeat(4, 1fr); }
+    }
+    .kpi {
+      padding: 18px 12px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .kpi:nth-child(2n) { border-right: none; }
+    @media(min-width: 640px) {
+      .kpi { border-bottom: none; padding: 24px 16px; }
+      .kpi:nth-child(2n) { border-right: 1px solid var(--border); }
+      .kpi:last-child { border-right: none; }
+    }
+    .kpi-val { font-size: 1.5rem; font-weight: 700; color: var(--navy); line-height: 1.1; margin-bottom: 5px; }
+    .kpi-label { font-size: 0.65rem; color: var(--mgrey); text-transform: uppercase; letter-spacing: 0.07em; font-weight: 500; }
+    @media(min-width: 640px) { .kpi-val { font-size: 1.8rem; } }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1180px;
+      margin: 24px auto;
+      padding: 0 16px 60px;
+      align-items: start;
+    }
+    @media(min-width: 860px) {
+      .layout {
+        grid-template-columns: 270px 1fr;
+        gap: 32px;
+        margin: 40px auto;
+      }
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      padding: 22px 18px;
+    }
+    @media(min-width: 860px) {
+      .sidebar { position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow-y: auto; }
+    }
+    .sidebar h3 {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--mgrey);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .toc-link {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--mgrey);
+      text-decoration: none;
+      margin-bottom: 9px;
+      padding: 3px 0 3px 12px;
+      border-left: 2px solid transparent;
+      transition: all 0.2s;
+      line-height: 1.35;
+    }
+    .toc-link:hover, .toc-link.active {
+      color: var(--navy);
+      border-left-color: var(--gold);
+      padding-left: 16px;
+    }
+    .toc-link.h2 {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--navy);
+      margin-top: 12px;
+      padding-left: 0;
+      border-left: none;
+    }
+    .toc-link.h2:hover { border-left: none; padding-left: 0; color: var(--gold); }
+
+    /* ── CONTENT ── */
+    .content {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      padding: 28px 20px;
+      overflow-x: hidden;
+    }
+    @media(min-width: 640px) { .content { padding: 44px 52px; } }
+
+    /* ── TYPOGRAPHY ── */
+    .content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      color: var(--navy);
+      margin: 48px 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+      line-height: 1.2;
+    }
+    .content h2:first-child { margin-top: 0; }
+    .content h3 {
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin: 32px 0 12px;
+      font-weight: 700;
+    }
+    .content h4 {
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 24px 0 10px;
+      font-weight: 700;
+    }
+    .content p { margin-bottom: 14px; font-size: 0.97rem; color: #1f2937; line-height: 1.7; }
+    .content ul, .content ol { margin: 0 0 16px 22px; }
+    .content li { margin-bottom: 7px; font-size: 0.97rem; color: #1f2937; line-height: 1.65; }
+    .content strong { color: var(--navy); font-weight: 700; }
+    .content em { color: var(--mgrey); }
+    hr { border: 0; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    /* ── TABLES ── */
+    .tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0 24px; border-radius: 8px; }
+    table.dt { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 440px; }
+    table.dt thead tr { background: var(--navy); color: var(--white); }
+    table.dt thead th { padding: 11px 14px; text-align: left; font-weight: 600; font-size: 0.8rem; white-space: nowrap; }
+    table.dt tbody tr:nth-child(odd)  { background: var(--white); }
+    table.dt tbody tr:nth-child(even) { background: var(--talt); }
+    table.dt td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    table.dt td.r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    table.dt .badge-yes { background: var(--grn-bg); color: #065f46; padding: 2px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+    table.dt .badge-no  { background: var(--red-bg);  color: #991b1b; padding: 2px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+
+    /* ── WATERFALL TABLE ── */
+    table.wf { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 0.9rem; }
+    table.wf td { padding: 9px 14px; border-bottom: 1px solid var(--border); }
+    table.wf tr:nth-child(odd) td { background: var(--white); }
+    table.wf tr:nth-child(even) td { background: var(--talt); }
+    table.wf tr.section-head td {
+      background: var(--navy);
+      color: var(--gold2);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-bottom: none;
+    }
+    table.wf tr.total td {
+      background: var(--lgrey);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.97rem;
+      border-top: 2px solid var(--navy);
+    }
+    table.wf tr.grand-total td {
+      background: var(--navy);
+      color: var(--gold2);
+      font-weight: 700;
+      font-size: 1rem;
+      border-top: 2px solid var(--gold);
+    }
+    table.wf .r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    table.wf .deduct { color: #b91c1c; }
+
+    /* ── ALERT BOXES ── */
+    .alert {
+      border-left: 4px solid;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 20px 0;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .alert p:last-child { margin-bottom: 0; }
+    .alert strong.label {
+      display: block;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+    }
+    .alert.info     { background: var(--blue-bg); border-color: var(--blue-b); color: #1e40af; }
+    .alert.warning  { background: var(--amb-bg);  border-color: var(--amb-b);  color: #92400e; }
+    .alert.caution  { background: var(--red-bg);  border-color: var(--red-b);  color: #991b1b; }
+    .alert.success  { background: var(--grn-bg);  border-color: var(--grn-b);  color: #065f46; }
+    .alert.purple   { background: var(--purp-bg); border-color: var(--purp-b); color: #6b21a8; }
+
+    /* ── VERDICT CARD ── */
+    .verdict-card {
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      color: var(--white);
+      margin: 28px 0;
+    }
+    .verdict-card .vc-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .verdict-card h3 { color: var(--gold2); margin: 0 0 10px; font-size: 1.25rem; }
+    .verdict-card p { color: #cbd5e1; font-size: 0.97rem; margin-bottom: 10px; }
+    .verdict-card p:last-child { margin: 0; }
+    .verdict-card strong { color: var(--white); }
+
+    /* ── SCENARIO BADGE ── */
+    .scenario-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .sc-pill {
+      padding: 5px 18px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .sc-pill.rec   { background: var(--grn-bg); color: #065f46; border: 1px solid var(--grn-b); }
+    .sc-pill.warn  { background: var(--red-bg);  color: #991b1b; border: 1px solid var(--red-b); }
+    .sc-pill.maybe { background: var(--amb-bg);  color: #92400e; border: 1px solid var(--amb-b); }
+
+    /* ── ACTION PLAN ── */
+    .action-list { list-style: none; margin: 0 0 24px; }
+    .action-list li {
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+      font-size: 0.95rem;
+    }
+    .action-list li:last-child { border-bottom: none; }
+    .action-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      font-weight: 800;
+      margin-top: 1px;
+    }
+    .action-dot.red    { background: var(--red-bg);  color: var(--red-b); border: 2px solid var(--red-b); }
+    .action-dot.orange { background: var(--amb-bg);  color: var(--amb-b); border: 2px solid var(--amb-b); }
+    .action-dot.yellow { background: #fef9c3;        color: #a16207;      border: 2px solid #fde047; }
+    .action-dot.green  { background: var(--grn-bg);  color: var(--grn-b); border: 2px solid var(--grn-b); }
+    .action-list .action-label { font-weight: 700; color: var(--navy); display: block; margin-bottom: 3px; }
+
+    /* ── NET BOX ── */
+    .net-box {
+      background: var(--navy);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 28px 0;
+    }
+    .net-box .nb-head {
+      background: rgba(0,0,0,0.25);
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--gold2);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    table.nb { width: 100%; border-collapse: collapse; }
+    table.nb td { padding: 11px 20px; font-size: 0.92rem; color: #e2e8f0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    table.nb tr:nth-child(even) td { background: rgba(255,255,255,0.04); }
+    table.nb tr.nb-total td { color: var(--gold2); font-weight: 700; font-size: 1rem; border-top: 1px solid var(--gold); }
+    table.nb .r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+    /* ── MVL TIMELINE ── */
+    .timeline { margin: 20px 0 28px; }
+    .tl-phase {
+      display: flex;
+      gap: 0;
+      margin-bottom: 6px;
+    }
+    .tl-label {
+      width: 110px;
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--mgrey);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding-top: 6px;
+      text-align: right;
+      padding-right: 16px;
+    }
+    .tl-bar-wrap { flex: 1; }
+    .tl-bar {
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      border-radius: 4px;
+      height: 8px;
+      margin: 8px 0 4px;
+    }
+    .tl-desc { font-size: 0.82rem; color: var(--mgrey); line-height: 1.4; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 20px 52px;
+      color: var(--mgrey);
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Confidential — Private &amp; Family Reference</div>
+  <h1>Philip Harrison<br/>Los Romeros Limited<br/>Scenario Planning Model</h1>
+  <p class="meta">Post-Sale Proceeds Strategy &mdash; What to Do With the Money</p>
+  <p class="meta">Prepared: 31 March 2026 &nbsp;&bull;&nbsp; AI Advisory Team</p>
+</div>
+
+<!-- KPI STRIP -->
+<div class="kpi-strip">
+  <div class="kpi"><div class="kpi-val">&euro;315,000</div><div class="kpi-label">Sale Price</div></div>
+  <div class="kpi"><div class="kpi-val">&sim;&euro;18,783</div><div class="kpi-label">Spanish Tax</div></div>
+  <div class="kpi"><div class="kpi-val">&pound;25,069</div><div class="kpi-label">Director&rsquo;s Loan (Tax-Free)</div></div>
+  <div class="kpi"><div class="kpi-val">&sim;&pound;196,000</div><div class="kpi-label">Est. Net to Philip</div></div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR / TOC -->
+  <aside class="sidebar">
+    <h3>Contents</h3>
+    <nav id="toc-nav">
+      <!-- JS populated -->
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content" id="report-content">
+
+    <div class="alert info">
+      <strong class="label">&#9432; Planning Estimates Only</strong>
+      All figures are based on verified data from Los Romeros Limited accounts (August 2025) and the Spanish CGT Report (March 2026). They must be confirmed by a CIOT-registered Chartered Tax Adviser and licensed Insolvency Practitioner before any formal action is taken.
+    </div>
+
+    <!-- SECTION 1 -->
+    <h2 id="s1">The Starting Position</h2>
+
+    <p>The Lanzarote property held by <strong>Los Romeros Limited</strong> has been sold. The company now holds cash &mdash; it owns no assets other than that balance. Philip cannot simply withdraw the money. Every route out of the company carries a different tax cost. The question is: <strong>which is the cheapest legal path?</strong></p>
+
+    <div class="tbl-wrap"><table class="dt">
+      <thead><tr><th>Item</th><th class="r">Amount</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Sale Price</td><td class="r">&euro;315,000</td><td>Confirmed</td></tr>
+        <tr><td>Acquisition Cost (2019 Escritura)</td><td class="r">&euro;185,000</td><td>Verified deed</td></tr>
+        <tr><td>Total Deductions (acquisition + disposal + repairs)</td><td class="r">&sim;&euro;221,140</td><td>CGT Report</td></tr>
+        <tr><td><strong>Taxable Gain (Spain)</strong></td><td class="r"><strong>&sim;&euro;98,860</strong></td><td>CGT Report</td></tr>
+        <tr><td>Spanish Tax @ 19% IRNR</td><td class="r">&sim;&euro;18,783</td><td>CGT Report</td></tr>
+        <tr><td>&nbsp;&nbsp;— Withheld at Notary (Modelo 211)</td><td class="r">&euro;9,600</td><td>Confirmed</td></tr>
+        <tr><td>&nbsp;&nbsp;— Balance due via Modelo 210</td><td class="r">&sim;&euro;9,183</td><td>CGT Report</td></tr>
+        <tr><td><strong>Director&rsquo;s Loan (tax-free recovery)</strong></td><td class="r"><strong>&pound;25,069</strong></td><td>2025 Accounts</td></tr>
+        <tr><td>Net EUR proceeds into UK company (est.)</td><td class="r">&sim;&euro;301,217 (&sim;&pound;257,000)</td><td>Estimated @ 1.17</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- SECTION 2 -->
+    <h2 id="s2">Comparing Every Option</h2>
+
+    <p>There are four realistic strategies Philip can pursue. The table below compares them at a glance. Only one is recommended.</p>
+
+    <div class="tbl-wrap"><table class="dt">
+      <thead>
+        <tr>
+          <th>Strategy</th>
+          <th>Spanish Tax</th>
+          <th>UK Corp Tax</th>
+          <th>Extraction Tax</th>
+          <th>Est. Net to Philip</th>
+          <th>Recommended?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>A &mdash; MVL (Wind Up Company)</strong></td>
+          <td>&sim;&euro;18,783 (FTCR credited)</td>
+          <td>Minimal top-up &sim;&pound;5,000</td>
+          <td>CGT @ 18&ndash;24%</td>
+          <td><strong>&sim;&pound;193,000&ndash;&pound;198,000</strong></td>
+          <td><span class="badge-yes">&#10003; Yes &mdash; Best</span></td>
+        </tr>
+        <tr>
+          <td>B &mdash; Buy Another Spanish Property (in company)</td>
+          <td>Same</td>
+          <td>Deferred then worse</td>
+          <td>Higher long-run</td>
+          <td>Less</td>
+          <td><span class="badge-no">&#10007; No</span></td>
+        </tr>
+        <tr>
+          <td>C &mdash; Buy UK BTL Property (pre-MVL)</td>
+          <td>Same</td>
+          <td>Complicates CT</td>
+          <td>SDLT surcharge + CGT</td>
+          <td>Less</td>
+          <td><span class="badge-no">&#10007; No</span></td>
+        </tr>
+        <tr>
+          <td>D &mdash; Pay Dividends (no MVL)</td>
+          <td>Same</td>
+          <td>Same</td>
+          <td>Income Tax up to 39.35%</td>
+          <td>&sim;&pound;175,000</td>
+          <td><span class="badge-no">&#10007; Worst</span></td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <!-- SECTION 3 -->
+    <h2 id="s3">Scenario A &mdash; MVL Dissolution (Recommended)</h2>
+
+    <div class="scenario-header">
+      <span class="sc-pill rec">&#10003; Strongly Recommended</span>
+    </div>
+
+    <div class="verdict-card">
+      <div class="vc-badge">Senior Adviser Verdict</div>
+      <h3>Wind up the company via MVL. Do not buy more property inside it.</h3>
+      <p>The Members' Voluntary Liquidation (MVL) legally converts the company cash into a <strong>capital distribution</strong>, taxed at CGT rates (18&ndash;24%) rather than Income Tax rates (up to 39.35%). For a retired basic-rate taxpayer, this is the single most efficient extraction method available in UK law.</p>
+      <p>The Spanish CGT is already fixed &mdash; nothing can reduce it now. The only question left is how to get the remaining &sim;&pound;257,000 out of Los Romeros Limited as cheaply as possible. The MVL achieves that.</p>
+    </div>
+
+    <h3 id="s3-waterfall">The Tax Waterfall &mdash; Step by Step</h3>
+
+    <div class="tbl-wrap"><table class="wf">
+      <tbody>
+        <tr class="section-head"><td colspan="2">Spain &mdash; Already Settled</td></tr>
+        <tr><td>Sale Proceeds</td><td class="r">&euro;315,000</td></tr>
+        <tr><td>Less: Spanish IRNR @ 19%</td><td class="r deduct">(&euro;18,783)</td></tr>
+        <tr class="total"><td>Net retained by company</td><td class="r">&euro;301,217 &asymp; &pound;257,450</td></tr>
+
+        <tr class="section-head"><td colspan="2">UK Corporation Tax (CT600 Filing)</td></tr>
+        <tr><td>Taxable gain (GBP equivalent)</td><td class="r">&sim;&pound;84,500</td></tr>
+        <tr><td>UK Corp Tax @ 25%</td><td class="r">&sim;&pound;21,125</td></tr>
+        <tr><td>Less: Foreign Tax Credit Relief (FTCR &mdash; Spanish tax)</td><td class="r deduct">(&sim;&pound;16,055)</td></tr>
+        <tr class="total"><td>UK Corp Tax top-up payable</td><td class="r">&sim;&pound;5,070</td></tr>
+
+        <tr class="section-head"><td colspan="2">Company Cash Pre-MVL Distribution</td></tr>
+        <tr><td>Cash in company (GBP)</td><td class="r">&sim;&pound;257,450</td></tr>
+        <tr><td>Less: UK Corp Tax top-up</td><td class="r deduct">(&sim;&pound;5,070)</td></tr>
+        <tr><td>Less: MVL IP fees</td><td class="r deduct">(&sim;&pound;3,000&ndash;&pound;5,000)</td></tr>
+        <tr><td>Less: CTA / accountant fees</td><td class="r deduct">(&sim;&pound;2,500)</td></tr>
+        <tr><td>Less: Director&rsquo;s Loan repayment (tax-free to Philip)</td><td class="r deduct">(&pound;25,069)</td></tr>
+        <tr class="total"><td>Distributable capital pool</td><td class="r">&sim;&pound;222,000</td></tr>
+
+        <tr class="section-head"><td colspan="2">Philip&rsquo;s Personal CGT on MVL Distribution</td></tr>
+        <tr><td>Distribution received</td><td class="r">&sim;&pound;222,000</td></tr>
+        <tr><td>Less: Annual CGT exemption (2025/26)</td><td class="r deduct">(&pound;3,000)</td></tr>
+        <tr><td>Taxable amount</td><td class="r">&sim;&pound;219,000</td></tr>
+        <tr><td>CGT on first &sim;&pound;22,700 (basic rate band remaining) @ 18%</td><td class="r deduct">(&sim;&pound;4,086)</td></tr>
+        <tr><td>CGT on remaining &sim;&pound;196,300 @ 24% (higher rate)</td><td class="r deduct">(&sim;&pound;47,112)</td></tr>
+        <tr class="total"><td>Total personal CGT</td><td class="r">&sim;&pound;51,198</td></tr>
+
+        <tr class="section-head"><td colspan="2">Summary &mdash; What Philip Receives</td></tr>
+        <tr><td>Director&rsquo;s Loan (tax-free)</td><td class="r">&pound;25,069</td></tr>
+        <tr><td>MVL distribution after CGT</td><td class="r">&sim;&pound;170,802</td></tr>
+        <tr class="grand-total"><td><strong>Estimated Total Net to Philip</strong></td><td class="r"><strong>&sim;&pound;195,871</strong></td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="alert info">
+      <strong class="label">&#9432; Key Assumption</strong>
+      The CGT calculation assumes Philip's retirement income is approximately &pound;15,000/year (state pension + any private pension). If his income is lower, more falls in the 18% basic rate band and the net figure improves. Your CTA must confirm this with Philip's actual income figures.
+    </div>
+
+    <h3 id="s3-timeline">MVL Timeline</h3>
+
+    <div class="tbl-wrap"><table class="dt">
+      <thead><tr><th>Phase</th><th>Duration</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1 &mdash; Pre-MVL Prep</strong></td><td>Weeks 1&ndash;4</td><td>Appoint a licensed Insolvency Practitioner (IPA/ICAEW regulated). Director signs Declaration of Solvency (Form LQ01). Pass Special Resolution to wind up.</td></tr>
+        <tr><td><strong>2 &mdash; HMRC Clearance</strong></td><td>Weeks 4&ndash;16</td><td>File CT600 with Foreign Tax Credit Relief applied. Seek S.1020 HMRC pre-distribution clearance. Settle all outstanding creditors.</td></tr>
+        <tr><td><strong>3 &mdash; Capital Distribution</strong></td><td>Weeks 12&ndash;20</td><td>IP distributes cash as capital to Philip. Philip files Self-Assessment SA108. Pay CGT by 31 January following the tax year.</td></tr>
+        <tr><td><strong>4 &mdash; Dissolution</strong></td><td>Weeks 18&ndash;26</td><td>IP files final account. Companies House automatically strikes off Los Romeros Limited.</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- SECTION 4 -->
+    <h2 id="s4">Scenario B &mdash; Buying Another Property Inside the Company</h2>
+
+    <div class="scenario-header">
+      <span class="sc-pill warn">&#10007; Not Recommended</span>
+    </div>
+
+    <div class="alert warning">
+      <strong class="label">&#9888; Common Misconception</strong>
+      Philip is thinking about buying another property to "offset the taxes." This is a very understandable instinct, but it does not work the way people expect. Here is exactly why.
+    </div>
+
+    <h3>What Buying a Property Inside the Company Does &mdash; and Does NOT &mdash; Do</h3>
+
+    <div class="tbl-wrap"><table class="dt">
+      <thead><tr><th>What it DOES</th><th>What it Does NOT Do</th></tr></thead>
+      <tbody>
+        <tr><td>Defers UK Corporation Tax (company doesn&rsquo;t dissolve yet)</td><td><strong>Does NOT reduce the Spanish CGT</strong> &mdash; that bill is already fixed</td></tr>
+        <tr><td>Keeps funds working in an appreciating asset</td><td><strong>Does NOT create Spanish reinvestment relief</strong> &mdash; only available to Spanish tax-resident sellers of their primary home (not Philip)</td></tr>
+        <tr><td>Avoids immediate MVL CGT trigger</td><td><strong>Does NOT create UK rollover relief</strong> &mdash; Los Romeros is a passive SPV, not a trading group</td></tr>
+        <tr><td>&mdash;</td><td><strong>Increases the final tax bill</strong> &mdash; a larger accumulated pot pushes more into the 24% CGT band at eventual MVL</td></tr>
+        <tr><td>&mdash;</td><td><strong>Increases ongoing costs</strong> &mdash; additional CT600 filings, Modelo 210 annual charges, Companies House compliance</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>The Spanish Reinvestment Relief Myth &mdash; Explained Clearly</h3>
+    <p>Spain has a <em>vivienda habitual</em> reinvestment exemption that allows sellers to defer CGT if they reinvest in a new primary residence. However, this relief is <strong>only available to</strong>:</p>
+    <ul>
+      <li>Sellers who are <strong>Spanish tax residents</strong></li>
+      <li>Properties that are the seller&rsquo;s <strong>primary home</strong></li>
+    </ul>
+    <p>Philip is a <strong>UK resident</strong> selling via a <strong>corporate wrapper</strong>. Neither condition is met. This relief is <strong>entirely unavailable</strong> to him. There is no legal mechanism to roll the Spanish CGT gain into a new property purchase to defer or eliminate it.</p>
+
+    <div class="alert caution">
+      <strong class="label">&#9888; Long-Run Warning</strong>
+      Buying another property is a deferral strategy that <strong>increases long-run total tax, complexity, and risk</strong>. The only scenario where it makes sense is if Philip genuinely wants to continue holding property for lifestyle or rental income reasons &mdash; and even then, holding property <em>personally</em> after the MVL is far simpler and cheaper.
+    </div>
+
+    <!-- SECTION 5 -->
+    <h2 id="s5">Scenario C &mdash; Buying UK Property Before MVL</h2>
+
+    <div class="scenario-header">
+      <span class="sc-pill warn">&#10007; Not Recommended</span>
+    </div>
+
+    <p>Could the company purchase a UK buy-to-let property before winding up? Technically yes. But the financial and compliance costs make this substantially worse:</p>
+
+    <div class="tbl-wrap"><table class="dt">
+      <thead><tr><th>Problem</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td><strong>SDLT Surcharge</strong></td><td>A company buying a residential property pays standard SDLT <em>plus</em> a 3% surcharge. On a &pound;200,000 property this is approximately &pound;8,000 in stamp duty.</td></tr>
+        <tr><td><strong>Annual Tax on Enveloped Dwellings (ATED)</strong></td><td>If the property value exceeds &pound;500,000, an annual ATED charge applies. Not applicable here, but a future risk if prices rise.</td></tr>
+        <tr><td><strong>Corporation Tax on Rental Income</strong></td><td>All rental profit is taxed at 25% CT inside the company before Philip can access it.</td></tr>
+        <tr><td><strong>Double Tax Events</strong></td><td>When the UK property is eventually sold, there is another round of UK Corp Tax, then a second MVL distribution event with CGT.</td></tr>
+        <tr><td><strong>Complexity &amp; Cost</strong></td><td>Annual accounts, CT600 filings, and property management. Completely avoidable by simply extracting the cash via MVL now.</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- SECTION 6 -->
+    <h2 id="s6">The Smart Property Play: Buy Personally After MVL</h2>
+
+    <div class="scenario-header">
+      <span class="sc-pill maybe">Considered &mdash; if Philip wants property</span>
+    </div>
+
+    <p>If Philip genuinely wants to invest in property after the sale, the right sequence is:</p>
+    <ol>
+      <li><strong>Complete the MVL</strong> &mdash; extract ~&pound;196,000 net into his personal estate</li>
+      <li><strong>Buy property personally</strong> &mdash; from his own money, not inside a company</li>
+    </ol>
+
+    <p>This is dramatically superior to buying inside the company:</p>
+
+    <div class="tbl-wrap"><table class="dt">
+      <thead><tr><th>Feature</th><th>Inside Corporate Wrapper</th><th>Personally (post-MVL)</th></tr></thead>
+      <tbody>
+        <tr><td>SDLT rate</td><td>Standard + 3% company surcharge</td><td><strong>Standard rates only</strong></td></tr>
+        <tr><td>CGT on eventual sale</td><td>25% Corp Tax THEN MVL CGT</td><td><strong>18/24% CGT directly</strong></td></tr>
+        <tr><td>Annual compliance</td><td>CT600, ATED risk, Modelo 210</td><td><strong>Simple Self-Assessment</strong></td></tr>
+        <tr><td>Control</td><td>Via company directors</td><td><strong>Direct personal control</strong></td></tr>
+        <tr><td>Estate planning</td><td>Complex corporate structure</td><td><strong>Straightforward gifting &amp; IHT planning</strong></td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- SECTION 7 -->
+    <h2 id="s7">Three Levers That Still Improve the MVL Outcome</h2>
+
+    <p>Even in the recommended MVL scenario, there are meaningful steps Philip can take now to increase his net proceeds.</p>
+
+    <h3 id="s7-dla">1. Maximise the Director&rsquo;s Loan Before MVL</h3>
+    <p>The Director&rsquo;s Loan Account (DLA) stands at <strong>&pound;25,069</strong>. Every additional pound added to this account is recovered tax-free at MVL (it is repayment of a debt, not a distribution). Philip should document every personal payment he has made for Los Romeros Limited since <strong>31 August 2025</strong>:</p>
+    <ul>
+      <li>Insurance premiums</li>
+      <li>Utility bills or service charges</li>
+      <li>Estate agent or management fees</li>
+      <li>Any professional fees paid personally on the company&rsquo;s behalf</li>
+    </ul>
+    <div class="alert success">
+      <strong class="label">&#128176; Tax Saving</strong>
+      Every &pound;1,000 added to the DLA saves &pound;180&ndash;&pound;240 in personal CGT that would otherwise be due on the MVL distribution. It is the highest-value paperwork exercise available.
+    </div>
+
+    <h3 id="s7-timing">2. Split the MVL Across Two Tax Years</h3>
+    <p>The Insolvency Practitioner has flexibility on when distributions are made. If the MVL straddles 5 April (end of tax year), Philip can make a partial distribution in the current tax year (using &pound;3,000 CGT allowance) and the remainder in the next year (using another &pound;3,000 allowance).</p>
+    <div class="alert info">
+      <strong class="label">&#9432; Small But Easy Win</strong>
+      Doubling the CGT annual exemption saves approximately &pound;540&ndash;&pound;720. Costs nothing to implement &mdash; just needs to be planned with the IP before the first distribution.
+    </div>
+
+    <h3 id="s7-fx">3. Use a Specialist FX Broker (Not a High-Street Bank)</h3>
+    <p>The company holds euros. Converting at a retail bank costs 2&ndash;4% in exchange spread. A specialist FX broker charges 0.3&ndash;0.6%.</p>
+
+    <div class="tbl-wrap"><table class="dt">
+      <thead><tr><th>Route</th><th>Spread</th><th class="r">Cost on &euro;257,000</th></tr></thead>
+      <tbody>
+        <tr><td>HSBC / Barclays / Lloyds</td><td>&sim;3%</td><td class="r">&sim;&pound;6,600 lost</td></tr>
+        <tr><td><strong>Currencies Direct / TorFX</strong></td><td>&sim;0.4%</td><td class="r">&sim;&pound;880</td></tr>
+        <tr><td><strong>Saving</strong></td><td>&mdash;</td><td class="r"><strong>&sim;&pound;5,700</strong></td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- SECTION 8 -->
+    <h2 id="s8">Estate Planning &mdash; After the MVL</h2>
+
+    <p>Once approximately &pound;196,000 lands in Philip&rsquo;s personal estate, this is the moment for an estate planning review. A lump sum of this size should not sit uninstructed &mdash; it will be subject to Inheritance Tax at 40% on death if left as cash above his nil-rate band.</p>
+
+    <div class="tbl-wrap"><table class="dt">
+      <thead><tr><th>Strategy</th><th>IHT Saving</th><th>Survivorship Condition</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Gifts to children (PETs)</strong></td><td>Exempt if survived 7 years</td><td>7 years</td><td>Potentially Exempt Transfer. Any amount. No cap.</td></tr>
+        <tr><td><strong>Annual exemption (£3k/yr)</strong></td><td>Immediate (40% saved on £3k)</td><td>None</td><td>Use every year. Carries forward 1 year.</td></tr>
+        <tr><td><strong>Gifts from income (s.21 IHTA)</strong></td><td>Immediate</td><td>None</td><td>Must be habitual, from pension income, not capital. Document carefully.</td></tr>
+        <tr><td><strong>AIM shares (Business Relief)</strong></td><td>100% exempt after 2 years</td><td>2 years only</td><td>Riskier; investment must be maintained. Confirm with IFA.</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="alert warning">
+      <strong class="label">&#9888; IHT Risk</strong>
+      If Philip&rsquo;s estate (Sheffield home + MVL proceeds + other savings) exceeds &pound;500,000, HMRC will levy 40% Inheritance Tax on everything above his nil-rate bands at death. A STEP-registered solicitor should review his Will and gifting strategy <em>promptly after</em> the MVL distribution lands.
+    </div>
+
+    <!-- SECTION 9 -->
+    <h2 id="s9">Priority Action Plan</h2>
+
+    <ul class="action-list">
+      <li>
+        <div class="action-dot red">NOW</div>
+        <div>
+          <span class="action-label">File the Modelo 210 &mdash; Pay Spanish Balance</span>
+          Approximately &euro;9,183 is due to the Spanish Tax Authority (AEAT) within 3 months of the sale completion. Must be filed via an independent Spanish <em>asesor fiscal</em>. Do not use Wincham&rsquo;s Calpe office. Deadline: approximately 20 July 2026.
+        </div>
+      </li>
+      <li>
+        <div class="action-dot red">NOW</div>
+        <div>
+          <span class="action-label">Open a Currencies Direct or TorFX Account</span>
+          Do NOT convert euros at a high-street bank. Set up the FX account now so it is ready when the IP initiates the distribution. Estimated saving: &sim;&pound;5,700 vs retail bank.
+        </div>
+      </li>
+      <li>
+        <div class="action-dot orange">30 DAYS</div>
+        <div>
+          <span class="action-label">Instruct a UK Chartered Tax Adviser (CTA)</span>
+          Engage a CIOT-registered CTA to prepare the final CT600 Corporation Tax return with Foreign Tax Credit Relief (FTCR) applied. This nearly eliminates the UK Corp Tax bill by crediting the Spanish tax already paid.
+        </div>
+      </li>
+      <li>
+        <div class="action-dot orange">30 DAYS</div>
+        <div>
+          <span class="action-label">Appoint a Licensed Insolvency Practitioner (IP)</span>
+          The IP must be regulated by the IPA or ICAEW. Find one via the <a href="https://www.r3.org.uk/find-a-professional" target="_blank" rel="noopener">R3 register</a>. Do not use anyone recommended by Wincham or Adrem.
+        </div>
+      </li>
+      <li>
+        <div class="action-dot yellow">PRE-MVL</div>
+        <div>
+          <span class="action-label">Document All Director&rsquo;s Loan Additions</span>
+          Give your accountant a complete list (with bank statements) of every personal payment made on behalf of Los Romeros Limited after 31 August 2025. Every pound added to the DLA is recovered tax-free.
+        </div>
+      </li>
+      <li>
+        <div class="action-dot yellow">PRE-MVL</div>
+        <div>
+          <span class="action-label">Plan the Tax Year Timing of Distribution</span>
+          Ask the IP to consider straddling the distribution across two tax years (either side of 5 April) to access the CGT annual exemption twice. Saves approximately &pound;600&ndash;&pound;700 with zero effort.
+        </div>
+      </li>
+      <li>
+        <div class="action-dot green">POST-MVL</div>
+        <div>
+          <span class="action-label">Review Estate Plan with a STEP Solicitor</span>
+          Once &sim;&pound;196,000 lands in Philip&rsquo;s personal estate, review the Will, gifting strategy, and IHT exposure with a STEP-registered solicitor. A lump sum of this size sitting as uninstructed cash is subject to 40% IHT on death.
+        </div>
+      </li>
+    </ul>
+
+    <!-- SECTION 10 -->
+    <h2 id="s10">The Bottom Line</h2>
+
+    <div class="net-box">
+      <div class="nb-head">Net Proceeds Summary &mdash; MVL Route</div>
+      <table class="nb">
+        <tbody>
+          <tr><td>Sale Proceeds</td><td class="r">&euro;315,000</td></tr>
+          <tr><td>Spanish Tax (IRNR @ 19%)</td><td class="r">(&euro;18,783)</td></tr>
+          <tr><td>UK Corp Tax top-up (after FTCR)</td><td class="r">(&sim;&pound;5,070)</td></tr>
+          <tr><td>MVL professional fees (IP + CTA)</td><td class="r">(&sim;&pound;7,500)</td></tr>
+          <tr><td>Personal CGT on MVL distribution</td><td class="r">(&sim;&pound;51,000)</td></tr>
+          <tr><td>Director&rsquo;s Loan (returned tax-free)</td><td class="r">+&pound;25,069</td></tr>
+          <tr class="nb-total"><td><strong>Estimated Net to Philip</strong></td><td class="r"><strong>&sim;&pound;193,000 &ndash; &pound;198,000</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="verdict-card">
+      <div class="vc-badge">Final Recommendation</div>
+      <h3>Do not buy more property inside the company.</h3>
+      <p>Wind up Los Romeros Limited via MVL. Recover the Director&rsquo;s Loan tax-free. Pay CGT at 18&ndash;24% on the remaining distribution. Then &mdash; if Philip wants property &mdash; buy it <strong>personally</strong> from his net proceeds.</p>
+      <p>This is the cleanest, cheapest, and most straightforward path to getting <strong>&sim;&pound;196,000 into Philip&rsquo;s hands</strong> with full legal compliance.</p>
+    </div>
+
+    <div class="alert caution">
+      <strong class="label">&#9888; Professional Advice Required</strong>
+      This document is an AI-generated planning analysis based on verified figures from Los Romeros Limited&rsquo;s 2025 accounts and the CGT report prepared in March 2026. All figures are estimates. Formal advice from a CIOT-registered CTA, licensed Insolvency Practitioner (IP), and STEP-registered solicitor is required before any action is taken.
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <p>Philip Harrison &mdash; Los Romeros Limited (No. 06993349) &mdash; Scenario Planning Model</p>
+  <p>Prepared 31 March 2026 &nbsp;&bull;&nbsp; AI Advisory Team</p>
+  <p style="margin-top:8px;color:#9ca3af;">Planning purposes only &mdash; not professional tax advice.<br/>Consult a qualified CTA, licensed IP, and STEP-registered solicitor before acting.</p>
+</footer>
+
+<script>
+  // Build TOC dynamically
+  const content = document.getElementById('report-content');
+  const tocNav  = document.getElementById('toc-nav');
+  content.querySelectorAll('h2, h3').forEach(h => {
+    if (!h.id) return;
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.replace(/^Scenario [A-D] — /, '');
+    a.className = 'toc-link ' + h.tagName.toLowerCase();
+    tocNav.appendChild(a);
+  });
+
+  // Highlight active section on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
+        const active = tocNav.querySelector(`[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '0px 0px -55% 0px', threshold: 0.1 });
+
+  content.querySelectorAll('h2, h3').forEach(h => { if (h.id) observer.observe(h); });
+</script>
+
+</body>
+</html>

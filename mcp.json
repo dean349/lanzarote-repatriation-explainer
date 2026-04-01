@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "uk-law": {
+      "command": "node",
+      "args": [
+        "C:\\DAD\\UK_Lanzarote_Repatriation\\.agent\\mcp\\UK-law-mcp\\dist\\index.js"
+      ]
+    },
+    "companies-house": {
+      "command": "node",
+      "args": [
+        "C:\\DAD\\UK_Lanzarote_Repatriation\\.agent\\mcp\\companies-house\\server.js"
+      ],
+      "env": {
+        "COMPANIES_HOUSE_API_KEY": "4416608c-08ec-449e-8c5a-ddc66b5bb6b3",
+        "COMPANIES_HOUSE_API_SECRET": "wXstwtJmUg/HEG1M7uinXMS+AovnoCeSafSizSctmUQ"
+      }
+    }
+  }
+}
