@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Personal AI Advisory Team — Lanzarote Property Repatriation</title>
+  <meta name="description" content="A dedicated AI advisory team working on the Los Romeros Limited Lanzarote repatriation case — 7 specialist advisers, 3 live data connections, zero hourly fees." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #080d18;
+      --surface:     #0f1624;
+      --card:        #141c2e;
+      --card-hover:  #1a2440;
+      --border:      rgba(255,255,255,0.07);
+      --border-mid:  rgba(255,255,255,0.12);
+      --gold:        #f5c842;
+      --gold-dim:    #c9a82a;
+      --blue:        #3b82f6;
+      --blue-glow:   rgba(59,130,246,0.2);
+      --green:       #10b981;
+      --green-glow:  rgba(16,185,129,0.2);
+      --purple:      #8b5cf6;
+      --purple-glow: rgba(139,92,246,0.2);
+      --red:         #ef4444;
+      --orange:      #f97316;
+      --cyan:        #06b6d4;
+      --text:        #e2e8f0;
+      --muted:       #8899b4;
+      --radius:      16px;
+      --radius-sm:   10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    /* ── TOP NAV ──────────────────────────────────────── */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,13,24,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: 54px;
+    }
+
+    .topnav-logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .topnav-links {
+      display: flex;
+      gap: 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .topnav-links::-webkit-scrollbar { display: none; }
+
+    .topnav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .topnav-links a:hover {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+    }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 80px 24px 70px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 90% 70% at 50% -10%, rgba(59,130,246,0.22) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 50% at 85% 90%, rgba(139,92,246,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 10% 80%, rgba(245,200,66,0.08) 0%, transparent 60%),
+        var(--bg);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.018'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245,200,66,0.1);
+      border: 1px solid rgba(245,200,66,0.3);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      margin-bottom: 22px;
+      background: linear-gradient(140deg, #fff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(140deg, var(--gold) 0%, #f97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.125rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 32px;
+      line-height: 1.75;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat .stat-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .hero-stat .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    .hero-quote {
+      max-width: 660px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1));
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: var(--radius);
+      padding: 24px 36px;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #c7d6ef;
+      position: relative;
+    }
+
+    .hero-quote::before {
+      content: '"';
+      position: absolute;
+      top: -12px;
+      left: 28px;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--blue);
+      opacity: 0.28;
+      font-family: Georgia, serif;
+    }
+
+    /* ── CONTAINER ────────────────────────────────────── */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    /* ── SECTION TITLE ────────────────────────────────── */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 72px 0 10px;
+    }
+
+    .section-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+    }
+
+    .section-title h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    .section-tagline {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-mid), transparent);
+      margin-bottom: 28px;
+    }
+
+    /* ── PROBLEM CARDS ────────────────────────────────── */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .problem-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+
+    .problem-card:hover {
+      border-color: rgba(245,200,66,0.3);
+      transform: translateY(-2px);
+    }
+
+    .problem-card .num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      opacity: 0.22;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .problem-card h3 {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .problem-card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    /* ── ADVISER CARDS ────────────────────────────────── */
+    .adviser-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      padding: 4px 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+
+    .adviser-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .adviser-card {
+      display: grid;
+      grid-template-columns: 68px 1fr;
+      gap: 20px;
+      align-items: start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s, background 0.2s;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .adviser-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      border-radius: 3px 0 0 3px;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .adviser-card:hover {
+      background: var(--card-hover);
+      transform: translateY(-2px);
+    }
+
+    .adviser-card:hover::before { opacity: 1; }
+
+    /* individual accent colours */
+    .ac-red::before    { background: var(--red); }
+    .ac-blue::before   { background: var(--blue); }
+    .ac-gold::before   { background: var(--gold); }
+    .ac-green::before  { background: var(--green); }
+    .ac-purple::before { background: var(--purple); }
+    .ac-orange::before { background: var(--orange); }
+    .ac-cyan::before   { background: var(--cyan); }
+
+    .ac-red:hover    { border-color: rgba(239,68,68,0.4);  box-shadow: 0 0 0 1px rgba(239,68,68,0.12),  0 10px 36px rgba(0,0,0,0.35); }
+    .ac-blue:hover   { border-color: rgba(59,130,246,0.4); box-shadow: 0 0 0 1px rgba(59,130,246,0.12), 0 10px 36px rgba(0,0,0,0.35); }
+    .ac-gold:hover   { border-color: rgba(245,200,66,0.4); box-shadow: 0 0 0 1px rgba(245,200,66,0.12), 0 10px 36px rgba(0,0,0,0.35); }
+    .ac-green:hover  { border-color: rgba(16,185,129,0.4); box-shadow: 0 0 0 1px rgba(16,185,129,0.12), 0 10px 36px rgba(0,0,0,0.35); }
+    .ac-purple:hover { border-color: rgba(139,92,246,0.4); box-shadow: 0 0 0 1px rgba(139,92,246,0.12), 0 10px 36px rgba(0,0,0,0.35); }
+    .ac-orange:hover { border-color: rgba(249,115,22,0.4); box-shadow: 0 0 0 1px rgba(249,115,22,0.12), 0 10px 36px rgba(0,0,0,0.35); }
+    .ac-cyan:hover   { border-color: rgba(6,182,212,0.4);  box-shadow: 0 0 0 1px rgba(6,182,212,0.12),  0 10px 36px rgba(0,0,0,0.35); }
+
+    .adviser-emoji {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.85rem;
+      flex-shrink: 0;
+    }
+
+    .adviser-body h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .adviser-body p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .adviser-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .adviser-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+    }
+
+    .tag-red    { background: rgba(239,68,68,0.12);   color: #fca5a5; border: 1px solid rgba(239,68,68,0.2); }
+    .tag-blue   { background: rgba(59,130,246,0.12);  color: #93c5fd; border: 1px solid rgba(59,130,246,0.2); }
+    .tag-gold   { background: rgba(245,200,66,0.12);  color: #fde68a; border: 1px solid rgba(245,200,66,0.2); }
+    .tag-green  { background: rgba(16,185,129,0.12);  color: #6ee7b7; border: 1px solid rgba(16,185,129,0.2); }
+    .tag-purple { background: rgba(139,92,246,0.12);  color: #c4b5fd; border: 1px solid rgba(139,92,246,0.2); }
+    .tag-orange { background: rgba(249,115,22,0.12);  color: #fdba74; border: 1px solid rgba(249,115,22,0.2); }
+    .tag-cyan   { background: rgba(6,182,212,0.12);   color: #67e8f9; border: 1px solid rgba(6,182,212,0.2); }
+    .tag-gray   { background: rgba(148,163,184,0.1);  color: #94a3b8; border: 1px solid rgba(148,163,184,0.15); }
+
+    /* ── NEW: MCP SERVER CARDS ────────────────────────── */
+    .mcp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .mcp-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mcp-card::after {
+      content: 'LIVE';
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--green);
+      background: rgba(16,185,129,0.12);
+      border: 1px solid rgba(16,185,129,0.25);
+      border-radius: 999px;
+      padding: 2px 8px;
+    }
+
+    .mcp-card:hover {
+      border-color: rgba(16,185,129,0.35);
+      box-shadow: 0 0 0 1px rgba(16,185,129,0.1), 0 10px 36px rgba(0,0,0,0.35);
+      transform: translateY(-2px);
+    }
+
+    .mcp-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .mcp-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .mcp-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .mcp-endpoint {
+      margin-top: 14px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      color: var(--green);
+      background: rgba(16,185,129,0.06);
+      border: 1px solid rgba(16,185,129,0.15);
+      border-radius: 8px;
+      padding: 6px 12px;
+      display: inline-block;
+    }
+
+    /* ── DOCUMENTS SECTION ────────────────────────────── */
+    .docs-box {
+      background: linear-gradient(135deg, rgba(16,185,129,0.07), rgba(59,130,246,0.07));
+      border: 1px solid rgba(16,185,129,0.18);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .docs-icon { font-size: 2.5rem; flex-shrink: 0; }
+
+    .docs-box h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .docs-box p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .doc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .doc-tag {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: 'Courier New', monospace;
+    }
+
+    /* ── HONEST SECTION ───────────────────────────────── */
+    .honest-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 30px 34px;
+    }
+
+    .honest-box .quote-text {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+
+    /* ── SAVINGS ──────────────────────────────────────── */
+    .savings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .saving-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      transition: transform 0.2s;
+    }
+
+    .saving-item:hover { transform: translateY(-2px); }
+
+    .saving-item .amount {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+
+    .saving-item .label {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── WHAT HAPPENS NEXT ────────────────────────────── */
+    .timeline {
+      display: grid;
+      gap: 0;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 28px;
+      bottom: 28px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--blue), var(--purple), var(--green));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 8px 0 24px;
+    }
+
+    .tl-dot {
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      background: var(--card);
+      border: 2px solid var(--border);
+    }
+
+    .tl-body h3 {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 6px;
+      padding-top: 14px;
+    }
+
+    .tl-body p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+    .footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.83rem;
+      line-height: 1.8;
+    }
+
+    .footer strong { color: var(--text); }
+
+    /* ── ANIMATIONS ───────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero { animation: fadeUp 0.6s ease both; }
+    .problem-card, .adviser-card, .saving-item, .mcp-card, .timeline-item {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .problem-card:nth-child(1)  { animation-delay: 0.05s; }
+    .problem-card:nth-child(2)  { animation-delay: 0.10s; }
+    .problem-card:nth-child(3)  { animation-delay: 0.15s; }
+    .adviser-card:nth-child(1)  { animation-delay: 0.04s; }
+    .adviser-card:nth-child(2)  { animation-delay: 0.08s; }
+    .adviser-card:nth-child(3)  { animation-delay: 0.12s; }
+    .adviser-card:nth-child(4)  { animation-delay: 0.16s; }
+    .adviser-card:nth-child(5)  { animation-delay: 0.20s; }
+    .adviser-card:nth-child(6)  { animation-delay: 0.24s; }
+    .adviser-card:nth-child(7)  { animation-delay: 0.28s; }
+    .mcp-card:nth-child(1)      { animation-delay: 0.05s; }
+    .mcp-card:nth-child(2)      { animation-delay: 0.10s; }
+    .mcp-card:nth-child(3)      { animation-delay: 0.15s; }
+    .timeline-item:nth-child(1) { animation-delay: 0.06s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.12s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.18s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.24s; }
+    .timeline-item:nth-child(5) { animation-delay: 0.30s; }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 640px) {
+      .adviser-card  { grid-template-columns: 54px 1fr; gap: 14px; }
+      .docs-box      { flex-direction: column; }
+      .honest-box    { padding: 22px 20px; }
+      .hero-stats    { gap: 24px; }
+      .topnav-logo   { font-size: 0.8rem; }
+      .timeline::before { left: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── TOP NAV ── -->
+  <nav class="topnav">
+    <div class="topnav-logo">🏠 Los Romeros Ltd</div>
+    <div class="topnav-links">
+      <a href="#why-ai">Why This Works</a>
+      <a href="#specialists">Specialist Advisers</a>
+      <a href="#live-data">Live Data</a>
+      <a href="#documents">Documents</a>
+      <a href="#next-steps">Next Steps</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-badge">🏠 Los Romeros Limited &nbsp;·&nbsp; Lanzarote Repatriation Dossier</div>
+    <h1>Dad, meet your<br /><span>AI Advisory Team</span></h1>
+    <p class="hero-sub">
+      We've assembled a full team of specialist AI advisers — each one trained specifically on your situation — working together around the clock without a single billable hour.
+    </p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Specialist Advisers</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Live Data Connections</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">£315k</div>
+        <div class="stat-label">Under Management</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">£0</div>
+        <div class="stat-label">Hourly Fees</div>
+      </div>
+    </div>
+
+    <div class="hero-quote">
+      This doesn't replace a professional's signature on a legal document. What it does is make sure you walk into any lawyer or accountant's office already knowing exactly what they should be doing — and whether their bill is reasonable.
+    </div>
+  </section>
+
+  <!-- ── MAIN CONTENT ── -->
+  <div class="container">
+
+    <!-- ── PROBLEM SECTION ── -->
+    <div id="why-ai" class="section-title">
+      <div class="section-icon">💡</div>
+      <h2>The Problem With Paying £1,000s to Lawyers</h2>
+    </div>
+    <div class="section-divider"></div>
+    <p class="section-tagline">When you instruct a solicitor or accountant for something like this, you're paying for three things — all of which we can largely provide for free.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="num">01</div>
+        <h3>Their knowledge</h3>
+        <p>Of the law, tax thresholds, Spanish compliance deadlines, and the UK–Spain Double Taxation Agreement. We have that knowledge built in.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">02</div>
+        <h3>Their time</h3>
+        <p>Applying that knowledge to your specific situation — at £250–£400 per hour. We apply it instantly, at any time of day or night.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">03</div>
+        <h3>Their indemnity</h3>
+        <p>Someone to blame if it goes wrong. Bills of £3,000–£8,000+ are normal for a cross-border disposal. We go in knowing what to challenge.</p>
+      </div>
+    </div>
+
+    <!-- ── ADVISER SECTION ── -->
+    <div id="specialists" class="section-title">
+      <div class="section-icon">🤖</div>
+      <h2>Your Specialist AI Advisory Team</h2>
+    </div>
+    <div class="section-divider"></div>
+    <p class="section-tagline">
+      Seven specialist advisers, each trained on your exact situation — Los Romeros Limited, Philip &amp; Beryl Harrison, and the Lanzarote property sale. Each one has their own skill set and scope of expertise.
+    </p>
+
+    <div class="adviser-section-label">⚖️ Legal Specialists</div>
+    <div class="adviser-grid" style="margin-bottom: 20px;">
+
+      <div class="adviser-card ac-red">
+        <div class="adviser-emoji">🏛️</div>
+        <div class="adviser-body">
+          <h3>UK Commercial Litigation &amp; Professional Negligence Solicitor</h3>
+          <p>
+            This is your legal weapon against Wincham Accountants. This adviser assesses whether they owed a duty of care, whether they breached it, and how to calculate and recover your financial losses. They draft the Pre-Action Protocol Letter of Claim, reference the
+            <em>Limitation Act 1980</em>, <em>Companies Act 2006</em> and the <em>Supply of Goods and Services Act 1982</em>, and cite real case law (e.g., <em>Hedley Byrne v Heller</em>) — the same tools a £350/hr City solicitor would use.
+          </p>
+          <div class="adviser-tags">
+            <span class="adviser-tag tag-red">Pre-Action Protocol</span>
+            <span class="adviser-tag tag-red">Professional Negligence</span>
+            <span class="adviser-tag tag-red">Quantum Calculation</span>
+            <span class="adviser-tag tag-gray">CPR Compliance</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="adviser-card ac-purple">
+        <div class="adviser-emoji">📜</div>
+        <div class="adviser-body">
+          <h3>UK Private Client Solicitor (STEP-Registered)</h3>
+          <p>
+            A specialist in Wills, trusts, and estate planning for the moment the proceeds land in the UK. Covers Lasting Powers of Attorney, trust structures, and how to ensure the transfer of wealth is clean and tax-efficient for the next generation. Advises on how the £315,000 interacts with Philip &amp; Beryl's overall estate and how to protect it.
+          </p>
+          <div class="adviser-tags">
+            <span class="adviser-tag tag-purple">Wills &amp; Trusts</span>
+            <span class="adviser-tag tag-purple">LPAs</span>
+            <span class="adviser-tag tag-purple">Estate Planning</span>
+            <span class="adviser-tag tag-gray">STEP-Qualified</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="adviser-section-label">💰 Tax &amp; Financial Specialists</div>
+    <div class="adviser-grid" style="margin-bottom: 20px;">
+
+      <div class="adviser-card ac-blue">
+        <div class="adviser-emoji">🧮</div>
+        <div class="adviser-body">
+          <h3>UK Cross-Border Tax Adviser (CTA &amp; Accountant)</h3>
+          <p>
+            Calculates exactly what UK Corporation Tax and CGT is owed after the Lanzarote sale, applies the Spain-UK Double Taxation Agreement so you're never taxed twice, and models the most efficient method of extracting the proceeds from Los Romeros Limited — dividends vs. MVL capital distribution. Also handles Foreign Tax Credit Relief (FTCR) to offset Spanish tax paid against UK liability.
+          </p>
+          <div class="adviser-tags">
+            <span class="adviser-tag tag-blue">Double Tax Treaty</span>
+            <span class="adviser-tag tag-blue">FTCR</span>
+            <span class="adviser-tag tag-blue">Capital Extraction</span>
+            <span class="adviser-tag tag-gray">MVL Structuring</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="adviser-card ac-gold">
+        <div class="adviser-emoji">💷</div>
+        <div class="adviser-body">
+          <h3>UK Inheritance Tax Calculator</h3>
+          <p>
+            Runs full IHT scenarios for Philip &amp; Beryl's estate — applying the Nil-Rate Band (£325,000 each) and Residence Nil-Rate Band (£175,000 each), calculating how the £315,000 affects overall exposure, and modelling gifting strategies (including PET taper relief) to pass wealth to children with the smallest possible HMRC deduction.
+          </p>
+          <div class="adviser-tags">
+            <span class="adviser-tag tag-gold">Nil-Rate Band</span>
+            <span class="adviser-tag tag-gold">RNRB</span>
+            <span class="adviser-tag tag-gold">PET Relief</span>
+            <span class="adviser-tag tag-gray">Gifting Strategy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="adviser-card ac-cyan">
+        <div class="adviser-emoji">💱</div>
+        <div class="adviser-body">
+          <h3>FX &amp; Currency Risk Adviser</h3>
+          <p>
+            Warns against using a high street bank (which would cost €6,300–€12,600 in unnecessary spread on €315,000) and advises on FCA-regulated specialist FX brokers like Currencies Direct or TorFX. Models forward contracts to lock in exchange rates today on the €9,600 AEAT refund — so a weakening euro doesn't cost you money while you wait.
+          </p>
+          <div class="adviser-tags">
+            <span class="adviser-tag tag-cyan">EUR/GBP Strategy</span>
+            <span class="adviser-tag tag-cyan">Forward Contracts</span>
+            <span class="adviser-tag tag-cyan">Broker Selection</span>
+            <span class="adviser-tag tag-gray">FCA-Regulated</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="adviser-section-label">🇪🇸 Spanish &amp; Corporate Compliance</div>
+    <div class="adviser-grid">
+
+      <div class="adviser-card ac-orange">
+        <div class="adviser-emoji">🇪🇸</div>
+        <div class="adviser-body">
+          <h3>Spanish Property Compliance Adviser</h3>
+          <p>
+            A non-resident vendor specialist for the Canary Islands. Tracks every Spanish obligation — the 3% buyer's retention (€9,450 withheld at the Notary), the Modelo 210 non-resident CGT filing (due ~20 July 2026 via independent gestoria), the Plusvalía Municipal tax, and the AEAT refund timeline. Produces a dated compliance checklist and advises on the deduction of allowable costs to minimise the Spanish CGT bill.
+          </p>
+          <div class="adviser-tags">
+            <span class="adviser-tag tag-orange">Modelo 210/211</span>
+            <span class="adviser-tag tag-orange">Plusvalía</span>
+            <span class="adviser-tag tag-orange">AEAT Refund</span>
+            <span class="adviser-tag tag-gray">Canary Islands</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="adviser-card ac-green">
+        <div class="adviser-emoji">⚖️</div>
+        <div class="adviser-body">
+          <h3>MVL Process Tracker (Insolvency Specialist)</h3>
+          <p>
+            Guides the Members' Voluntary Liquidation — the HMRC-approved way to close Los Romeros Limited and get the cash into Philip &amp; Beryl's hands as a capital distribution (taxed at 18–24% CGT) rather than a dividend (taxed at up to 39.35% income tax). Tracks each stage: IP appointment, statutory Declaration of Solvency, HMRC clearance, creditor advertisements, and final distribution. Also ensures the £25,069 Director's Loan Account is repaid first, tax-free.
+          </p>
+          <div class="adviser-tags">
+            <span class="adviser-tag tag-green">MVL Stages</span>
+            <span class="adviser-tag tag-green">IP Appointment</span>
+            <span class="adviser-tag tag-green">HMRC Clearance</span>
+            <span class="adviser-tag tag-gray">Director's Loan</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── LIVE DATA CONNECTIONS ── -->
+    <div id="live-data" class="section-title">
+      <div class="section-icon">🔌</div>
+      <h2>Live Data Connections — Not Just Google</h2>
+    </div>
+    <div class="section-divider"></div>
+    <p class="section-tagline">
+      Your advisers aren't working from memory alone. They have real-time, direct connections to authoritative UK government and legal databases — the same sources a solicitor's clerk would check.
+    </p>
+
+    <div class="mcp-grid">
+
+      <div class="mcp-card">
+        <div class="mcp-icon">🏢</div>
+        <h3>Companies House Live API</h3>
+        <p>
+          Direct, authenticated access to the UK government's official company register. Can retrieve the full filing history, current officers, registered address, share structure, and confirmation statements for <strong style="color: var(--text);">Los Romeros Limited</strong> — and for every company registered at Adrem/Wincham's address (CW12 4AA) for victim identification.
+        </p>
+        <span class="mcp-endpoint">api.company-information.service.gov.uk</span>
+      </div>
+
+      <div class="mcp-card">
+        <div class="mcp-icon">📚</div>
+        <h3>UK Legislation Database (legislation.gov.uk)</h3>
+        <p>
+          Direct connection to the official UK statute book. Allows your litigation solicitor adviser to cite the exact, current text of every relevant Act — <em>Limitation Act 1980</em>, <em>Companies Act 2006</em>, <em>Insolvency Act 1986</em>, <em>TCGA 1992</em> — without risk of the AI misremembering what the law says.
+        </p>
+        <span class="mcp-endpoint">legislation.gov.uk / UK-law-mcp</span>
+      </div>
+
+      <div class="mcp-card">
+        <div class="mcp-icon">🌐</div>
+        <h3>Live Web &amp; Research Tools</h3>
+        <p>
+          Secure, real-time web search and URL fetching to access live sources — AEAT tax rates, ICAEW member lookups, FX broker comparisons, Wincham corporate structure investigations, and HMRC guidance updates — exactly as they exist right now, not as they were months ago.
+        </p>
+        <span class="mcp-endpoint">Brave Search · Fetch MCP</span>
+      </div>
+
+    </div>
+
+    <!-- ── DOCUMENTS SECTION ── -->
+    <div id="documents" class="section-title">
+      <div class="section-icon">📁</div>
+      <h2>Your Full File Library Is Loaded</h2>
+    </div>
+    <div class="section-divider"></div>
+    <div class="docs-box">
+      <div class="docs-icon">📂</div>
+      <div>
+        <h3>Every document is already here — personalised, not generic</h3>
+        <p>
+          The actual company documents from Companies House, the accounts, the certificates of incorporation, sale deeds, and bank records are all stored in this workspace. The AI advisers can read them, cross-reference them, and give advice that is already personalised to <strong style="color: var(--text);">Los Romeros Limited</strong>, Philip and Beryl's specific situation, and the Lanzarote property — it is not off-the-shelf template advice.
+        </p>
+        <div class="doc-tags">
+          <span class="doc-tag">CERTIFICATE OF INCORPORATION.pdf</span>
+          <span class="doc-tag">Unaudited Financial Statements 2025.pdf</span>
+          <span class="doc-tag">Companies House Annual Return.pdf</span>
+          <span class="doc-tag">LOS ROMEROS LIMITED Overview.pdf</span>
+          <span class="doc-tag">Bank Statements/</span>
+          <span class="doc-tag">Spanish Deeds/</span>
+          <span class="doc-tag">combined_report.html</span>
+          <span class="doc-tag">scenario-planning.html</span>
+          <span class="doc-tag">Starling Bank Setup Guide</span>
+          <span class="doc-tag">Emergency Bank Correction Plan</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── NEXT STEPS ── -->
+    <div id="next-steps" class="section-title">
+      <div class="section-icon">🗺️</div>
+      <h2>What Happens Next — In Plain English</h2>
+    </div>
+    <div class="section-divider"></div>
+    <p class="section-tagline">The advisory team has already mapped out your full action plan. Here's the priority order:</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="tl-dot">🏦</div>
+        <div class="tl-body">
+          <h3>Step 1 — Secure the Bank Account (Urgent)</h3>
+          <p>Philip must be the sole signatory on Los Romeros Limited's Starling Bank account. Do not allow Wincham or Adrem to deduct any "exit fees" or make any outgoing payments before the MVL begins. The £25,069 Director's Loan must be protected.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-dot">✉️</div>
+        <div class="tl-body">
+          <h3>Step 2 — Formally Terminate Adrem/Wincham</h3>
+          <p>Issue a formal, written letter terminating their appointment as company secretary and accountants. The litigation solicitor adviser has the template ready. This starts the clock on their professional indemnity insurer.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-dot">⚖️</div>
+        <div class="tl-body">
+          <h3>Step 3 — Appoint an Independent IP for the MVL</h3>
+          <p>Appoint an Insolvency Practitioner (IP) who has <strong>no connection to Wincham</strong>. The MVL process extracts Philip's money as a capital distribution at 18–24% CGT — not as a dividend at up to 39.35% income tax. The difference on £315,000 is potentially £40,000+.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-dot">🇪🇸</div>
+        <div class="tl-body">
+          <h3>Step 4 — File Modelo 210 Before 20 July 2026</h3>
+          <p>A Spanish gestoria (independent of any Wincham recommendation) must file the non-resident CGT return within 3 months of the Notary completion date. This also triggers the AEAT refund of the €9,450 buyer's retention — which we protect with a forward FX contract.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-dot">🏛️</div>
+        <div class="tl-body">
+          <h3>Step 5 — Issue the Letter of Claim to Wincham</h3>
+          <p>Once the above is secured, issue the Pre-Action Protocol Letter of Claim to Wincham/Adrem's Professional Indemnity insurer. Historical pattern shows they settle quietly to avoid public precedent. The target quantum is £26,340 in demonstrable losses, plus costs.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── HONEST SECTION ── -->
+    <div class="section-title" style="margin-top: 72px;">
+      <div class="section-icon">🛡️</div>
+      <h2>Being Honest — What This Can and Can't Do</h2>
+    </div>
+    <div class="section-divider"></div>
+    <div class="honest-box">
+      <p class="quote-text">
+        "This doesn't replace a professional's signature on a legal document. What it does is make sure you walk into any lawyer or accountant's office already knowing what they should be doing, why they're doing it, and whether their bill is reasonable."
+      </p>
+      <p style="color:var(--muted); font-size:0.875rem; margin-bottom:22px;">
+        A well-prepared client with clear, targeted questions takes <strong style="color: var(--text);">2–3 hours</strong> of a professional's time instead of 10–15. Here's what that means in real money for this case:
+      </p>
+      <div class="savings-grid">
+        <div class="saving-item">
+          <div class="amount">£2,000–£5,000</div>
+          <div class="label">Saved on solicitor / accountant time — arriving with full documentation vs. starting from zero at £250–£400/hr</div>
+        </div>
+        <div class="saving-item">
+          <div class="amount">£8,000–£12,000</div>
+          <div class="label">Saved by using a specialist FX broker instead of a high street bank for transferring €315,000</div>
+        </div>
+        <div class="saving-item">
+          <div class="amount">£26,340</div>
+          <div class="label">Target recovery from the Wincham professional negligence claim — losses we've already documented and quantified</div>
+        </div>
+        <div class="saving-item">
+          <div class="amount">£40,000+</div>
+          <div class="label">Tax saving difference between MVL capital distribution (18–24% CGT) vs. dividend (up to 39.35% income tax)</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <strong>Los Romeros Limited — Lanzarote Repatriation &amp; Wincham Negligence Case</strong><br />
+    Built by Dean Harrison using <strong>Antigravity AI</strong> — 7 specialist skills · 3 live data connections · Google Gemini 2.5 Pro<br />
+    <span style="color: rgba(148,163,184,0.5); font-size:0.78rem;">All figures are documented estimates for planning purposes. Formal professional signatures required before implementation.</span>
+  </footer>
+
+</body>
+</html>
