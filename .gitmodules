@@ -1,0 +1,12 @@
+[submodule "Files and Information for Phil Harrison"]
+    path = Files and Information for Phil Harrison
+    url = https://github.com/dean349/lanzarote-repatriation-explainer
+[submodule "deploy_pages"]
+    path = deploy_pages
+    url = https://github.com/dean349/lanzarote-repatriation-explainer
+[submodule "deploy_report"]
+    path = deploy_report
+    url = https://github.com/dean349/lanzarote-repatriation-explainer
+[submodule "philip-harrison-case-report"]
+    path = philip-harrison-case-report
+    url = https://github.com/dean349/lanzarote-repatriation-explainer
