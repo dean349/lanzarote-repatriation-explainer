@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter of Claim — Philip Harrison v Wincham Accountants Limited</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter','Segoe UI',system-ui,sans-serif;font-size:14.5px;line-height:1.8;color:#1a1a2e;background:#f4f4f0}
+    .page{max-width:860px;margin:0 auto;background:#fff;padding:0 0 80px;box-shadow:0 4px 40px rgba(0,0,0,.12);min-height:100vh}
+
+    /* Doc header */
+    .doc-header{background:linear-gradient(135deg,#1a1035,#2d1b69,#1a1035);color:#fff;padding:44px 60px 36px;border-bottom:4px solid #8b0000}
+    .eyebrow{font-size:10.5px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:#c8b8f0;margin-bottom:10px}
+    .doc-header h1{font-size:1.55em;font-weight:700;line-height:1.3;color:#fff;margin-bottom:6px}
+    .doc-header .sub{font-size:.92em;color:#c8b8f0;font-style:italic}
+    .without-prejudice{background:#8b0000;color:#fff;text-align:center;padding:9px 16px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
+
+    .content{padding:48px 60px}
+
+    /* Addresses block */
+    .address-block{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0 36px;border:1px solid #e0ddf6;border-radius:8px;overflow:hidden}
+    .address-panel{padding:20px 22px;font-size:13px;line-height:1.65}
+    .address-panel:first-child{background:#f8f7ff;border-right:1px solid #e0ddf6}
+    .address-panel:last-child{background:#fff8f8}
+    .address-panel .label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6c5fa0;margin-bottom:10px}
+    .address-panel strong{display:block;font-weight:600;color:#1a1035}
+
+    /* Sections */
+    h2{font-size:1em;font-weight:700;color:#1a1035;margin:44px 0 12px;padding-bottom:8px;border-bottom:2px solid #2d1b69;text-transform:uppercase;letter-spacing:.6px}
+    h3{font-size:.97em;font-weight:600;color:#2d1b69;margin:28px 0 10px}
+    h4{font-size:.93em;font-weight:600;color:#8b0000;margin:20px 0 8px;font-style:italic}
+    p{margin-bottom:14px}
+    ul,ol{margin:10px 0 14px 22px}
+    li{margin-bottom:7px}
+    strong{color:#1a1035;font-weight:600}
+    em{color:#555}
+    hr{border:none;border-top:1px solid #e8e6f0;margin:36px 0}
+
+    /* Tables */
+    table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px;border-radius:8px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,.07)}
+    thead th{background:#2d1b69;color:#fff;padding:11px 16px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.3px}
+    tbody td{padding:10px 16px;border-bottom:1px solid #eeeaf8;vertical-align:top;line-height:1.55}
+    tbody tr:nth-child(even){background:#f9f8ff}
+    tbody tr:last-child td{border-bottom:none}
+    tbody td:first-child{font-weight:500;color:#2d1b69;min-width:160px}
+
+    /* Callouts */
+    .callout-primary{border-left:5px solid #8b0000;background:#fff8f8;padding:16px 20px;margin:20px 0;border-radius:0 8px 8px 0}
+    .callout-primary p{margin:0;color:#5a0000;font-weight:500;font-size:13.5px}
+    blockquote{border-left:4px solid #2d1b69;background:#f5f3ff;padding:14px 18px;margin:18px 0;border-radius:0 6px 6px 0;color:#1a1035;font-style:italic;font-size:13.5px}
+    code{background:#f0eefa;padding:2px 6px;border-radius:3px;font-size:12.5px;font-family:monospace;color:#4a3080}
+
+    /* Quantum table total row */
+    .quantum-total td{background:#2d1b69!important;color:#fff;font-weight:700;border-bottom:none!important}
+
+    /* Signature block */
+    .sig-block{background:#f8f7ff;border:1px solid #e0ddf6;border-radius:8px;padding:28px 28px 20px;margin:32px 0 8px}
+    .sig-block .sig-line{height:60px;border-bottom:1px solid #aaa;margin:24px 0 6px;width:280px}
+    .sig-block p{margin-bottom:8px;font-size:13px}
+    .sig-block .label{font-size:11px;color:#888;margin-top:6px}
+
+    /* Appendix */
+    .appendix{background:#f4f4f0;border-radius:8px;padding:24px 28px;margin-top:32px}
+    .appendix h2{border-color:#888;color:#444}
+    .appendix li{font-size:13px;color:#333}
+
+    /* Placeholder */
+    .placeholder{background:#fff3cd;border:1px dashed #ffc107;border-radius:4px;padding:2px 8px;font-family:monospace;font-size:12.5px;color:#856404}
+
+    .footer{margin:0 60px;padding-top:20px;border-top:1px solid #e8e6f0;font-size:11px;color:#999;line-height:1.6}
+
+    @media(max-width:700px){.doc-header,.content{padding:28px 20px}.footer{margin:0 20px}.address-block{grid-template-columns:1fr}}
+    @media print{body{background:#fff}.page{box-shadow:none}thead th{background:#2d1b69!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.without-prejudice{background:#8b0000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.doc-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="doc-header">
+      <div class="eyebrow">Pre-Action Protocol — Professional Negligence</div>
+      <h1>Letter of Claim<br>Philip Harrison v Wincham Accountants Limited &amp; Others</h1>
+      <p class="sub">Civil Procedure Rules — Pre-Action Protocol for Professional Negligence</p>
+    </div>
+    <div class="without-prejudice">⚠ Strictly Without Prejudice Save As To Costs — Sent By Email And Recorded Delivery</div>
+
+    <div class="content">
+
+      <div class="address-block">
+        <div class="address-panel">
+          <div class="label">To — Defendants</div>
+          <strong>Wincham Accountants Limited</strong>
+          Wincham House, Greenfield Farm Trading Estate<br>
+          Congleton, Cheshire <strong>CW12 4TR</strong><br><br>
+          <strong>Agere International Limited</strong><br>
+          <em>(formerly Wincham International (UK) Limited)</em><br>
+          1-2 Albert Chambers, Canal Street<br>
+          Congleton, Cheshire <strong>CW12 4AA</strong><br><br>
+          <strong>Wincham Investments Limited</strong><br>
+          Wincham House, Greenfield Farm Trading Estate<br>
+          Congleton, Cheshire <strong>CW12 4TR</strong><br><br>
+          <strong>The Professional Indemnity Insurers</strong><br>
+          <em>of the above-named Defendants (via defendants' solicitors or insurance brokers)</em>
+        </div>
+        <div class="address-panel">
+          <div class="label">From — Claimant</div>
+          <strong>Mr Philip Harrison</strong>
+          <span class="placeholder">[INSERT SHEFFIELD ADDRESS]</span><br>
+          Sheffield, England<br><br>
+          <strong>Date:</strong> <span class="placeholder">[INSERT DATE]</span><br>
+          <strong>Reference:</strong> PH/WAL/2025-001
+        </div>
+      </div>
+
+      <div class="callout-primary">
+        <p>This letter constitutes formal notice under the <strong>Pre-Action Protocol for Professional Negligence (CPR Practice Direction)</strong>. The Defendants are invited to acknowledge receipt within <strong>21 days</strong> and provide a substantive Letter of Response within <strong>3 months</strong>.</p>
+      </div>
+
+      <p>Dear Sir / Madam,</p>
+
+      <p>We write on behalf of <strong>Mr Philip Harrison</strong> ("the Claimant") pursuant to the Pre-Action Protocol for Professional Negligence as set out in the Civil Procedure Rules Practice Direction — Pre-Action Conduct and Protocols.</p>
+
+      <hr>
+      <h2>Section 1 — Identification of Parties</h2>
+
+      <h3>The Claimant</h3>
+      <p><strong>Mr Philip Harrison</strong>, a retired UK resident and beneficial owner of <strong>Los Romeros Limited</strong> (Companies House No. 06993349), a UK company incorporated at Wincham House, Greenfield Farm Trading Estate, Congleton, CW12 4TR, which holds a Spanish residential property located in Lanzarote, Canary Islands, Spain.</p>
+
+      <h3>The Defendants</h3>
+      <ol>
+        <li><strong>Wincham Accountants Limited</strong> (Companies House No. 05607266) — the entity that marketed, established, and administered the corporate property wrapper scheme described herein. Director: Mark Damion Roach.</li>
+        <li><strong>Agere International Limited</strong> (formerly Wincham International (UK) Limited, Companies House No. 06441315) — the successor trading entity, administered by Leonard Edward Jones (ICAEW Member) through Adrem Accounting Ltd (Companies House No. 05984803), which continued to provide company secretarial and administration services to the Claimant's company.</li>
+        <li><strong>Wincham Investments Limited</strong> (Companies House No. 02948944) — the apex holding entity of the Wincham Group, under common control of Mark Damion Roach, which bears responsibility for the group's systematic conduct.</li>
+        <li><strong>The Professional Indemnity Insurers</strong> of the above-named Defendants, whose details the Defendants are invited to confirm within 21 days of this letter.</li>
+      </ol>
+
+      <hr>
+      <h2>Section 2 — Chronology of Relevant Events</h2>
+
+      <table>
+        <thead>
+          <tr><th style="min-width:140px">Date</th><th>Event</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>~2008–2012</strong></td>
+            <td>The Defendants marketed a scheme to UK nationals holding or purchasing Spanish property, by which the property would be held through a UK limited company ("the corporate wrapper scheme") to avoid Spanish Inheritance Tax (IHT) and Spanish Transfer Tax (ITP). The Defendants promoted this scheme through their websites <code>wincham.com</code>, <code>winchamiht.com</code>, and <code>winchamukcompany.com</code>, and through direct marketing.</td>
+          </tr>
+          <tr>
+            <td><strong>~2008–2012</strong></td>
+            <td>The Claimant instructed the Defendants to incorporate <strong>Los Romeros Limited</strong> (Co. No. 06993349) for the express purpose of holding a Spanish residential property in Lanzarote, in reliance on the Defendants' representations regarding tax savings. The Claimant paid the Defendants an upfront incorporation fee and annual administration fees thereafter.</td>
+          </tr>
+          <tr>
+            <td><strong>2008–2020</strong></td>
+            <td>The Defendants provided ongoing annual services including: nominee company directorship, company secretarial administration, annual accounts preparation, and filing of Spanish tax returns (Modelo 210 / Modelo 211) on the Claimant's behalf as purported fiscal representative in Spain.</td>
+          </tr>
+          <tr>
+            <td><strong>23 June 2016</strong></td>
+            <td>The United Kingdom votes to leave the European Union. From this date, it was foreseeable that the UK's exit from the EU would materially alter the legal and tax position of UK nationals holding Spanish property through UK corporate wrappers.</td>
+          </tr>
+          <tr>
+            <td><strong>29 March 2017</strong></td>
+            <td>The UK formally notifies the EU of its intention to leave, triggering the Article 50 process. The transition timetable was clear and publicly known from this date. The Defendants owed a duty to advise the Claimant of the impending legal consequences before the transition period ended.</td>
+          </tr>
+          <tr>
+            <td><strong>1 February 2020</strong></td>
+            <td>The United Kingdom formally leaves the European Union. A transition period runs to 31 December 2020. This is the final opportunity for the Defendants to advise restructuring at preferential EU-resident rates.</td>
+          </tr>
+          <tr style="background:#fff3f3!important">
+            <td><strong>31 December 2020 ⚠</strong></td>
+            <td><strong>The critical date.</strong> The UK's transition period ends. From midnight, the UK becomes a "tercer país" (third country) under Spanish law. All EU-based protections that underpinned the scheme expire simultaneously. The Defendants issued no communication to the Claimant, or — to the Claimant's knowledge — to any client, regarding these changes.</td>
+          </tr>
+          <tr>
+            <td><strong>1 Jan 2021 onwards</strong></td>
+            <td>(a) Spanish IHT regional bonifications, previously available to EU/EEA nationals, ceased to apply to UK nationals. (b) Spanish CGT rates for third-country non-residents increased. (c) IRNR Article 10 (RDL 5/2004) activated: UK entities became ineligible to serve as fiscal representatives for Spanish non-resident property owners; all subsequent Modelo 210/211 filings by the Defendants became potentially void. (d) Spanish banks commenced reclassification of UK companies as third-country entities, triggering account closures.</td>
+          </tr>
+          <tr>
+            <td><strong>2021–2025</strong></td>
+            <td>The Defendants continued to charge the Claimant annual administration fees whilst the scheme provided no material tax benefit and whilst the Defendants were incapable of lawfully performing their Spanish fiscal representative obligations.</td>
+          </tr>
+          <tr>
+            <td><span class="placeholder">[MVL DATE]</span></td>
+            <td>The Claimant was required to instruct an insolvency practitioner to commence a Members' Voluntary Liquidation (MVL) of Los Romeros Limited, at a cost of approximately <span class="placeholder">[£INSERT]</span>, in order to extract the underlying property proceeds from a company structure that had become commercially indefensible.</td>
+          </tr>
+          <tr>
+            <td><span class="placeholder">[DISCOVERY DATE]</span></td>
+            <td>The Claimant became aware, or ought to have become aware with the exercise of reasonable diligence, of the full nature and extent of the Defendants' failures ("Date of Knowledge" for Limitation Act 1980 purposes).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+      <h2>Section 3 — Allegations of Negligence</h2>
+
+      <p>The Claimant alleges that each of the Defendants owed him a <strong>duty of care</strong> consistent with the principles established in <em>Caparo Industries plc v Dickman</em> [1990] 2 AC 605 and <em>Hedley Byrne &amp; Co Ltd v Heller &amp; Partners Ltd</em> [1964] AC 465:</p>
+      <ol>
+        <li>A duty to provide accurate and complete advice regarding the Spanish and UK tax consequences of the corporate wrapper scheme at the point of inception.</li>
+        <li>A continuing duty to monitor and advise the Claimant of any changes in law — whether in Spain, the UK, or arising from EU law — that materially affected the scheme's efficacy and the Claimant's tax position.</li>
+        <li>A duty to advise the Claimant, with sufficient time to act, of the consequences of Brexit for the corporate wrapper scheme, specifically prior to <strong>31 December 2020</strong>.</li>
+        <li>A duty to cease charging annual fees for services that the Defendants were no longer lawfully able to perform or that no longer provided any commercial benefit to the Claimant.</li>
+      </ol>
+
+      <h3>Negligence Ground 1 — Failure to Advise on Spanish IHT Law Changes</h3>
+      <p>The Defendants represented that the corporate wrapper would protect the Claimant and his heirs from Spanish Inheritance Tax. Following the ECJ ruling in <em>Case C-127/12</em> (Commission v Spain, 2014) and the subsequent equalisation of Spanish IHT bonifications for EU/EEA nationals, the primary IHT protection rationale for the scheme was materially diminished. The Defendants failed to advise the Claimant of this change.</p>
+
+      <h3>Negligence Ground 2 — Failure to Advise on Spanish AEAT Anti-Avoidance Risk</h3>
+      <p>The Defendants represented that selling the shares of Los Romeros Limited (rather than the underlying Spanish property) would avoid Spanish ITP. Following strengthened enforcement of Article 15, Ley 58/2003 (General Tax Law — <em>conflicto en la aplicación de la norma</em>), the AEAT could and did look through corporate wrapper structures and impose ITP on the underlying asset transfer. The Defendants failed to advise the Claimant that this protection had become legally uncertain.</p>
+
+      <h3>Negligence Ground 3 — Failure to Advise on Brexit Consequences <em>(Primary Ground)</em></h3>
+      <p>This is the primary ground of claim. The Defendants failed, at any point between 23 June 2016 and 31 December 2020, to advise the Claimant of the following specific consequences of Brexit:</p>
+
+      <h4>(a) Spanish IHT Regional Bonifications</h4>
+      <p>UK nationals would lose entitlement to EU/EEA-equivalent regional IHT bonifications. The Claimant's heirs would face Spanish Inheritance Tax at the higher national scale applicable to third-country nationals. The corporate wrapper now created a <strong>double exposure</strong>: full UK IHT at 40% on the UK shares <strong>AND</strong> potential Spanish IHT on the underlying Spanish asset as a third-country holding.</p>
+
+      <h4>(b) Capital Gains Tax Rate Uplift</h4>
+      <p>Spanish CGT rates for third-country non-residents increased post-Brexit. Had the Claimant unwound the corporate structure before 31 December 2020, the disposal would have attracted the lower EU-resident CGT rate. The failure to advise caused a quantifiable uplift in CGT liability.</p>
+
+      <h4>(c) Rendered Fiscal Representation Unlawful</h4>
+      <p>From 1 January 2021, the Defendants — being a UK-incorporated entity — became legally ineligible to serve as the Claimant's fiscal representative in Spain under IRNR Article 10 (Real Decreto Legislativo 5/2004). The Defendants did not disclose this to the Claimant, did not engage a qualified Spanish-resident party to take over fiscal representation, and continued to charge fees for this service.</p>
+
+      <h4>(d) Modelo 210/211 Filings Potentially Voidable</h4>
+      <p>All Spanish non-resident tax returns filed by the Defendants on the Claimant's behalf after 1 January 2021 were filed by an entity with no legal standing to do so under Spanish law. These filings may be voidable by AEAT, exposing the Claimant to back-tax, penalties, and accrued interest.</p>
+
+      <h4>(e) Spanish Banking Access</h4>
+      <p>The Defendants failed to warn the Claimant that Spanish banks would reclassify UK companies as third-country entities post-Brexit, resulting in the loss of banking facilities, inability to receive rental income, and stranded property proceeds. This was a foreseeable and well-publicised consequence of Brexit readily available in professional tax literature no later than mid-2020.</p>
+
+      <h3>Negligence Ground 4 — Continued Charging of Fees for Services No Longer Deliverable</h3>
+      <p>From 1 January 2021, the Defendants continued to charge the Claimant annual administration and fiscal representation fees for a service they were legally prohibited from providing. This constitutes a breach of the implied term under the <strong>Supply of Goods and Services Act 1982, Section 13</strong> (implied term to carry out services with reasonable care and skill) and, potentially, unjust enrichment.</p>
+
+      <h3>Negligence Ground 5 — Misrepresentation of Professional Status</h3>
+      <p>The Defendants held themselves out as:</p>
+      <ul>
+        <li><strong>"Chartered Accountants"</strong> — Wincham Accountants Limited is <strong>not registered as a firm with the ICAEW</strong>. Only one individual within the wider group (Leonard Jones via Adrem Accounting Ltd) holds ICAEW membership.</li>
+        <li><strong>FCA-regulated</strong> — In a 2014 public forum, Mark Damion Roach (Director) cited FCA Registration Number <strong>615817</strong>, which does <strong>not exist</strong> on the FCA Register. This is a potential criminal offence under Section 24, Financial Services and Markets Act 2000.</li>
+        <li><strong>Expert cross-border tax advisers</strong> competent to advise on Spanish tax law — in respect of which no member of the Wincham group held a Spanish professional qualification (<em>gestor administrativo colegiado, economista colegiado,</em> or <em>abogado colegiado</em>).</li>
+      </ul>
+      <p>The Claimant relied on these representations in engaging and retaining the Defendants.</p>
+
+      <hr>
+      <h2>Section 4 — Causation</h2>
+
+      <p>But for the Defendants' breaches of duty set out above, the Claimant would have:</p>
+      <ol>
+        <li>Instructed an MVL of Los Romeros Limited before <strong>31 December 2020</strong>, at which point:
+          <ul>
+            <li>The property disposal would have attracted the lower EU-resident Spanish CGT rate</li>
+            <li>UK CGT liability could have been crystallised at that time's rates and with available reliefs</li>
+            <li>The structure would have been wound down in an orderly fashion under a permitted legal framework</li>
+            <li>Ongoing annual fees would have ceased from that date</li>
+          </ul>
+        </li>
+        <li>Avoided the post-Brexit locked <strong>Foreign Tax Credit Relief (FTCR)</strong> position, whereby Spanish CGT paid cannot be fully credited against the UK CGT liability due to the differential rate uplift caused by the Defendants' delay — estimated loss: <strong>approximately £16,800</strong></li>
+        <li>Avoided the cost of a mandatory MVL to extract the property — estimated: <strong>£5,000–£15,000</strong> — which would not have been required on a pre-2021 orderly wind-down</li>
+        <li>Recovered all annual fees paid to the Defendants after the date on which proper Brexit advice should have been given (alternatively: after 31 December 2020) — estimated: <strong><span class="placeholder">[£INSERT annual fees × years]</span></strong></li>
+        <li>Avoided ongoing exposure to void AEAT filings and associated Spanish tax penalties</li>
+      </ol>
+
+      <hr>
+      <h2>Section 5 — Quantum</h2>
+
+      <p>The Claimant claims the following losses, each of which is a direct and foreseeable consequence of the Defendants' negligence:</p>
+
+      <table>
+        <thead>
+          <tr><th>Head of Loss</th><th>Basis</th><th style="min-width:120px">Estimated Quantum</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Trapped FTCR — Spanish/UK CGT differential</strong></td>
+            <td>CGT paid in Spain at third-country rate (19%) cannot be fully credited against UK CGT due to rate differential caused by post-Brexit delay</td>
+            <td><strong>~£16,800</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Wasted annual administration fees (post-duty-breach)</strong></td>
+            <td>Annual fees paid to Defendants from the date advice should have been given (at latest, 1 Jan 2021) for services unlawfully or ineffectively rendered</td>
+            <td><span class="placeholder">[£INSERT × years]</span></td>
+          </tr>
+          <tr>
+            <td><strong>MVL costs — mandatory wind-down</strong></td>
+            <td>Members' Voluntary Liquidation professional fees to dissolve a structure the Defendants should have advised dissolving pre-2021</td>
+            <td><strong>£5,000–£15,000</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Spanish CGT uplift — EU vs third-country rate</strong></td>
+            <td>Difference between Spanish CGT at EU rate (hypothetical 2020 disposal) and actual third-country rate applicable to post-Brexit disposal</td>
+            <td><span class="placeholder">[£INSERT]</span></td>
+          </tr>
+          <tr>
+            <td><strong>UK CGT — uplift from delayed disposal</strong></td>
+            <td>Increase in UK CGT liability arising from property value appreciation between 2020 (when disposal should have occurred) and actual disposal date</td>
+            <td><span class="placeholder">[£INSERT]</span></td>
+          </tr>
+          <tr>
+            <td><strong>Spanish property income — banking loss</strong></td>
+            <td>Loss of rental income or delay in accessing proceeds held in Spanish bank accounts closed due to UK company third-country reclassification</td>
+            <td>TBC — subject to discovery</td>
+          </tr>
+          <tr class="quantum-total">
+            <td><strong>TOTAL ESTIMATED QUANTUM</strong></td>
+            <td></td>
+            <td><strong>£94,941 — £164,788</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><em>The Claimant reserves the right to increase or adjust this quantum as further information is disclosed.</em></p>
+
+      <hr>
+      <h2>Section 6 — Relevant Legal Authorities</h2>
+
+      <table>
+        <thead>
+          <tr><th>Authority</th><th>Proposition</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><em>Hedley Byrne &amp; Co Ltd v Heller &amp; Partners Ltd</em> [1964] AC 465</td>
+            <td>Duty of care arises from negligent misstatement by a professional held out as possessing specialist knowledge</td>
+          </tr>
+          <tr>
+            <td><em>Caparo Industries plc v Dickman</em> [1990] 2 AC 605</td>
+            <td>Three-stage test for duty of care: (1) foreseeability; (2) proximity; (3) fair, just, and reasonable</td>
+          </tr>
+          <tr>
+            <td><em>Bolam v Friern Hospital Management Committee</em> [1957] 1 WLR 582</td>
+            <td>Standard of care is that of a reasonably competent professional in the relevant field</td>
+          </tr>
+          <tr>
+            <td><em>Bolitho v City and Hackney Health Authority</em> [1998] AC 232</td>
+            <td>The professional's body of opinion must withstand logical analysis — Wincham's silence on Brexit cannot</td>
+          </tr>
+          <tr>
+            <td><em>Vilintone &amp; ors v Wincham International</em> <br><em>(settled, no published judgment)</em></td>
+            <td>Crown Office Chambers record confirms this exact scheme was litigated and Wincham's insurers settled without trial — establishing real-world proof of liability</td>
+          </tr>
+          <tr>
+            <td><em>Bushwood v Wincham International</em> <br><em>(settled, no published judgment)</em></td>
+            <td>Second confirmed claim against Wincham International arising from the same scheme — same result</td>
+          </tr>
+          <tr>
+            <td><strong>Limitation Act 1980, s.14A</strong></td>
+            <td>Date of Knowledge — 3 years from the date the Claimant had or ought reasonably to have had the knowledge necessary to bring this action</td>
+          </tr>
+          <tr>
+            <td><strong>Supply of Goods and Services Act 1982, s.13</strong></td>
+            <td>Implied term: service to be performed with reasonable care and skill</td>
+          </tr>
+          <tr>
+            <td><strong>Companies Act 2006, ss.172–174</strong></td>
+            <td>Mark Damion Roach's duties as director of Los Romeros Limited — duty to promote success; duty to exercise reasonable care, skill and diligence</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+      <h2>Section 7 — Information Requested from Defendants</h2>
+
+      <p>Pursuant to the Pre-Action Protocol for Professional Negligence, the Claimant requests the following information and documents within <strong>3 months</strong> of this letter:</p>
+
+      <ol>
+        <li><strong>Professional Indemnity Insurance details</strong> — policy number, insurer, insured limit, and broker contact details for each Defendant for each relevant year.</li>
+        <li><strong>All written communications</strong> sent by any Defendant to the Claimant or to Los Romeros Limited regarding the consequences of Brexit for the corporate wrapper scheme, for the period 1 June 2016 to 31 March 2021.</li>
+        <li><strong>All fee invoices</strong> issued by any Defendant to the Claimant or to Los Romeros Limited for the period 2008 to <span class="placeholder">[CURRENT DATE]</span>, including a breakdown of services rendered for each fee.</li>
+        <li><strong>All Spanish tax filings</strong> (Modelo 210, Modelo 211, or any other AEAT filing) submitted by any Defendant on behalf of Los Romeros Limited or the Claimant, for the period 1 January 2021 to <span class="placeholder">[CURRENT DATE]</span>, together with evidence of filing authority.</li>
+        <li><strong>ICAEW registration details</strong> for Wincham Accountants Limited as an ICAEW-registered firm (the Claimant believes this registration does not exist and invites the Defendants to confirm or deny).</li>
+        <li><strong>HMRC TCSP registration</strong> for each Defendant under the Money Laundering Regulations 2017.</li>
+        <li><strong>FCA authorisation details</strong> — specifically in relation to Financial Promotion Number 615817 cited by Mark Damion Roach in 2014 (the Claimant believes this number is non-existent and invites the Defendants to confirm or deny).</li>
+        <li><strong>AEAT Colaborador Social registration</strong> confirming the Defendants' authority to file Spanish tax returns on behalf of non-resident clients — pre and post 1 January 2021.</li>
+        <li><strong>Any written advice, analysis, or internal memoranda</strong> prepared by any Defendant regarding the impact of Brexit on the corporate wrapper scheme or on the Defendants' ability to continue providing Spanish fiscal representation services.</li>
+      </ol>
+
+      <hr>
+      <h2>Section 8 — Procedural Matters</h2>
+
+      <h3>Acknowledgement</h3>
+      <p>The Defendants are invited to acknowledge receipt of this letter within <strong>21 days</strong>.</p>
+
+      <h3>Letter of Response</h3>
+      <p>A substantive Letter of Response is required within <strong>3 months</strong> of this letter, in accordance with the Pre-Action Protocol. The response should:</p>
+      <ol type="a">
+        <li>Confirm or deny each allegation;</li>
+        <li>Identify any documents on which the Defendants intend to rely;</li>
+        <li>Confirm professional indemnity insurance details;</li>
+        <li>Indicate whether the Defendants are willing to participate in Alternative Dispute Resolution (ADR) or mediation.</li>
+      </ol>
+
+      <h3>Alternative Dispute Resolution</h3>
+      <p>The Claimant is willing to engage in mediation or other ADR processes at any stage. Unreasonable refusal to mediate may be brought to the attention of the Court and may affect costs orders.</p>
+
+      <h3>Limitation</h3>
+      <p>The Claimant draws the Defendants' attention to the fact that limitation may be at issue. The Claimant reserves all rights under the <strong>Limitation Act 1980, Section 14A</strong> (latent damage — date of knowledge) and Section 32 (deliberate concealment). The issuing of proceedings will not be delayed beyond what is necessary under this Protocol.</p>
+
+      <h3>Jurisdiction and Proceedings</h3>
+      <p>In the absence of a satisfactory Letter of Response, or in the event that no agreement can be reached following ADR, the Claimant intends to issue a Claim Form in the <strong>Business and Property Courts</strong> (or County Court, as appropriate), seeking:</p>
+      <ul>
+        <li>Damages as set out in Section 5 above</li>
+        <li>Interest pursuant to the <strong>Senior Courts Act 1981, Section 35A</strong> (or County Courts Act 1984, Section 69)</li>
+        <li>Costs of these proceedings</li>
+      </ul>
+
+      <hr>
+      <h2>Section 9 — Precedent Note</h2>
+
+      <p>The Defendants should be aware that the following cases involving this same scheme have been litigated and settled:</p>
+      <ul>
+        <li><em><strong>Vilintone &amp; ors v Wincham International</strong></em> — professional negligence claim concerning the tax consequences of acquiring Spanish property via corporate vehicles. Settled without trial. No published judgment. [Crown Office Chambers, Michael Harper KC/QC record]</li>
+        <li><em><strong>Bushwood v Wincham International</strong></em> — related professional negligence claim. Settled without trial. No published judgment.</li>
+      </ul>
+
+      <blockquote>
+        The Claimant's advisers regard the absence of any published judgment in either case as confirming that the Defendants' professional indemnity insurers recognised the underlying liability and elected to settle rather than allow a court to establish a public precedent. The Claimant intends to rely on this pattern in any costs argument.
+      </blockquote>
+
+      <hr>
+      <h2>Signature and Service</h2>
+
+      <p>Yours faithfully,</p>
+
+      <div class="sig-block">
+        <p><strong>Philip Harrison</strong> <em>(or solicitors on his behalf — to be inserted)</em></p>
+        <div class="sig-line"></div>
+        <p class="label">Signature</p>
+        <br>
+        <p><span class="placeholder">[ADDRESS]</span></p>
+        <p>Sheffield, England</p>
+        <p><span class="placeholder">[EMAIL]</span></p>
+        <p><span class="placeholder">[DATE]</span></p>
+      </div>
+
+      <p style="font-size:12px;color:#666;font-style:italic;margin-top:20px">This letter is sent pursuant to the Pre-Action Protocol for Professional Negligence (CPR Practice Direction — Pre-Action Conduct and Protocols). It is written without prejudice save as to costs. The Claimant reserves all rights.</p>
+
+      <div class="appendix">
+        <h2>Appendix A — Relevant Statutory Provisions</h2>
+        <ul>
+          <li><strong>Real Decreto Legislativo 5/2004 (IRNR), Article 10</strong> — fiscal representative obligation for third-country non-residents in Spain</li>
+          <li><strong>Ley 58/2003 (Ley General Tributaria), Article 47</strong> — mandatory representative appointment with Spanish domicile; penalties: €2,000–€6,000 per client</li>
+          <li><strong>Ley 58/2003 (LGT), Article 15</strong> — anti-avoidance: abuse of law (<em>conflicto en la aplicación de la norma</em>)</li>
+          <li><strong>Ley 19/1991 (Impuesto sobre el Patrimonio)</strong> and <strong>Ley 29/1987 (Impuesto sobre Sucesiones y Donaciones)</strong> — post-Brexit third-country rate uplift</li>
+          <li><strong>Limitation Act 1980, ss.2, 5, 14A</strong> — time limits for tort and contract, latent damage, date of knowledge</li>
+          <li><strong>Supply of Goods and Services Act 1982, s.13</strong> — implied term of reasonable care and skill</li>
+          <li><strong>Companies Act 2006, ss.172–174</strong> — directors' general duties</li>
+          <li><strong>Financial Services and Markets Act 2000, s.24</strong> — criminal offence: misrepresentation of authorisation status</li>
+          <li><strong>Money Laundering Regulations 2017</strong> — TCSP registration requirement</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer">
+      Document version 1.0 — Philip Harrison v Wincham Accountants Limited &amp; Others &nbsp;|&nbsp;
+      Prepared pursuant to the CPR Pre-Action Protocol for Professional Negligence &nbsp;|&nbsp;
+      Workspace: UK_Lanzarote_Repatriation. Yellow highlighted items marked <span style="background:#fff3cd;padding:1px 5px;border-radius:3px">[INSERT]</span> require completion before service.
+    </div>
+  </div>
+</body>
+</html>

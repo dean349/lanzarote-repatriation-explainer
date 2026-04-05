@@ -57,6 +57,33 @@ DOCS = [
         'eyebrow': 'PRIVILEGED & CONFIDENTIAL — LITIGATION SUPPORT',
         'ribbon': True,
     },
+    {
+        'input': r'C:\DAD\UK_Lanzarote_Repatriation\Wincham Legal Case UK Type Class Action\Wincham_Nine_Task_Verification_Report.md',
+        'output': PDF_DIR / 'Wincham_Nine_Task_Verification_Report.pdf',
+        'html_tmp': r'C:\DAD\UK_Lanzarote_Repatriation\_tmp_nime_report.html',
+        'title': 'Wincham Scheme — Nine-Task Regulatory Verification Report',
+        'subtitle': 'Cross-Registry Forensic Evidence of Unauthorised Operation — April 2026',
+        'eyebrow': 'ATTORNEY-CLIENT PRIVILEGED WORK PRODUCT — NOT FOR DISCLOSURE',
+        'ribbon': True,
+    },
+    {
+        'input': r'C:\DAD\UK_Lanzarote_Repatriation\Wincham Legal Case UK Type Class Action\Wincham_ICAEW_Disciplinary_Referral.md',
+        'output': PDF_DIR / 'Wincham_ICAEW_Disciplinary_Referral.pdf',
+        'html_tmp': r'C:\DAD\UK_Lanzarote_Repatriation\_tmp_icaew_referral.html',
+        'title': 'ICAEW Formal Disciplinary Referral — Leonard Edward Jones',
+        'subtitle': 'Complaint under the ICAEW Code of Ethics and NOCLAR Framework',
+        'eyebrow': 'FORMAL REGULATORY COMPLAINT — ICAEW PROFESSIONAL STANDARDS',
+        'ribbon': False,
+    },
+    {
+        'input': r'C:\DAD\UK_Lanzarote_Repatriation\Wincham Legal Case UK Type Class Action\Wincham_FCA_Referral.md',
+        'output': PDF_DIR / 'Wincham_FCA_Referral.pdf',
+        'html_tmp': r'C:\DAD\UK_Lanzarote_Repatriation\_tmp_fca_referral.html',
+        'title': 'FCA Formal Referral — Wincham Group Unauthorised Regulated Activity',
+        'subtitle': 'Suspected breach of FSMA 2000 s.19 — Financial Intermediation Without Authorisation',
+        'eyebrow': 'FORMAL REGULATORY REFERRAL — FINANCIAL CONDUCT AUTHORITY',
+        'ribbon': False,
+    },
 ]
 
 ALERT_ICONS = {
@@ -170,21 +197,26 @@ if pdf_engine is None:
     print("  pip install weasyprint")
     sys.exit(1)
 
-print(f"\nGenerating {len(DOCS)} PDFs...\n")
+print(f"\nGenerating {len(DOCS)} documents...\n")
 for doc in DOCS:
     print(f"Processing: {Path(doc['input']).name}")
     raw = Path(doc['input']).read_text(encoding='utf-8')
     body_html = md_to_html(raw)
     html_content = build_html(doc, body_html)
 
-    # Write temp HTML
-    tmp_path = doc['html_tmp']
-    Path(tmp_path).write_text(html_content, encoding='utf-8')
+    # Always write a print-ready HTML file to the output folder
+    html_out_path = Path(str(doc['output'])).with_suffix('.html')
+    html_out_path.parent.mkdir(parents=True, exist_ok=True)
+    html_out_path.write_text(html_content, encoding='utf-8')
+    print(f"  ✅ HTML written: {html_out_path}")
 
-    # Generate PDF
+    # Attempt PDF generation if engine available
     out_path = str(doc['output'])
-    try:
-        if pdf_engine == 'pdfkit':
+    if pdf_engine == 'pdfkit':
+        # Also write temp file for pdfkit
+        tmp_path = doc['html_tmp']
+        Path(tmp_path).write_text(html_content, encoding='utf-8')
+        try:
             opts = {
                 'page-size': 'A4',
                 'margin-top': '0',
@@ -194,14 +226,26 @@ for doc in DOCS:
                 'encoding': 'UTF-8',
                 'enable-local-file-access': None,
             }
+            import pdfkit
             pdfkit.from_file(tmp_path, out_path, options=opts)
-        elif pdf_engine == 'weasyprint':
-            WP_HTML(filename=tmp_path).write_pdf(out_path)
-        print(f"  ✅ Written: {out_path}")
-    except Exception as e:
-        print(f"  ❌ Failed: {e}")
+            print(f"  ✅ PDF written: {out_path}")
+        except Exception as e:
+            print(f"  ⚠️  PDF skipped (open HTML in browser → Ctrl+P → Save as PDF): {e}")
+        finally:
+            Path(tmp_path).unlink(missing_ok=True)
 
-    # Clean up temp HTML
-    Path(tmp_path).unlink(missing_ok=True)
+    elif pdf_engine == 'weasyprint':
+        try:
+            from weasyprint import HTML as WP_HTML
+            WP_HTML(filename=str(html_out_path)).write_pdf(out_path)
+            print(f"  ✅ PDF written: {out_path}")
+        except Exception as e:
+            print(f"  ⚠️  PDF skipped (open HTML in browser → Ctrl+P → Save as PDF): {e}")
 
-print("\nDone.")
+    else:
+        print(f"  ℹ️  No PDF engine — open HTML in browser → Ctrl+P → Save as PDF")
+
+print("\nDone.\n")
+print(f"HTML files are in: {PDF_DIR}")
+print("To generate PDFs: open each HTML file in Chrome and press Ctrl+P → Save as PDF → A4, No margins")
+

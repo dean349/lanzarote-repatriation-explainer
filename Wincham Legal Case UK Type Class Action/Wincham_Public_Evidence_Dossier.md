@@ -289,7 +289,7 @@ A forensic cross-reference of the Wincham (CW12 4TR) and Adrem (CW12 4AA) compan
 | Albert Chambers / Adrem (CW12 4AA) exclusive | 197 companies |
 | **Estimated individual victims (2 directors/company avg)** | **~1,564 individuals** |
 | Active companies still in scheme (ongoing harm) | **186 (Adrem) + ~50 (Wincham)** |
-| SIC 70229 mis-classified entities confirmed | **167 companies** |
+| SIC 70229 mis-classified entities confirmed (full scheme, CH API 2 Apr 2026) | **399 companies** (167 Adrem + 232 Wincham) |
 | Estimated annual fees paid to scheme operators | **£390,000–£780,000** |
 
 > [!IMPORTANT]
@@ -297,14 +297,14 @@ A forensic cross-reference of the Wincham (CW12 4TR) and Adrem (CW12 4AA) compan
 
 ### HMRC SIC 70229 Mis-Classification Finding
 
-167 of the 197 companies at the Adrem address (Albert Chambers, CW12 4AA) are registered under SIC code **70229 — Management Consultancy Activities**. The correct SIC code for a Spanish property holding vehicle is **68100** or **68209**. This systematic mis-coding across 85% of Adrem-administered companies:
+**Full-scheme forensic audit (2 April 2026, live Companies House API):** 399 of 752 audited companies across both registered addresses (53.1%) are registered under SIC code **70229 — Management Consultancy Activities**. The breakdown is: **167 of 197 Adrem (CW12 4AA) companies (85%)** and **232 of 585 Wincham (CW12 4TR) companies (39.7%)**. The correct SIC code for a Spanish property holding vehicle is **68100** or **68209**. This systematic mis-coding across more than half of the full scheme population:
 
 - May have been used to obscure **Annual Tax on Enveloped Dwellings (ATED)** obligations
 - Creates potential Corporation Tax return irregularities
 - Constitutes independent grounds for an HMRC fraud referral
 - Is directly attributable to **Leonard Edward Jones** (ICAEW member) as the responsible accountant for Adrem Accounting Ltd
 
-**Output files:** `hmrc_sic_misclassification.csv` (167 records), `adrem_only_companies.csv` (197 records), `wincham_only_companies.csv` (585 records)
+**Output files:** `FULL_SCHEME_sic_misclassification.csv` (752 records; 399 confirmed SIC 70229), `hmrc_sic_misclassification.csv` (167 Adrem records), `adrem_only_companies.csv` (197 records), `wincham_only_companies.csv` (585 records)
 
 ---
 

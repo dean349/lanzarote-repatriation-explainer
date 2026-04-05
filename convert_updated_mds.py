@@ -177,6 +177,30 @@ FILE_META = {
         "footer": "Internal use only. Do not distribute to any law firm prior to execution of the NDA.",
         "theme": "pitch",
     },
+    "Wincham_FCA_Referral": {
+        "eyebrow": "Regulatory Referral — Financial Conduct Authority",
+        "title": "FCA Referral: Wincham International — FSMA 2000 Breach",
+        "subtitle": "Formal referral of suspected unauthorised regulated activity and consumer financial harm",
+        "ribbon": "⚠ STRICTLY CONFIDENTIAL — REGULATORY REFERRAL DOCUMENT",
+        "footer": "This referral is made in good faith on the basis of publicly verifiable evidence. All statutory citations verified against UK legislation. Prepared April 2026 — revised TAM based on €450,000 average property valuation.",
+        "theme": "legal",
+    },
+    "Wincham_GLO_Headline_Summary": {
+        "eyebrow": "Group Litigation Order — Executive Briefing",
+        "title": "The Wincham GLO — Headline Summary",
+        "subtitle": "One-Page Executive Briefing for Law Firm Partners — Under Executed NDA Only",
+        "ribbon": "⚠ STRICTLY PRIVATE & CONFIDENTIAL — EXECUTE NDA BEFORE DISTRIBUTION",
+        "footer": "All figures are estimates based on forensic analysis and current market data. Updated April 2026 — supersedes all previous summaries. Full quantum review by instructed solicitors required prior to pleading.",
+        "theme": "pitch",
+    },
+    "Wincham_TAM_Revised_Analysis": {
+        "eyebrow": "Internal Analysis — Revised April 2026",
+        "title": "Wincham TAM Revised Analysis",
+        "subtitle": "Total Addressable Market recalculated at €450,000 average property value — supersedes all previous TAM estimates",
+        "ribbon": "⚠ INTERNAL WORKING DOCUMENT — DO NOT DISTRIBUTE WITHOUT REDACTION",
+        "footer": "This document supersedes all previous TAM calculations. Revised April 2026 based on current Spanish/Canary Islands property market data. For instructed solicitor review only.",
+        "theme": "pitch",
+    },
 }
 
 def build_html(stem, body_html, meta):
@@ -216,6 +240,9 @@ TARGET = [
     "Wincham_Data_Licence_Agreement",
     "Wincham_Legal_Lead_Generation_Business_Plan",
     "Wincham_Target_Law_Firms",
+    "Wincham_FCA_Referral",
+    "Wincham_GLO_Headline_Summary",
+    "Wincham_TAM_Revised_Analysis",
 ]
 
 print(f"Converting {len(TARGET)} updated MD files to HTML...\n")

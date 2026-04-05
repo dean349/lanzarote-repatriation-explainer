@@ -1,0 +1,645 @@
+WINCHAM GROUP — WAYBACK MACHINE FORENSIC AUDIT REPORT
+Generated: 05 April 2026 02:55 UTC
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+DOMAIN: wincham.com
+Total archived snapshots found: 270
+Years active in archive:       2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2019, 2020, 2021, 2022
+
+TIMELINE:
+  2008: 3 page(s) audited | FLAGS: iht, inheritance tax, spanish, spain, uk limited company
+  2009: 2 page(s) audited | FLAGS: spain, saving, spanish
+  2010: 2 page(s) audited | FLAGS: spain, saving, uk company, spanish
+  2011: 3 page(s) audited | FLAGS: eu, saving, spanish, spain, guarantee, guaranteed
+  2012: 3 page(s) audited | FLAGS: qualified, eu, uk company, european, double taxation, iht, saving, registered office, inheritance tax, spanish, spain, avoid, annual return, uk limited company, offshore
+  2013: 3 page(s) audited | FLAGS: qualified, iht, inheritance tax, spain, tax free, eu, uk company, aat, double taxation, annual return, spanish, avoid, avoidance, guarantee, european, saving, uk limited company, stamp duty, registered office, offshore
+  2014: 1 page(s) audited | FLAGS: eu, regulated, inheritance tax, spanish, spain, fca
+  2015: 1 page(s) audited | FLAGS: qualified, eu, regulated, inheritance tax, spanish, spain, fca
+  2016: 3 page(s) audited | FLAGS: qualified, iht, inheritance tax, spain, brexit, eu, uk company, double taxation, annual return, spanish, avoid, guarantee, european, saving, uk limited company, regulated, registered office, fca, offshore
+  2019: 1 page(s) audited | FLAGS: spain, regulated, inheritance tax, spanish
+  2020: 2 page(s) audited | FLAGS: qualified, regulated, iht, saving, inheritance tax, spanish, spain
+  2021: 3 page(s) audited | FLAGS: qualified, iht, inheritance tax, spain, tax free, eu, uk company, double taxation, annual return, spanish, avoid, guarantee, european, saving, tax efficient, uk limited company, stamp duty, regulated, registered office, offshore
+  2022: 2 page(s) audited | FLAGS: qualified, eu, european, regulated, registered office, inheritance tax, spanish, spain, annual return, tax efficient, uk limited company, guarantee
+
+FORENSICALLY FLAGGED PAGES:
+
+  📅 05 Sep 2008
+  🔗 https://web.archive.org/web/20080905122221/http://www.wincham.com/
+  🚩 Keywords: inheritance tax, iht, spain, spanish
+  📄 Preview: Wincham Investments - A professional investment property service for UK or Spanish properties &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; UK Property Shop &nbsp; &nbsp; Spanish Property Shop &nbsp; &nbsp; Commercial Property &nbsp; --> &nbsp; Sell Your Property &nbsp; &nbsp; Property Lettings &nbsp...
+
+
+  📅 16 Sep 2008
+  🔗 https://web.archive.org/web/20080916012834/http://www.wincham.com:80/asp/services2.asp
+  🚩 Keywords: spain, spanish, uk limited company
+  📄 Preview: Wincham Investments - A professional investment property service for UK or Spanish properties &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; UK Property Shop &nbsp; &nbsp; Spanish Property Shop &nbsp; &nbsp; Commercial Property &nbsp; --> &nbsp; Sell Your Property &nbsp; &nbsp; Property Lettings &nbsp...
+
+
+  📅 26 Sep 2008
+  🔗 https://web.archive.org/web/20080926050528/http://www.wincham.com:80/asp/services3.asp
+  🚩 Keywords: spain, spanish
+  📄 Preview: Wincham Investments - A professional investment property service for UK or Spanish properties &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; UK Property Shop &nbsp; &nbsp; Spanish Property Shop &nbsp; &nbsp; Commercial Property &nbsp; --> &nbsp; Sell Your Property &nbsp; &nbsp; Property Lettings &nbsp...
+
+
+  📅 08 Nov 2009
+  🔗 https://web.archive.org/web/20091108121518/http://www.wincham.com:80/asp/ihtcompanydetail.asp?l=19&p=276&o=1
+  🚩 Keywords: spain, spanish
+  📄 Preview: Property Brochure Call Sales on +44(0)1260 299 700 NOW! Back to Listing Sangria Property Limited User Options: Request More Info Printer Friendly Page E-Mail this Page Mortgage Calculator Currency Converter Property Information: £42,500 Calpe Available Additional Photos: Please Click here for additi...
+
+
+  📅 12 Oct 2009
+  🔗 https://web.archive.org/web/20091012114346/http://www.wincham.com:80/asp/ihtcompanylist.asp?l=19
+  🚩 Keywords: spain, spanish, saving
+  📄 Preview: Property Companies For Sale Close This Window The properties shown in the following list are all owned by individual UK Limited Companies and are offered for Sale as part of the company. This method of purchase has the advantage of saving the Purchaser the 7% Transfer Tax in Spain. The company can b...
+
+
+  📅 30 Sep 2010
+  🔗 https://web.archive.org/web/20100930154223/http://www.wincham.com:80/asp/ihtcompanylist.asp?
+  🚩 Keywords: spain, spanish, uk company, saving
+  📄 Preview: Category Listing Unavailable We're sorry. The category listing page you requested is unavailable. Please try again later. Close This Window The properties shown in the following list are all owned by individual UK Limited Companies and are offered for Sale as part of the company. This method of purc...
+
+
+  📅 05 Mar 2010
+  🔗 https://web.archive.org/web/20100305153516/http://www.wincham.com:80/asp/detail.asp?l=12&p=183&o=1
+  🚩 Keywords: spain, spanish
+  📄 Preview: Wincham Investments - A professional investment property service for UK or Spanish properties &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; UK Property Shop &nbsp; &nbsp; Spanish Property Shop &nbsp; &nbsp; Commercial Property &nbsp; --> &nbsp; Sell Your Property &nbsp; &nbsp; Property Lettings &nbsp...
+
+
+  📅 01 Oct 2011
+  🔗 https://web.archive.org/web/20111001125648/http://www.wincham.com:80/asp/companies4sale.asp?
+  🚩 Keywords: spain, spanish
+  📄 Preview: Wincham Investments - A professional investment property service for UK or Spanish properties &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; UK Property Shop &nbsp; &nbsp; Spanish Property Shop &nbsp; &nbsp; Commercial Property &nbsp; --> &nbsp; Sell Your Property &nbsp; &nbsp; Property Lettings &nbsp...
+
+
+  📅 26 Feb 2011
+  🔗 https://web.archive.org/web/20110226113809/http://www.wincham.com:80/asp/completelist.asp?
+  🚩 Keywords: spain, spanish, eu
+  📄 Preview: Wincham Investments - A professional investment property service for UK or Spanish properties &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; UK Property Shop &nbsp; &nbsp; Spanish Property Shop &nbsp; &nbsp; Commercial Property &nbsp; --> &nbsp; Sell Your Property &nbsp; &nbsp; Property Lettings &nbsp...
+
+
+  📅 26 Sep 2011
+  🔗 https://web.archive.org/web/20110926015036/http://www.wincham.com:80/landing/mallorca.htm?
+  🚩 Keywords: saving, guarantee, guaranteed, eu
+  📄 Preview: Buying a property in Mallorca &nbsp; Learn the secret that &#8216;non savvy&#8217; buyers in Mallorca do not know about!! Good news! You can test it for free NOW &nbsp; &nbsp; &nbsp; Do not even consider buying a property in Mallorca until you have read this! &nbsp; &#8216; Easily the best advice we...
+
+
+  📅 02 Feb 2012
+  🔗 https://web.archive.org/web/20120202124653/http://www.wincham.com:80/iht.asp
+  🚩 Keywords: inheritance tax, iht, spain, spanish, uk limited company, uk company, offshore, avoid
+  📄 Preview: Wincham International Limited :: Spanish Inheritance Tax &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Simple, Intelligent, Professional Services Home About Us Services Accountancy UK &amp; Spanish Properties Wills &amp; Probate Spanish Inheritance Tax Currency Exchange Corporate Services User Login Meet The...
+
+
+  📅 02 Feb 2012
+  🔗 https://web.archive.org/web/20120202124525/http://www.wincham.com:80/aboutus.asp
+  🚩 Keywords: inheritance tax, spain, spanish, qualified, eu, european, annual return, registered office
+  📄 Preview: Wincham International Limited :: About Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Simple, Intelligent, Professional Services Home About Us Services Accountancy UK &amp; Spanish Properties Wills &amp; Probate Spanish Inheritance Tax Currency Exchange Corporate Services User Login Meet The Team Contact U...
+
+
+  📅 18 Feb 2012
+  🔗 https://web.archive.org/web/20120218033757/http://www.wincham.com:80/news.asp?
+  🚩 Keywords: inheritance tax, iht, spain, spanish, uk limited company, uk company, offshore, avoid, saving, double taxation, qualified, eu, european, annual return, registered office
+  📄 Preview: Wincham International Limited :: News Updates &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Simple, Intelligent, Professional Services Home About Us Services Accountancy UK &amp; Spanish Properties Wills &amp; Probate Spanish Inheritance Tax Currency Exchange Corporate Services Debt collection services User ...
+
+
+  📅 19 Dec 2013
+  🔗 https://web.archive.org/web/20131219015553/http://www.wincham.com:80/nl/iht.asp
+  🚩 Keywords: iht, spain
+  📄 Preview: Wincham International Limited :: Spaanse Successierechten &nbsp; &nbsp; &nbsp; Eenvoudige, intelligente en professionele dienstverlening! Home Informatie Diensten Boekhouding Engelse en Spaanse Eigendommen Testamenten &amp; nalatenschappen Spaanse Successierechten Valuta Wissel Corporate Services In...
+
+
+  📅 09 Jul 2013
+  🔗 https://web.archive.org/web/20130709021914/http://www.wincham.com:80/nl/aboutus.asp
+  🚩 Keywords: spain, aat, eu
+  📄 Preview: Wincham International Limited :: About Us &nbsp; &nbsp; &nbsp; Eenvoudige, intelligente en professionele dienstverlening! Home Informatie Diensten Boekhouding Engelse en Spaanse Eigendommen Testamenten &amp; nalatenschappen Spaanse Successierechten Valuta Wissel Corporate Services Incasso Gebruikers...
+
+
+  📅 07 Dec 2013
+  🔗 https://web.archive.org/web/20131207155805/http://wincham.com/news.asp?e=10
+  🚩 Keywords: inheritance tax, iht, spain, spanish, uk limited company, uk company, offshore, tax free, avoid, avoidance, saving, double taxation, guarantee, qualified, eu, european, annual return, registered office, stamp duty
+  📄 Preview: Wincham International Limited :: News Updates &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; Simple, Intelligent, Professional Services Home About Us Who We Are Clients Comments Press Releases Company Awards Services Accountancy UK &amp; Spanish Properties Wills &amp; Probate Span...
+
+
+  📅 10 Mar 2014
+  🔗 https://web.archive.org/web/20140310230945/http://www.wincham.com:80/icard.asp
+  🚩 Keywords: inheritance tax, spain, spanish, regulated, fca, eu
+  📄 Preview: Wincham International Limited :: Wincham InterCash &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who We Are Clients Comments Press Releases Company Awards Services Accountancy Wincham Inte...
+
+
+  📅 13 Nov 2015
+  🔗 https://web.archive.org/web/20151113052507/http://www.wincham.com:80/propertyservice.asp
+  🚩 Keywords: inheritance tax, spain, spanish, qualified, regulated, fca, eu
+  📄 Preview: Wincham International Limited :: Property Services &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who We Are Clients Comments Press Releases Company Awards Services Accountancy Wincham Inte...
+
+
+  📅 04 Apr 2016
+  🔗 https://web.archive.org/web/20160404224938/http://wincham.com/news.asp?e=11
+  🚩 Keywords: inheritance tax, iht, spain, spanish, uk limited company, uk company, offshore, avoid, saving, double taxation, guarantee, qualified, regulated, fca, eu, european, annual return, registered office
+  📄 Preview: Wincham International Limited :: News Updates &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; --> Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who We Are Clients Comments Press Releases Company Awards Services Accountancy Wincham Inter...
+
+
+  📅 12 Jul 2016
+  🔗 https://web.archive.org/web/20160712165307/http://www.wincham.com:80/brexit.asp
+  🚩 Keywords: inheritance tax, spain, spanish, uk limited company, offshore, regulated, fca, brexit, eu, european
+  📄 Preview: Wincham International Limited :: BREXIT &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; --> Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who We Are Clients Comments Press Releases Company Awards Services Accountancy Wincham InterCash C...
+
+
+  📅 04 Apr 2016
+  🔗 https://web.archive.org/web/20160404002851/http://wincham.com/dlt.asp
+  🚩 Keywords: inheritance tax, spain, spanish, guarantee, regulated, fca, eu
+  📄 Preview: Wincham International Limited :: Demolition Las Terreras Cantoria 18th November 2014 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; --> Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who We Are Clients Comments Press Releases Company Aw...
+
+
+  📅 18 Aug 2019
+  🔗 https://web.archive.org/web/20190818173431/https://www.wincham.com/enquiry.asp?o=sx47GvW1vFcm9&i=1wCnThY
+  🚩 Keywords: inheritance tax, spain, spanish, regulated
+  📄 Preview: Wincham International Limited :: Enquiry Section &nbsp; &nbsp; &nbsp; --> &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who We Are Clients Comments Press Releases Company Awards Services Accountancy Wincham In...
+
+
+  📅 13 Aug 2020
+  🔗 https://web.archive.org/web/20200813115455/https://www.wincham.com/businesssupport.asp
+  🚩 Keywords: inheritance tax, spain, spanish, qualified, regulated
+  📄 Preview: Wincham International Limited :: Emergency Coronavirus Business Interruption Loan Scheme &nbsp; &nbsp; &nbsp; --> &nbsp;&nbsp;Covid-19 - Help for business&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&n...
+
+
+  📅 25 Sep 2020
+  🔗 https://web.archive.org/web/20200925033232/https://www.wincham.com/mttWinUK.asp
+  🚩 Keywords: inheritance tax, iht, spain, spanish, saving, qualified, regulated
+  📄 Preview: Wincham International UK Limited :: Meet The Team &nbsp; &nbsp; &nbsp; --> &nbsp;&nbsp;Covid-19 - Help for business&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who We Are...
+
+
+  📅 08 May 2021
+  🔗 https://web.archive.org/web/20210508224934/https://www.wincham.com/news.asp?e=12
+  🚩 Keywords: inheritance tax, iht, spain, spanish, uk limited company, uk company, offshore, tax free, avoid, saving, double taxation, guarantee, qualified, regulated, eu, european, annual return, registered office
+  📄 Preview: Wincham International Limited :: News Updates --> &nbsp; &nbsp; &nbsp; --> &nbsp;&nbsp;Covid-19 - Help for business&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who We Are...
+
+
+  📅 08 May 2021
+  🔗 https://web.archive.org/web/20210508220453/https://www.wincham.com/buytolet.asp
+  🚩 Keywords: inheritance tax, spain, spanish, uk limited company, uk company, tax efficient, tax free, qualified, regulated, stamp duty
+  📄 Preview: Wincham International Limited :: About Us --> &nbsp; &nbsp; &nbsp; --> &nbsp;&nbsp;Covid-19 - Help for business&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who We Are Cli...
+
+
+  📅 08 May 2021
+  🔗 https://web.archive.org/web/20210508225126/https://www.wincham.com/cookiepolicy.asp
+  🚩 Keywords: inheritance tax, spain, spanish, regulated, eu
+  📄 Preview: Wincham International Limited :: Cookie Policy --> &nbsp; &nbsp; &nbsp; --> &nbsp;&nbsp;Covid-19 - Help for business&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who We Ar...
+
+
+  📅 22 May 2022
+  🔗 https://web.archive.org/web/20220522204643/https://www.wincham.com/aboutus
+  🚩 Keywords: inheritance tax, spain, spanish, uk limited company, qualified, regulated, eu, european, annual return, registered office
+  📄 Preview: Wincham International Limited :: About Us --> &nbsp; &nbsp; &nbsp; --> &nbsp;&nbsp;Covid-19 - Help for business&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who We Are Cli...
+
+
+  📅 22 May 2022
+  🔗 https://web.archive.org/web/20220522205955/https://www.wincham.com/updates.asp
+  🚩 Keywords: inheritance tax, spain, spanish, tax efficient, guarantee, qualified, regulated
+  📄 Preview: Wincham International Limited :: Coronavirus Updates --> &nbsp; &nbsp; &nbsp; --> &nbsp;&nbsp;Covid-19 - Help for business&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Career Opportunities&nbsp;&nbsp; Simple, Intelligent, Professional Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --> Home About Us Who...
+
+
+────────────────────────────────────────────────────────────
+DOMAIN: winchamaccountants.com
+Total archived snapshots found: 31
+Years active in archive:       2018, 2021, 2024, 2025, 2026
+
+TIMELINE:
+  2018: 1 page(s) audited
+  2021: 3 page(s) audited | FLAGS: spain, saving, registered office, liquidation
+  2024: 2 page(s) audited | FLAGS: spain
+  2025: 3 page(s) audited | FLAGS: spain, saving
+  2026: 1 page(s) audited | FLAGS: spain, guarantee, qualified, avoid
+
+FORENSICALLY FLAGGED PAGES:
+
+  📅 20 Oct 2021
+  🔗 https://web.archive.org/web/20211020033828/https://www.winchamaccountants.com/services
+  🚩 Keywords: spain, saving
+  📄 Preview: Wincham Accountants | Our Services Have Any Questions? Brussels@business.com +251-235-3256 --> info@winchamaccountants.co.uk 01260 299 700 01260 281 260 Covid-19 - Help for business Home Who We Are Services Accounts Taxation Payroll/Real Time Information (RTI)/CIS Pensions Auto-Enrolment VAT Returns...
+
+
+  📅 20 Oct 2021
+  🔗 https://web.archive.org/web/20211020030839/https://www.winchamaccountants.com/taxation
+  🚩 Keywords: spain
+  📄 Preview: Wincham Accountants | Taxation Have Any Questions? Brussels@business.com +251-235-3256 --> info@winchamaccountants.co.uk 01260 299 700 01260 281 260 Covid-19 - Help for business Home Who We Are Services Accounts Taxation Payroll/Real Time Information (RTI)/CIS Pensions Auto-Enrolment VAT Returns Com...
+
+
+  📅 20 Oct 2021
+  🔗 https://web.archive.org/web/20211020025203/https://www.winchamaccountants.com/company-secretarial
+  🚩 Keywords: spain, saving, liquidation, registered office
+  📄 Preview: Wincham Accountants | Company Secretarial Have Any Questions? Brussels@business.com +251-235-3256 --> info@winchamaccountants.co.uk 01260 299 700 01260 281 260 Covid-19 - Help for business Home Who We Are Services Accounts Taxation Payroll/Real Time Information (RTI)/CIS Pensions Auto-Enrolment VAT ...
+
+
+  📅 25 May 2024
+  🔗 https://web.archive.org/web/20240525232229/https://winchamaccountants.com/meettheteam
+  🚩 Keywords: spain
+  📄 Preview: Wincham Accountants | Meet The Team Have Any Questions? Brussels@business.com +251-235-3256 --> info@winchamaccountants.co.uk 01260 299 700 Covid-19 - Help for business --> Home Who We Are Our Team Services Accounts Taxation Payroll/Real Time Information (RTI)/CIS Pensions Auto-Enrolment VAT Returns...
+
+
+  📅 13 Jul 2024
+  🔗 https://web.archive.org/web/20240713190619/https://winchamaccountants.com/meettheteam.asp
+  🚩 Keywords: spain
+  📄 Preview: Wincham Accountants | Meet The Team Have Any Questions? Brussels@business.com +251-235-3256 --> info@winchamaccountants.co.uk 01260 299 700 Covid-19 - Help for business --> Home Who We Are Our Team Services Accounts Taxation Payroll/Real Time Information (RTI)/CIS Pensions Auto-Enrolment VAT Returns...
+
+
+  📅 15 Dec 2025
+  🔗 https://web.archive.org/web/20251215201541/https://www.winchamaccountants.com/services.asp
+  🚩 Keywords: spain, saving
+  📄 Preview: Wincham Accountants | Our Services Have Any Questions? Brussels@business.com +251-235-3256 --> info@winchamaccountants.co.uk 01260 299 700 Covid-19 - Help for business --> Home Who We Are Our Team Services Accounts Taxation Payroll/Real Time Information (RTI)/CIS Pensions Auto-Enrolment VAT Returns ...
+
+
+  📅 06 Dec 2025
+  🔗 https://web.archive.org/web/20251206213305/https://www.winchamaccountants.com/contactus.asp
+  🚩 Keywords: spain
+  📄 Preview: Wincham Accountants | Contact Us Have Any Questions? Brussels@business.com +251-235-3256 --> info@winchamaccountants.co.uk 01260 299 700 Covid-19 - Help for business --> Home Who We Are Our Team Services Accounts Taxation Payroll/Real Time Information (RTI)/CIS Pensions Auto-Enrolment VAT Returns Co...
+
+
+  📅 15 Dec 2025
+  🔗 https://web.archive.org/web/20251215211859/https://www.winchamaccountants.com/enquiry.asp?e=1sWrv5H7Jnmp&p=4&i=9wS&se=6p2Wid37cU&m=1Sx3FvgTh67
+  🚩 Keywords: spain
+  📄 Preview: Wincham Accountants | Enquiry Form Have Any Questions? Brussels@business.com +251-235-3256 --> info@winchamaccountants.co.uk 01260 299 700 Covid-19 - Help for business --> Home Who We Are Our Team Services Accounts Taxation Payroll/Real Time Information (RTI)/CIS Pensions Auto-Enrolment VAT Returns ...
+
+
+  📅 15 Feb 2026
+  🔗 https://web.archive.org/web/20260215082540/https://www.winchamaccountants.com/termsandconditions.asp
+  🚩 Keywords: spain, avoid, guarantee, qualified
+  📄 Preview: Wincham Accountants | Terms and Conditions Have Any Questions? Brussels@business.com +251-235-3256 --> info@winchamaccountants.co.uk 01260 299 700 Covid-19 - Help for business --> Home Who We Are Our Team Services Accounts Taxation Payroll/Real Time Information (RTI)/CIS Pensions Auto-Enrolment VAT ...
+
+
+────────────────────────────────────────────────────────────
+DOMAIN: winchamukcompany.com
+Total archived snapshots found: 10
+Years active in archive:       2016, 2017, 2018
+
+TIMELINE:
+  2016: 1 page(s) audited | FLAGS: uk company, regulated, saving, registered office, inheritance tax, spanish, spain, uk limited company, canary, company secretary
+  2017: 3 page(s) audited | FLAGS: qualified, uk company, regulated, registered office, annual return, spanish, spain, uk limited company, company secretary
+  2018: 2 page(s) audited | FLAGS: qualified, eu, uk company, regulated, iht, saving, inheritance tax, spanish, spain, uk limited company, company secretary
+
+FORENSICALLY FLAGGED PAGES:
+
+  📅 27 Apr 2016
+  🔗 https://web.archive.org/web/20160427090723/http://www.winchamukcompany.com:80/
+  🚩 Keywords: inheritance tax, spain, spanish, canary, uk limited company, uk company, saving, regulated, company secretary, registered office
+  📄 Preview: UK Limited Company Structure for Spanish Property +44(0)1260 299 700 info@wincham.com English ENGLISH FRANCE GERMAN SPANISH --> --> Home Services Countries Available About Us Who We Are Company Awards --> Meet the Team Contact Us &nbsp;&nbsp;&nbsp; 24 Hour UK Company Formation &nbsp;&nbsp;&nbsp; Boo...
+
+
+  📅 13 Dec 2017
+  🔗 https://web.archive.org/web/20171213110723/http://www.winchamukcompany.com:80/service.asp
+  🚩 Keywords: spain, spanish, uk limited company, uk company, regulated, annual return, company secretary, registered office
+  📄 Preview: Wincham UK Company :: Our Services +44(0)1260 299 700 info@wincham.com English ENGLISH FRANCE GERMAN SPANISH --> --> Home Services Countries Available About Us Who We Are Company Awards --> Meet the Team Contact Us Home Our Services Our Services Wincham Supply for only &pound;3000 + VAT (&pound;3600...
+
+
+  📅 14 Dec 2017
+  🔗 https://web.archive.org/web/20171214113420/http://www.winchamukcompany.com:80/aboutus.asp
+  🚩 Keywords: spain, spanish, uk limited company, uk company, qualified, regulated
+  📄 Preview: Wincham UK Company :: About Us +44(0)1260 299 700 info@wincham.com English ENGLISH FRANCE GERMAN SPANISH --> --> Home Services Countries Available About Us Who We Are Company Awards --> Meet the Team Contact Us Home Who We Are Who We Are Wincham was established during 1994 and is celebrating 23 year...
+
+
+  📅 14 Dec 2017
+  🔗 https://web.archive.org/web/20171214054955/http://www.winchamukcompany.com:80/contactus.asp
+  🚩 Keywords: spain, spanish, uk company, regulated
+  📄 Preview: Wincham UK Company :: Contact Us +44(0)1260 299 700 info@wincham.com English ENGLISH FRANCE GERMAN SPANISH --> --> Home Services Countries Available About Us Who We Are Company Awards --> Meet the Team Contact Us Home Contact Us Contact Us Address UK Head Office Wincham Consultants Limited A Divisio...
+
+
+  📅 28 Aug 2018
+  🔗 https://web.archive.org/web/20180828083843/http://winchamukcompany.com/cookiepolicy.asp
+  🚩 Keywords: spain, spanish, uk company, regulated, eu
+  📄 Preview: Wincham UK Company :: Cookie Policy +44(0)1260 299 700 info@wincham.com English ENGLISH FRANCE GERMAN SPANISH --> --> Home Services Countries Available About Us Who We Are Company Awards --> Meet the Team Contact Us Home Cookie Policy Cookie Policy About this Cookie policy This Cookie Policy applies...
+
+
+  📅 28 Aug 2018
+  🔗 https://web.archive.org/web/20180828073726/http://winchamukcompany.com/mtt.asp
+  🚩 Keywords: inheritance tax, iht, spain, spanish, uk limited company, uk company, saving, qualified, regulated, company secretary
+  📄 Preview: Wincham UK Company :: Meet The Team +44(0)1260 299 700 info@wincham.com English ENGLISH FRANCE GERMAN SPANISH --> --> Home Services Countries Available About Us Who We Are Company Awards --> Meet the Team Contact Us Home Meet The Team Meet The Team Malcolm Roach M.C.I.C.M Founder &amp; Chairman (Ret...
+
+
+────────────────────────────────────────────────────────────
+DOMAIN: winchamiht.com
+Total archived snapshots found: 50
+Years active in archive:       2008, 2009, 2010, 2011, 2012, 2014, 2015, 2018
+
+TIMELINE:
+  2008: 3 page(s) audited | FLAGS: qualified, eu, uk company, saving, iht, inheritance tax, spanish, spain, uk limited company
+  2009: 3 page(s) audited | FLAGS: qualified, eu, uk company, double taxation, iht, saving, inheritance tax, spanish, spain, uk limited company
+  2010: 1 page(s) audited | FLAGS: spain, saving, inheritance tax, spanish
+  2011: 2 page(s) audited | FLAGS: qualified, saving, iht, inheritance tax, spanish, spain, avoid, uk limited company, guarantee
+  2012: 1 page(s) audited | FLAGS: iht, saving, inheritance tax, spanish, spain, avoid, uk limited company, guarantee
+  2014: 3 page(s) audited | FLAGS: qualified, eu, uk company, regulated, iht, saving, inheritance tax, spanish, spain, fca, avoid, uk limited company, canary
+  2015: 1 page(s) audited | FLAGS: qualified, uk company, iht, inheritance tax, spanish, spain, avoid, uk limited company, offshore
+  2018: 1 page(s) audited | FLAGS: spain, regulated, iht, eu
+
+FORENSICALLY FLAGGED PAGES:
+
+  📅 30 Jan 2008
+  🔗 https://web.archive.org/web/20080130001437/http://www.winchamiht.com:80/
+  🚩 Keywords: inheritance tax, iht, spain, spanish, saving
+  📄 Preview: Spanish Inheritance Tax Planning - Home Part 1 &nbsp; &lt;&lt;&nbsp;Previous&nbsp;&nbsp;&nbsp;&nbsp;[1]&nbsp;&nbsp; 2 &nbsp;&nbsp;&nbsp;&nbsp; Next&nbsp;&gt;&gt; D id you know,&nbsp;your hard earned legacy may have to be&nbsp;sold off to pay&nbsp;crippling tax bills when you pass away?&nbsp; Spanish...
+
+
+  📅 08 Mar 2008
+  🔗 https://web.archive.org/web/20080308144214/http://www.winchamiht.com:80/Spain_Legal.html
+  🚩 Keywords: inheritance tax, spain, spanish, uk limited company, uk company, saving, qualified, eu
+  📄 Preview: Spanish Inheritance Tax Planning - Spain Legal &nbsp; &nbsp; Spanish Lawyerâs View Introduction by Maria L. de Castro Maria is a Director of Spanish Law Firm Costaluz Lawyers - She is a lawyer and holds a doctorate from the&nbsp;University of Seville in Constitutional Law. In considering the benef...
+
+
+  📅 08 Mar 2008
+  🔗 https://web.archive.org/web/20080308144209/http://www.winchamiht.com:80/About_Wincham_Investments_Ltd.html
+  🚩 Keywords: inheritance tax, spain, spanish, saving
+  📄 Preview: Spanish Inheritance Tax Planning - About Wincham Investments Ltd &nbsp; Spanish Inheritance Tax Planning Wincham Investments Limited Company Reg Number&nbsp; 2948944&nbsp;&nbsp;&nbsp; Vat No 616 2096 54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CIF Number N0067305C Data Protection Licence No Z 1004980 About Mal...
+
+
+  📅 12 Jul 2009
+  🔗 https://web.archive.org/web/20090712034846/http://www.winchamiht.com:80/companystruct.html
+  🚩 Keywords: inheritance tax, iht, spain, spanish, uk limited company, saving
+  📄 Preview: Spanish Inheritance Tax Planning - Meet The Team &nbsp; Meet The Team Directors: Malcolm Roach M.I.C.M Email: malcroach@wincham.com Telphone: +44 (0)1260 299 700 Mobile: +44 (0)7713 147 658 Skype: malcroach Office: Located in the UK Mark Roach Email: mark@wincham.com Telphone: +44 (0)1260 299 700 Mo...
+
+
+  📅 07 Jan 2009
+  🔗 https://web.archive.org/web/20090107044208/http://www.winchamiht.com/Alphabetical_Site_Map.html
+  🚩 Keywords: inheritance tax, iht, spain, spanish, uk limited company, saving, qualified
+  📄 Preview: Spanish Inheritance Tax Planning - Alphabetical Site Map &nbsp; Site Map (Alphabetical) To see an ordinary site map click here About Wincham Investments Ltd Wincham Investments Ltd, registered in the UK. Learn more about the company here charles Charles full version Costs &amp; Savings Saving Inheri...
+
+
+  📅 07 Jan 2009
+  🔗 https://web.archive.org/web/20090107053445/http://www.winchamiht.com/charles.html
+  🚩 Keywords: inheritance tax, spain, spanish, uk limited company, uk company, saving, double taxation, qualified, eu
+  📄 Preview: Spanish Inheritance Tax Planning - charles &nbsp; First of all, let us consider the loan made by Jack and Jill to the Company. &nbsp; In this example each of them are treated as own ing half of the loan . &nbsp; The position, year by year is shown in Table 1 (Loan) and Table 2 (Shares) (these should...
+
+
+  📅 31 Jul 2010
+  🔗 https://web.archive.org/web/20100731070951/http://www.winchamiht.com:80/mediaguide.html
+  🚩 Keywords: inheritance tax, spain, spanish, saving
+  📄 Preview: Spanish Inheritance Tax Planning - Technical Guide &nbsp; Spanish Inheritance Tax Planning &nbsp;::&nbsp; Windows Media Player Plug-in Installation Guide &nbsp;:: &nbsp; STEP 1 : Click the "Windows Media Player" link above as shown in picture below to install the Windows Media Player plug-in. STEP 2...
+
+
+  📅 03 Jun 2011
+  🔗 https://web.archive.org/web/20110603182514/http://www.winchamiht.com:80/aplaceinsunlive.html
+  🚩 Keywords: inheritance tax, spain, spanish, uk limited company, saving
+  📄 Preview: Spanish Inheritance Tax Planning - A Place In Sun The Live &nbsp; Wincham Investments runners up in the AIPP Awards 2011 &nbsp;&nbsp;&nbsp; Wincham are proud to confirm that they were runners up in the AIPP Awards 2011 announced in London at âA Place in the Sun Liveâ Earls Court on Friday 11th M...
+
+
+  📅 03 Jun 2011
+  🔗 https://web.archive.org/web/20110603182445/http://www.winchamiht.com:80/tnc.html
+  🚩 Keywords: iht, spain, spanish, avoid, saving, guarantee, qualified
+  📄 Preview: Wincham Group :: Terms and Conditions Wincham Group :: Terms and Conditions &nbsp; Wincham general Terms and Conditions 1. OUR AIM We aim to offer our clients quality advice with a personal service at a fair cost. As a start, we hope it is helpful to you to set out in this statement the basis on whi...
+
+
+  📅 11 May 2012
+  🔗 https://web.archive.org/web/20120511135610/http://www.winchamiht.com:80/expo.html
+  🚩 Keywords: inheritance tax, iht, spain, spanish, uk limited company, avoid, saving, guarantee
+  📄 Preview: Spanish Inheritance Tax Planning - This is Spain Exhibitions &nbsp; Wincham International will be attending This is Spain on the 19th and 20th of May 2012 at the Diamante Hotel â Calpe, Alicante. Book your appointment now to guarantee your chance to talk through your legal and taxation questions w...
+
+
+  📅 15 Sep 2014
+  🔗 https://web.archive.org/web/20140915045253/http://www.winchamiht.com:80/aboutus.asp
+  🚩 Keywords: inheritance tax, spain, spanish, qualified, regulated, fca
+  📄 Preview: About Us :: Wincham Consultants Limited Enquiry Form (fields marked with * are required) * * * * * Submit &nbsp;&nbsp; * = mandatory field Spanish Inheritance Tax Yes No Enquiry Form FAQ &nbsp; |--> &nbsp; Login &nbsp; | &nbsp; Register &nbsp;&nbsp;&nbsp; Menu Home About Who We Are FAQs --> Meet The...
+
+
+  📅 12 Sep 2014
+  🔗 https://web.archive.org/web/20140912233708/http://www.winchamiht.com:80/clientcomments.asp
+  🚩 Keywords: inheritance tax, iht, spain, spanish, canary, uk limited company, uk company, avoid, saving, regulated, fca, eu
+  📄 Preview: Clients Comments :: Wincham Consultants Limited Enquiry Form (fields marked with * are required) * * * * * Submit &nbsp;&nbsp; * = mandatory field Spanish Inheritance Tax Yes No Enquiry Form FAQ &nbsp; |--> &nbsp; Login &nbsp; | &nbsp; Register &nbsp;&nbsp;&nbsp; Menu Home About Who We Are FAQs --> ...
+
+
+  📅 15 Sep 2014
+  🔗 https://web.archive.org/web/20140915045303/http://www.winchamiht.com:80/contactus.asp
+  🚩 Keywords: inheritance tax, spain, spanish, regulated, fca
+  📄 Preview: Contact Us :: Wincham Consultants Limited Enquiry Form (fields marked with * are required) * * * * * Submit &nbsp;&nbsp; * = mandatory field Spanish Inheritance Tax Yes No Enquiry Form FAQ &nbsp; |--> &nbsp; Login &nbsp; | &nbsp; Register &nbsp;&nbsp;&nbsp; Menu Home About Who We Are FAQs --> Meet T...
+
+
+  📅 28 Sep 2015
+  🔗 https://web.archive.org/web/20150928010253/http://www.winchamiht.com:80/?nike-max-air-409.html
+  🚩 Keywords: inheritance tax, iht, spain, spanish, uk limited company, uk company, offshore, avoid, qualified
+  📄 Preview: 2- cheap nike air max tn homme|nike air max 2014 red and black xs|nike free run womens 4.0 v3 herren --> --> Simple, Intelligent, Professional Services Welcome! Wincham Consultants supply owners or prospective buyers of Spanish property legal and Taxation advice to structure the ownership of their S...
+
+
+  📅 17 Aug 2018
+  🔗 https://web.archive.org/web/20180817184531/http://winchamiht.com/cookiepolicy.asp
+  🚩 Keywords: iht, spain, regulated, eu
+  📄 Preview: Cookie Policy :: Wincham Consultants Limited FAQ &nbsp; |--> &nbsp; Login &nbsp; | &nbsp; Register &nbsp;&nbsp;&nbsp; Menu Home About Who We Are FAQs --> Clients Comments Press Releases Problem Solution Our Solution Wincham Process Benefits Fees &amp; costs Our Team Contact Cookie Policy About this ...
+
+
+────────────────────────────────────────────────────────────
+DOMAIN: winchampropertyshop.com
+Total archived snapshots found: 602
+Years active in archive:       2011, 2012, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025
+
+TIMELINE:
+  2011: 1 page(s) audited
+  2012: 2 page(s) audited | FLAGS: uk company, saving, registered office, inheritance tax, spanish, spain, uk limited company
+  2016: 3 page(s) audited | FLAGS: spain, iht, inheritance tax, spanish
+  2017: 3 page(s) audited | FLAGS: eu, regulated, spanish, spain, uk limited company
+  2018: 3 page(s) audited | FLAGS: eu, european, regulated, spanish, spain
+  2019: 3 page(s) audited | FLAGS: spain, regulated, eu, spanish
+  2020: 3 page(s) audited | FLAGS: spain, regulated, eu, spanish
+  2021: 1 page(s) audited | FLAGS: spain, regulated, eu, spanish
+  2022: 2 page(s) audited | FLAGS: spain, regulated, eu, spanish
+  2023: 2 page(s) audited | FLAGS: spain, regulated, eu, spanish
+  2024: 3 page(s) audited | FLAGS: spain, regulated, eu, spanish
+  2025: 1 page(s) audited | FLAGS: spain, regulated, eu, spanish
+
+FORENSICALLY FLAGGED PAGES:
+
+  📅 10 Mar 2012
+  🔗 https://web.archive.org/web/20120310191403/http://www.winchampropertyshop.com:80/asp/ihtcompanylist.asp?l=19
+  🚩 Keywords: inheritance tax, spain, spanish, uk limited company, uk company, saving, registered office
+  📄 Preview: Property Companies 4 Sale Close This Window The properties shown in the following list are all owned by individual UK Limited Companies and are offered for Sale as part of the company. This method of purchase has the advantage of saving the Purchaser the 7% Transfer Tax in Spain. The company can be ...
+
+
+  📅 10 Mar 2012
+  🔗 https://web.archive.org/web/20120310191408/http://www.winchampropertyshop.com:80/asp/letsearch.asp
+  🚩 Keywords: spain, spanish
+  📄 Preview: Wincham Investments - A professional investment property service for UK or Spanish properties &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; UK Property Shop &nbsp; &nbsp; Spanish Property Shop &nbsp; &nbsp; Commercial Property &nbsp; --> &nbsp; Sell Your Property &nbsp; &nbsp; Property Lettings &nbsp...
+
+
+  📅 17 Sep 2016
+  🔗 https://web.archive.org/web/20160917000437/http://www.winchampropertyshop.com:80/asp/spanishproperty.asp?l=14&p=15
+  🚩 Keywords: spanish
+  📄 Preview: Wincham Investments - A professional investment property service for UK or Spanish properties &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; UK Property Shop &nbsp; &nbsp; Spanish Property Shop &nbsp; &nbsp; Commercial Property &nbsp; --> &nbsp; Sell Your Property &nbsp; &nbsp; Property Lettings &nbsp...
+
+
+  📅 17 Sep 2016
+  🔗 https://web.archive.org/web/20160917003226/http://www.winchampropertyshop.com:80/asp/default.asp?p=38
+  🚩 Keywords: spain, spanish
+  📄 Preview: Wincham Investments - A professional investment property service for UK or Spanish properties &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; UK Property Shop &nbsp; &nbsp; Spanish Property Shop &nbsp; &nbsp; Commercial Property &nbsp; --> &nbsp; Sell Your Property &nbsp; &nbsp; Property Lettings &nbsp...
+
+
+  📅 08 Sep 2016
+  🔗 https://web.archive.org/web/20160908092851/http://www.winchampropertyshop.com:80/asp/home.asp
+  🚩 Keywords: inheritance tax, iht, spain, spanish
+  📄 Preview: Wincham Investments - A professional investment property service for UK or Spanish properties &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; UK Property Shop &nbsp; &nbsp; Spanish Property Shop &nbsp; &nbsp; Commercial Property &nbsp; --> &nbsp; Sell Your Property &nbsp; &nbsp; Property Lettings &nbsp...
+
+
+  📅 08 Oct 2017
+  🔗 https://web.archive.org/web/20171008155003/http://www.winchampropertyshop.com:80/aboutus.asp
+  🚩 Keywords: spain, spanish, uk limited company, regulated
+  📄 Preview: About Wincham Property Shop +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layout Standard With Sidebar Com...
+
+
+  📅 08 Oct 2017
+  🔗 https://web.archive.org/web/20171008155125/http://www.winchampropertyshop.com:80/contactus.asp
+  🚩 Keywords: spain, spanish, regulated
+  📄 Preview: Wincham Property Shop :: Contact Us +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layout Standard With Sid...
+
+
+  📅 08 Oct 2017
+  🔗 https://web.archive.org/web/20171008180455/http://www.winchampropertyshop.com:80/detail.asp?itemid=100
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layout Standard Wit...
+
+
+  📅 21 Aug 2018
+  🔗 https://web.archive.org/web/20180821070408/http://winchampropertyshop.com/add-your-own-property.asp
+  🚩 Keywords: spain, spanish, regulated, eu, european
+  📄 Preview: Wincham Property Shop :: Add Your Own Property +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layout Standa...
+
+
+  📅 21 Aug 2018
+  🔗 https://web.archive.org/web/20180821071644/http://winchampropertyshop.com/cookiepolicy.asp
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Cookie Policy +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layout Standard With ...
+
+
+  📅 23 Sep 2018
+  🔗 https://web.archive.org/web/20180923235834/http://www.winchampropertyshop.com:80/detail.asp?i=1b94WK-hAaX38AfC46HQD&o=1&e=i8p9aX34WK-hA8AfWHQC46R&itemid=200
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layout Standard Wit...
+
+
+  📅 26 Mar 2019
+  🔗 https://web.archive.org/web/20190326102419/http://winchampropertyshop.com/detail.asp?i=1b94WK-hAaX38AfC46HQD&o=1&e=i8p9aX34WK-hA8AfWHQC46R&itemid=131
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layout Standard Wit...
+
+
+  📅 02 Oct 2019
+  🔗 https://web.archive.org/web/20191002195405/http://www.winchampropertyshop.com:80/detail.asp?i=1b94WK-hAaX38AfC46HQD&o=1&e=i8p9aX34WK-hA8AfWHQC46R&itemid=464
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layou...
+
+
+  📅 16 Jul 2019
+  🔗 https://web.archive.org/web/20190716225538/http://www.winchampropertyshop.com/detail.asp?itemid=109
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layout Standard Wit...
+
+
+  📅 22 Sep 2020
+  🔗 https://web.archive.org/web/20200922192846/http://winchampropertyshop.com/detail.asp?i=1b94WK-hAaX38AfC46HQD&o=1&e=i8p9aX34WK-hA8AfWHQC46R&itemid=298
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layou...
+
+
+  📅 25 Jan 2020
+  🔗 https://web.archive.org/web/20200125060843/http://www.winchampropertyshop.com:80/detail.asp?i=1b94WK-hAaX38AfC46HQD&o=1&e=i8p9aX34WK-hA8AfWHQC46R&itemid=502
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layou...
+
+
+  📅 20 Sep 2020
+  🔗 https://web.archive.org/web/20200920043305/http://www.winchampropertyshop.com/detail.asp?itemid=162
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layou...
+
+
+  📅 13 May 2021
+  🔗 https://web.archive.org/web/20210513143026/http://winchampropertyshop.com/detail.asp?i=1b94WK-hAaX38AfC46HQD&o=1&e=i8p9aX34WK-hA8AfWHQC46R&itemid=517
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layou...
+
+
+  📅 04 Oct 2022
+  🔗 https://web.archive.org/web/20221004153943/http://winchampropertyshop.com/detail.asp?i=1b94WK-hAaX38AfC46HQD&o=1&e=i8p9aX34WK-hA8AfWHQC46R&itemid=567
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layou...
+
+
+  📅 24 Jun 2022
+  🔗 https://web.archive.org/web/20220624135442/http://www.winchampropertyshop.com/detail.asp?i=1b94WK-hAaX38AfC46HQD&itemid=614&e=i8p9aX34WK-hA8AfWHQC46R
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layou...
+
+
+  📅 22 May 2023
+  🔗 https://web.archive.org/web/20230522041841/http://winchampropertyshop.com/detail.asp?i=1b94WK-hAaX38AfC46HQD&o=1&e=i8p9aX34WK-hA8AfWHQC46R&itemid=618
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layou...
+
+
+  📅 22 May 2023
+  🔗 https://web.archive.org/web/20230522041659/http://www.winchampropertyshop.com/detail.asp?itemid=316
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map Full Width Grid Layou...
+
+
+  📅 05 Nov 2024
+  🔗 https://web.archive.org/web/20241105091854/http://winchampropertyshop.com/detail.asp?i=1b94WK-hAaX38AfC46HQD&o=1&e=i8p9aX34WK-hA8AfWHQC46R&itemid=234
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale UK Property for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map ...
+
+
+  📅 08 Dec 2024
+  🔗 https://web.archive.org/web/20241208235721/https://www.winchampropertyshop.com/detail.asp?itemid=114
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale UK Property for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map ...
+
+
+  📅 15 Apr 2024
+  🔗 https://web.archive.org/web/20240415234445/http://winchampropertyshop.com/listingsuk.asp
+  🚩 Keywords: spain, spanish, regulated
+  📄 Preview: Wincham Property Shop :: UK Property for Sale +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale UK Property for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With...
+
+
+  📅 23 Jan 2025
+  🔗 https://web.archive.org/web/20250123180418/https://www.winchampropertyshop.com/detail.asp?i=1b94WK-hAaX38AfC46HQD&o=1&e=i8p9aX34WK-hA8AfWHQC46R&itemid=731
+  🚩 Keywords: spain, spanish, regulated, eu
+  📄 Preview: Wincham Property Shop :: Property Detail +44(0)1260 299 700 0034 965 830 991 info@wincham.com Home Home 1 Home 2 Home 3 --> About Us For Sale Spanish Property for Sale Spanish Property Company for Sale UK Property for Sale Rent --> Meet The Team Contact Us Listings List Layout With Sidebar With Map ...
+
+
+======================================================================
+WAYBACK MACHINE DIRECT ACCESS URLS FOR LEGAL REVIEW
+======================================================================
+
+
+Domain: wincham.com
+  Calendar view: https://web.archive.org/web/*/wincham.com
+  • 05 Sep 2008: https://web.archive.org/web/20080905122221/http://www.wincham.com/
+  • 16 Sep 2008: https://web.archive.org/web/20080916012834/http://www.wincham.com:80/asp/services2.asp
+  • 26 Sep 2008: https://web.archive.org/web/20080926050528/http://www.wincham.com:80/asp/services3.asp
+  • 08 Nov 2009: https://web.archive.org/web/20091108121518/http://www.wincham.com:80/asp/ihtcompanydetail.asp?l=19&p=276&o=1
+  • 12 Oct 2009: https://web.archive.org/web/20091012114346/http://www.wincham.com:80/asp/ihtcompanylist.asp?l=19
+
+Domain: winchamaccountants.com
+  Calendar view: https://web.archive.org/web/*/winchamaccountants.com
+  • 05 Aug 2018: https://web.archive.org/web/20180805143520/http://winchamaccountants.com/
+  • 20 Oct 2021: https://web.archive.org/web/20211020033828/https://www.winchamaccountants.com/services
+  • 20 Oct 2021: https://web.archive.org/web/20211020030839/https://www.winchamaccountants.com/taxation
+  • 20 Oct 2021: https://web.archive.org/web/20211020025203/https://www.winchamaccountants.com/company-secretarial
+  • 25 May 2024: https://web.archive.org/web/20240525232229/https://winchamaccountants.com/meettheteam
+
+Domain: winchamukcompany.com
+  Calendar view: https://web.archive.org/web/*/winchamukcompany.com
+  • 27 Apr 2016: https://web.archive.org/web/20160427090723/http://www.winchamukcompany.com:80/
+  • 13 Dec 2017: https://web.archive.org/web/20171213110723/http://www.winchamukcompany.com:80/service.asp
+  • 14 Dec 2017: https://web.archive.org/web/20171214113420/http://www.winchamukcompany.com:80/aboutus.asp
+  • 14 Dec 2017: https://web.archive.org/web/20171214054955/http://www.winchamukcompany.com:80/contactus.asp
+  • 28 Aug 2018: https://web.archive.org/web/20180828083843/http://winchamukcompany.com/cookiepolicy.asp
+
+Domain: winchamiht.com
+  Calendar view: https://web.archive.org/web/*/winchamiht.com
+  • 30 Jan 2008: https://web.archive.org/web/20080130001437/http://www.winchamiht.com:80/
+  • 08 Mar 2008: https://web.archive.org/web/20080308144214/http://www.winchamiht.com:80/Spain_Legal.html
+  • 08 Mar 2008: https://web.archive.org/web/20080308144209/http://www.winchamiht.com:80/About_Wincham_Investments_Ltd.html
+  • 12 Jul 2009: https://web.archive.org/web/20090712034846/http://www.winchamiht.com:80/companystruct.html
+  • 07 Jan 2009: https://web.archive.org/web/20090107044208/http://www.winchamiht.com/Alphabetical_Site_Map.html
+
+Domain: winchampropertyshop.com
+  Calendar view: https://web.archive.org/web/*/winchampropertyshop.com
+  • 08 Feb 2011: https://web.archive.org/web/20110208042901/http://winchampropertyshop.com/
+  • 10 Mar 2012: https://web.archive.org/web/20120310191403/http://www.winchampropertyshop.com:80/asp/ihtcompanylist.asp?l=19
+  • 10 Mar 2012: https://web.archive.org/web/20120310191408/http://www.winchampropertyshop.com:80/asp/letsearch.asp
+  • 17 Sep 2016: https://web.archive.org/web/20160917000437/http://www.winchampropertyshop.com:80/asp/spanishproperty.asp?l=14&p=15
+  • 17 Sep 2016: https://web.archive.org/web/20160917003226/http://www.winchampropertyshop.com:80/asp/default.asp?p=38

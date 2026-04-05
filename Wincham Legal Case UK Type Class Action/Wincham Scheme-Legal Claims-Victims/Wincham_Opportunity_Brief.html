@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wincham GLO — Commercial Opportunity Brief</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+
+    :root {
+      --navy:   #0d1b2a;
+      --navy2:  #1b2e45;
+      --gold:   #c9a84c;
+      --gold2:  #e8c96a;
+      --silver: #8fa3b8;
+      --light:  #f4f7fb;
+      --white:  #ffffff;
+      --green:  #2e7d5e;
+      --green2: #3aa87e;
+      --red:    #b84040;
+      --amber:  #c97d20;
+      --text:   #1a2535;
+      --muted:  #5a6e83;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 55%, #1e3a5f 100%);
+      color: var(--white);
+      padding: 56px 48px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 420px; height: 420px; border-radius: 50%;
+      background: rgba(201,168,76,.09); pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -140px; left: -80px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: rgba(201,168,76,.05); pointer-events: none;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,.18); border: 1px solid rgba(201,168,76,.35);
+      color: var(--gold2); font-size: 11px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 20px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 4vw, 42px); font-weight: 800; line-height: 1.15;
+      margin-bottom: 14px; max-width: 780px;
+    }
+    .hero h1 span { color: var(--gold2); }
+    .hero p {
+      font-size: 16px; color: rgba(255,255,255,.70);
+      max-width: 660px; margin-bottom: 28px;
+    }
+    .hero-stats {
+      display: flex; gap: 32px; flex-wrap: wrap;
+    }
+    .hstat {
+      display: flex; flex-direction: column;
+    }
+    .hstat .val { font-size: 26px; font-weight: 800; color: var(--gold); line-height: 1.1; }
+    .hstat .lbl { font-size: 11px; color: rgba(255,255,255,.50); letter-spacing: .06em; margin-top: 2px; }
+
+    /* ── CONTAINER ───────────────────────────────── */
+    .container { max-width: 980px; margin: 0 auto; padding: 0 32px; }
+
+    /* ── SECTION ─────────────────────────────────── */
+    .section { padding: 52px 0 8px; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+    }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 2.8vw, 28px); font-weight: 700;
+      color: var(--navy); margin-bottom: 6px;
+    }
+    .section .lead {
+      font-size: 15px; color: var(--muted); max-width: 700px; margin-bottom: 28px;
+    }
+
+    /* ── OPPORTUNITY GRID ────────────────────────── */
+    .opp-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-bottom: 32px;
+    }
+    .opp-card {
+      background: var(--white); border-radius: 14px;
+      padding: 24px 20px; border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05); text-align: center;
+    }
+    .opp-card .opp-icon { font-size: 28px; margin-bottom: 10px; }
+    .opp-card .opp-val {
+      font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 4px;
+    }
+    .opp-card .opp-val.gold { color: var(--gold); }
+    .opp-card .opp-lbl { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+    .opp-card .opp-sub { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+    /* ── CLAIM BASIS ─────────────────────────────── */
+    .claim-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px;
+    }
+    .claim-card {
+      background: var(--white); border-radius: 14px; padding: 22px 24px;
+      border: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(0,0,0,.04);
+    }
+    .claim-card .claim-head {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+    }
+    .claim-card .claim-head .ico {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(13,27,42,.07);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .claim-card .claim-head h3 { font-size: 15px; font-weight: 700; color: var(--navy); }
+    .claim-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .claim-card .statute {
+      margin-top: 10px; padding: 7px 12px;
+      background: #f0f0fa; border-left: 3px solid var(--navy);
+      border-radius: 0 6px 6px 0; font-size: 11.5px;
+      color: var(--navy); font-weight: 600;
+    }
+
+    /* ── PHASE BOXES ─────────────────────────────── */
+    .phase-wrap { display: flex; flex-direction: column; gap: 20px; margin-bottom: 32px; }
+    .phase-box {
+      background: var(--white); border-radius: 16px;
+      border: 1px solid #e2e8f0; padding: 28px 32px;
+      box-shadow: 0 3px 16px rgba(0,0,0,.05); position: relative;
+      overflow: hidden;
+    }
+    .phase-box.phase-1 { border-left: 4px solid var(--gold); }
+    .phase-box.phase-2 { border-left: 4px solid var(--green2); }
+    .phase-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 10px; font-weight: 800; letter-spacing: .12em;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .phase-1 .phase-pill { background: rgba(201,168,76,.12); color: var(--gold); }
+    .phase-2 .phase-pill { background: rgba(58,168,126,.12); color: var(--green); }
+    .phase-box h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .phase-box .phase-sub { font-size: 13.5px; color: var(--muted); margin-bottom: 18px; line-height: 1.6; }
+    .phase-steps { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .phase-steps li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13.5px; color: var(--text);
+    }
+    .phase-steps li .step-num {
+      flex-shrink: 0; width: 24px; height: 24px;
+      border-radius: 6px; font-size: 11px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; margin-top: 1px;
+    }
+    .phase-1 .phase-steps li .step-num { background: rgba(201,168,76,.15); color: var(--gold); }
+    .phase-2 .phase-steps li .step-num { background: rgba(58,168,126,.15); color: var(--green); }
+    .phase-rev {
+      margin-top: 18px; padding: 14px 18px;
+      border-radius: 10px; display: flex; align-items: center; gap: 14px;
+    }
+    .phase-1 .phase-rev { background: linear-gradient(135deg, #fffbf0, #fff9e6); border: 1px solid rgba(201,168,76,.3); }
+    .phase-2 .phase-rev { background: linear-gradient(135deg, #f0fdf8, #f7fff9); border: 1px solid rgba(58,168,126,.3); }
+    .phase-rev .rev-fig { font-size: 22px; font-weight: 800; }
+    .phase-1 .phase-rev .rev-fig { color: var(--gold); }
+    .phase-2 .phase-rev .rev-fig { color: var(--green); }
+    .phase-rev .rev-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+    /* ── DATA / GDPR BOX ─────────────────────────── */
+    .gdpr-box {
+      background: var(--white); border-radius: 14px; padding: 26px 28px;
+      border: 1px solid #e2e8f0; box-shadow: 0 2px 12px rgba(0,0,0,.05);
+      margin-bottom: 32px;
+    }
+    .gdpr-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .gdpr-header .gdpr-icon { font-size: 26px; }
+    .gdpr-header h3 { font-size: 17px; font-weight: 700; color: var(--navy); }
+    .gdpr-header .tag {
+      display: inline-block; padding: 3px 10px; border-radius: 20px;
+      font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      background: #d1fae5; color: #065f46; margin-left: 8px;
+    }
+    .gdpr-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .gdpr-item { padding: 14px 16px; border-radius: 10px; background: #f8fafc; border: 1px solid #e8edf2; }
+    .gdpr-item .gi-head { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+    .gdpr-item p { font-size: 12.5px; color: var(--text); line-height: 1.5; }
+
+    /* ── NEXT STEPS TABLE ────────────────────────── */
+    .data-table {
+      width: 100%; border-collapse: collapse; border-radius: 12px;
+      overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,.06);
+      margin-bottom: 36px; font-size: 13.5px;
+    }
+    .data-table thead { background: var(--navy); color: var(--white); }
+    .data-table thead th {
+      padding: 13px 18px; font-size: 11px; font-weight: 700;
+      letter-spacing: .10em; text-transform: uppercase; text-align: left;
+    }
+    .data-table tbody tr:nth-child(even) { background: #f8fafc; }
+    .data-table tbody tr:nth-child(odd) { background: var(--white); }
+    .data-table tbody td {
+      padding: 12px 18px; border-bottom: 1px solid #e8edf2; vertical-align: top;
+    }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: .06em; }
+    .tag-green  { background: #d1fae5; color: #065f46; }
+    .tag-amber  { background: #fef3c7; color: #92400e; }
+    .tag-navy   { background: #e8f0fe; color: var(--navy); }
+
+    /* ── ALERT ───────────────────────────────────── */
+    .alert {
+      border-radius: 12px; padding: 16px 20px;
+      margin-bottom: 20px; display: flex; gap: 14px; align-items: flex-start;
+    }
+    .alert-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .alert-text { font-size: 13.5px; line-height: 1.6; }
+    .alert-text strong { display: block; font-size: 14px; margin-bottom: 3px; }
+    .alert.info    { background: #eff6ff; border: 1px solid #93c5fd; }
+    .alert.success { background: #f0fdf5; border: 1px solid #86efac; }
+    .alert.warning { background: #fff8e6; border: 1px solid #f5d16a; }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    .footer {
+      background: var(--navy); color: rgba(255,255,255,.45);
+      text-align: center; padding: 30px 24px; font-size: 12px; margin-top: 60px;
+    }
+    .footer strong { color: rgba(255,255,255,.72); }
+
+    hr.fancy {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+      margin: 48px 0 0;
+    }
+
+    @media (max-width: 680px) {
+      .hero { padding: 36px 20px 32px; }
+      .opp-grid, .claim-grid, .gdpr-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 20px; }
+    }
+    @media print {
+      body { background: white; }
+      .hero, .phase-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<div class="hero">
+  <div class="container">
+    <div class="badge">⚖ Commercial Opportunity Brief — Confidential</div>
+    <h1>The <span>Wincham Scheme</span> GLO:<br>A Scalable UK Claims Business</h1>
+    <p>How Dean Harrison and Ellis Harrison monetise the Wincham victim database — licensing data and marketing services to an authorised CMC in the short term, then building their own FCA-authorised claims management business for the long-term upside.</p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="val">399+</span><span class="lbl">Identified Victims</span></div>
+      <div class="hstat"><span class="val">£26K+</span><span class="lbl">Avg. Loss Per Victim</span></div>
+      <div class="hstat"><span class="val">£10M+</span><span class="lbl">Estimated Total Claims Pool</span></div>
+      <div class="hstat"><span class="val">2</span><span class="lbl">Commercial Phases</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ═══ SECTION 1: THE OPPORTUNITY ═══ -->
+  <div class="section">
+    <div class="section-label">01 — The Opportunity</div>
+    <h2>Why the Wincham GLO Is a Serious Commercial Asset</h2>
+    <p class="lead">Wincham International Limited operated an offshore company wrapper scheme sold to UK non-resident property vendors in Spain. The scheme failed — victims suffered foreseeable, quantifiable tax losses caused by professional negligence, misrepresentation, and the unauthorised practice of legal advice.</p>
+  </div>
+
+  <div class="opp-grid">
+    <div class="opp-card">
+      <div class="opp-icon">🏗️</div>
+      <div class="opp-val gold">399+</div>
+      <div class="opp-lbl">Victim Companies</div>
+      <div class="opp-sub">Identified from Companies House, AEAT filings &amp; Spanish land registry — all public record, lawfully compiled.</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-icon">⚖️</div>
+      <div class="opp-val">GLO</div>
+      <div class="opp-lbl">Group Litigation Order</div>
+      <div class="opp-sub">The UK equivalent of a US class action (CPR Part 19). One judge, shared common issues, economy of scale for all claimants.</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-icon">💷</div>
+      <div class="opp-val gold">£10M+</div>
+      <div class="opp-lbl">Claims Pool</div>
+      <div class="opp-sub">At £26K average loss × 399 victims. CMC fees typically 20–40% of recovery = £2M–£4M gross revenue opportunity.</div>
+    </div>
+  </div>
+
+  <!-- ═══ CLAIM BASIS ═══ -->
+  <div class="section">
+    <div class="section-label">02 — Legal Basis</div>
+    <h2>Why Victims Have Good Cases</h2>
+    <p class="lead">Four independently strong heads of claim attach to every victim in the database. Any authorised CMC picking this up has a ready-made pre-packaged litigation case.</p>
+  </div>
+
+  <div class="claim-grid">
+    <div class="claim-card">
+      <div class="claim-head">
+        <div class="ico">📋</div>
+        <h3>Professional Negligence</h3>
+      </div>
+      <p>Wincham owed a duty of care when advising on tax structuring. They failed to advise on the catastrophic consequences of Brexit on their offshore wrapper scheme. Foreseeable loss, breached duty, direct causation.</p>
+      <div class="statute">Caparo Industries plc v Dickman [1990] — 3-stage duty test satisfied</div>
+    </div>
+    <div class="claim-card">
+      <div class="claim-head">
+        <div class="ico">🚫</div>
+        <h3>Unauthorised Legal Practice</h3>
+      </div>
+      <p>Mark Roach and Wincham International held themselves out as tax and legal advisers. They were not qualified solicitors, barristers, or registered tax practitioners — making all paid advice potentially unlawful and void.</p>
+      <div class="statute">Legal Services Act 2007 · ICAEW Bye-Laws · Solicitors Act 1974</div>
+    </div>
+    <div class="claim-card">
+      <div class="claim-head">
+        <div class="ico">💬</div>
+        <h3>Misrepresentation</h3>
+      </div>
+      <p>Wincham marketed the scheme as a lawful, compliant tax-saving structure. This was not true. Active misrepresentation of the scheme's legality and sustainability gives victims a statutory rescission and damages claim.</p>
+      <div class="statute">Misrepresentation Act 1967 s.2(1) — negligent misstatement</div>
+    </div>
+    <div class="claim-card">
+      <div class="claim-head">
+        <div class="ico">🔐</div>
+        <h3>Limitation Window — Still Open</h3>
+      </div>
+      <p>The 6-year limitation clock (Limitation Act 1980) runs from the date of knowledge — not when the scheme was set up. For many victims, HMRC penalty letters and MVL forced costs only crystallised post-2020. The window is open now.</p>
+      <div class="statute">Limitation Act 1980 s.14A — latent damage, 3 years from knowledge</div>
+    </div>
+  </div>
+
+  <hr class="fancy" />
+
+  <!-- ═══ SECTION 3: COMMERCIAL PHASES ═══ -->
+  <div class="section">
+    <div class="section-label">03 — Commercial Strategy</div>
+    <h2>Two-Phase Revenue Model</h2>
+    <p class="lead">Phase 1 generates immediate cash. Phase 2 captures the full long-term upside. Both phases leverage the same irreplaceable asset: the Wincham victim database.</p>
+  </div>
+
+  <div class="phase-wrap">
+
+    <!-- PHASE 1 -->
+    <div class="phase-box phase-1">
+      <div class="phase-pill">⚡ Phase 1 — Immediate (Months 1–6)</div>
+      <h3>Licence the Data · Get Hired as the Marketing Firm</h3>
+      <p class="phase-sub">Approach one established FCA-authorised Claims Management Company (target: Manchester-based specialist). Offer them two things simultaneously: a non-exclusive Data Licence for the victim database, and a Marketing Services Agreement to run all victim outreach on their behalf. This is commercially clean, legally compliant, and generates income within weeks — not years.</p>
+      <ul class="phase-steps">
+        <li><span class="step-num">1</span><strong>Data Licence Agreement:</strong> Dean licenses the Wincham victim database to the CMC for a one-off upfront fee (£15K–£50K depending on negotiation). Dean retains full IP ownership. The licence is non-exclusive and time-limited. Lawful basis: database compiled from Companies House public records (lawfully available) — no personal data processing issue arises at the licence stage.</li>
+        <li><span class="step-num">2</span><strong>Marketing Services Contract:</strong> Simultaneously, Ellis's UK company enters a Marketing Services Agreement with the same CMC. Dean subcontracts all the actual marketing work under that agreement, invoiced from the US. The CMC gets outreach capability. We get 65–70% of all revenue generated from Dean's work, zero UK tax exposure.</li>
+        <li><span class="step-num">3</span><strong>Ellis's UK Company as Appointed Representative (AR):</strong> Ellis's UK Ltd registers as an FCA Appointed Representative of the CMC (the Principal Firm). This is a standard arrangement — the principal holds the FCA authorisation, the AR operates under their regulatory umbrella. No FCA direct authorisation required at this stage.</li>
+        <li><span class="step-num">4</span><strong>Revenue Share on Claims:</strong> Negotiate a revenue split on any Wincham claims that convert — the CMC takes the regulated case management fee (20–35% of recovery), Ellis's AR company takes a 20–25% cut of that CMC revenue, and Dean takes 65–70% of Ellis's cut via the marketing subcontract.</li>
+      </ul>
+      <div class="phase-rev">
+        <div class="rev-fig">£10K–£50K +</div>
+        <div class="rev-desc"><strong>Data Licence upfront (direct to Dean, US tax only)</strong><br>Plus ongoing marketing subcontract revenue on every claim that converts — estimated £300K–£500K over the life of the GLO.</div>
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="phase-box phase-2">
+      <div class="phase-pill">🚀 Phase 2 — Medium Term (Months 6–18)</div>
+      <h3>Get FCA Authorised — Run the CMC Ourselves</h3>
+      <p class="phase-sub">The long-term value capture is to cut out the principal CMC entirely. With Ellis as FCA-authorised CMC director and Dean as the commercial and marketing engine, the full 35–40% claims management fee flows to us — not shared with a third-party firm. The FCA authorisation process for a CMC is demanding but achievable in 6–12 months with the right compliance infrastructure.</p>
+      <ul class="phase-steps">
+        <li><span class="step-num">1</span><strong>Set Up Ellis's UK CMC Ltd:</strong> Incorporate a dedicated CMC vehicle (separate from any AR entity). Ellis is sole director and holds the Senior Management Function (SMF). Written compliance policies, client money account, and Professional Indemnity Insurance are required before FCA application.</li>
+        <li><span class="step-num">2</span><strong>Submit FCA Direct Authorisation Application:</strong> Apply under FSMA 2000 s.19 for permission to carry out the regulated activity of managing claims. The FCA's CMCOB sourcebook governs all conduct obligations. Realistic timeline: 6–12 months from submission to approval.</li>
+        <li><span class="step-num">3</span><strong>Panel Solicitors Agreement:</strong> Appoint a panel of qualified litigation solicitors (DBD model — no win, no fee). The CMC manages the client acquisition, claim preparation and litigation co-ordination. The panel solicitors manage court proceedings. CMC fees come from their success fee.</li>
+        <li><span class="step-num">4</span><strong>GLO Application:</strong> Co-ordinate with panel solicitors to apply to the Business and Property Courts for a Group Litigation Order. The Wincham database becomes the claimant register. Once the GLO is granted, all claims are managed collectively — massive economy of scale.</li>
+      </ul>
+      <div class="phase-rev">
+        <div class="rev-fig">£2M–£4M</div>
+        <div class="rev-desc"><strong>Estimated gross CMC revenue over full GLO lifecycle</strong><br>At 20–35% of £10M+ claims pool. Dean captures 65–70% of net distributable income via marketing subcontract. Zero UK tax exposure on Dean's share under US-UK Tax Treaty Art. 7.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="fancy" />
+
+  <!-- ═══ SECTION 4: UK GDPR / DATA ═══ -->
+  <div class="section">
+    <div class="section-label">04 — UK GDPR &amp; Data Compliance</div>
+    <h2>The Data Question — Why It's Simpler Than It Looks</h2>
+    <p class="lead">The Wincham database is built from publicly available Companies House records and AEAT company data. This is not a secret — it's the same public record any solicitor or journalist could access. UK GDPR does not prohibit using public records commercially; it simply requires a documented lawful basis. We have three.</p>
+  </div>
+
+  <div class="gdpr-box">
+    <div class="gdpr-header">
+      <span class="gdpr-icon">🛡️</span>
+      <h3>Three Valid UK GDPR Lawful Bases Apply <span class="tag">No Loophole Required</span></h3>
+    </div>
+    <div class="gdpr-grid">
+      <div class="gdpr-item">
+        <div class="gi-head">GDPR Art. 6(1)(f) — Legitimate Interests</div>
+        <p>Connecting victims of a fraudulent scheme to legal redress is a legitimate interest that overrides individual privacy rights. The ICO accepts this basis for legal claims databases. A Legitimate Interests Assessment (LIA) is documented and kept on file.</p>
+      </div>
+      <div class="gdpr-item">
+        <div class="gi-head">GDPR Art. 6(1)(b) — Contractual Necessity</div>
+        <p>Once a victim signs a CMC retainer agreement, all data processing under that contract has a clear contractual basis. The licence agreement triggers this basis for downstream processing by the CMC.</p>
+      </div>
+      <div class="gdpr-item">
+        <div class="gi-head">Publicly Available Data — Reduced Obligations</div>
+        <p>UK GDPR Recital 47 &amp; ICO guidance confirm that personal data already made public — including Companies House director records — attracts reduced obligations. No special categories, no sensitive data involved in the Wincham database.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert info">
+    <span class="alert-icon">📌</span>
+    <div class="alert-text">
+      <strong>The Standard Contractual Clauses (SCCs) Requirement</strong>
+      When the database is transferred from Ellis's UK Ltd to Dean's US entity for marketing work, Standard Contractual Clauses (SCCs) must be executed. This is a standard two-page document — not a barrier. Every UK company doing business with a US service provider completes these. The CMC's data protection solicitor will draft it as routine.
+    </div>
+  </div>
+
+  <hr class="fancy" />
+
+  <!-- ═══ SECTION 5: NEXT STEPS ═══ -->
+  <div class="section">
+    <div class="section-label">05 — Immediate Actions</div>
+    <h2>What Needs to Happen Now</h2>
+    <p class="lead">Sequenced action plan to move from forensic database to commercial revenue.</p>
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Action</th>
+        <th>Owner</th>
+        <th>Timeline</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1</strong></td>
+        <td><strong>Finalise the Wincham victim database</strong><br><small>Complete victim sheets, verify company data, calculate quantum per victim</small></td>
+        <td>Dean (with AI agent)</td>
+        <td>Week 1</td>
+        <td><span class="tag tag-amber">In Progress</span></td>
+      </tr>
+      <tr>
+        <td><strong>2</strong></td>
+        <td><strong>Identify and shortlist 3 target CMCs</strong><br><small>FCA-authorised specialist CMCs — financial claims, professional negligence, or investment mis-selling focus</small></td>
+        <td>Dean / Ellis</td>
+        <td>Week 1–2</td>
+        <td><span class="tag tag-amber">Pending</span></td>
+      </tr>
+      <tr>
+        <td><strong>3</strong></td>
+        <td><strong>Prepare the CMC pitch deck</strong><br><small>1-page investment brief + victim database summary + quantum model. Deliver the opportunity, not the data.</small></td>
+        <td>Dean</td>
+        <td>Week 2</td>
+        <td><span class="tag tag-amber">Pending</span></td>
+      </tr>
+      <tr>
+        <td><strong>4</strong></td>
+        <td><strong>Incorporate Ellis's UK CMC vehicle</strong><br><small>Separate Ltd Co from any existing entity. Ellis as director. Constitution reviewed.</small></td>
+        <td>Ellis</td>
+        <td>Week 2–3</td>
+        <td><span class="tag tag-amber">Pending</span></td>
+      </tr>
+      <tr>
+        <td><strong>5</strong></td>
+        <td><strong>Negotiate and execute Data Licence Agreement</strong><br><small>Non-exclusive, time-limited licence. IP remains with Dean. Upfront fee + ongoing royalty clause.</small></td>
+        <td>Dean (with solicitor)</td>
+        <td>Week 3–6</td>
+        <td><span class="tag tag-amber">Pending</span></td>
+      </tr>
+      <tr>
+        <td><strong>6</strong></td>
+        <td><strong>Execute Marketing Services Agreement</strong><br><small>Ellis's UK Ltd → panel CMC. Dean's US entity subcontracted. Revenue split formalised.</small></td>
+        <td>Ellis / Dean</td>
+        <td>Week 3–6</td>
+        <td><span class="tag tag-amber">Pending</span></td>
+      </tr>
+      <tr>
+        <td><strong>7</strong></td>
+        <td><strong>Ellis registers as FCA Appointed Representative</strong><br><small>Of the principal CMC. Standard AR agreement. Ellis holds SMF role.</small></td>
+        <td>Ellis (with compliance adviser)</td>
+        <td>Month 2–3</td>
+        <td><span class="tag tag-amber">Pending</span></td>
+      </tr>
+      <tr>
+        <td><strong>8</strong></td>
+        <td><strong>Begin FCA Direct Authorisation application</strong><br><small>Phase 2 trigger. Full CMC authorisation under FSMA 2000. Deploy compliance consultant.</small></td>
+        <td>Ellis (lead) / Dean (commercial)</td>
+        <td>Month 4–6</td>
+        <td><span class="tag tag-navy">Phase 2</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert success">
+    <span class="alert-icon">💡</span>
+    <div class="alert-text">
+      <strong>The Commercial Logic in One Sentence</strong>
+      We hold the only comprehensive, forensically verified Wincham victim database in existence — that is an irreplaceable first-mover asset worth millions to the right CMC. Phase 1 converts that asset to immediate cash and a marketing contract. Phase 2 captures the full upside by becoming the authorised CMC ourselves.
+    </div>
+  </div>
+
+  <div class="alert warning">
+    <span class="alert-icon">⚠</span>
+    <div class="alert-text">
+      <strong>Critical: Do Not Conduct Regulated Claims Management Activity Without Authorisation</strong>
+      Until Ellis's entity is either an FCA Appointed Representative (Phase 1) or directly authorised (Phase 2), neither Dean nor Ellis may manage claims on behalf of victims, charge fee arrangements, or solicit claimants directly. Breach of s.19 FSMA 2000 is a criminal offence. The marketing services contract must be carefully drafted to keep Dean on the correct side of this line. All materials must be reviewed and approved by the AR's principal before publication.
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <strong>COMMERCIALLY CONFIDENTIAL — Harrison / Ellis Framework</strong><br>
+  Prepared April 2026 · Based on forensic research by Dean Harrison · Regulatory basis: FSMA 2000 · CMCOB · UK GDPR · CPR Pt 19<br>
+  This document is a commercial planning brief and does not constitute legal advice.
+</div>
+
+</body>
+</html>

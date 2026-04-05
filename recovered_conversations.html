@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recovered Agent Conversations — Lanzarote Repatriation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:        #0a0c10;
+      --surface:   #101318;
+      --card:      #13171e;
+      --border:    #1e2430;
+      --accent1:   #c9a84c;   /* gold */
+      --accent2:   #4c8fc9;   /* cobalt */
+      --accent3:   #c94c4c;   /* crimson – legal/alert */
+      --text-hi:   #e8e4d9;
+      --text-mid:  #9a9385;
+      --text-lo:   #4a4640;
+      --glow:      rgba(201,168,76,.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-hi);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── BACKGROUND TEXTURE ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 10%, rgba(201,168,76,.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 90%, rgba(76,143,201,.05) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 3.5rem 2rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .75rem;
+      text-align: center;
+    }
+
+    .badge {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent1);
+      background: rgba(201,168,76,.1);
+      border: 1px solid rgba(201,168,76,.25);
+      padding: .3rem .8rem;
+      border-radius: 2px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.2;
+    }
+
+    header p {
+      font-size: .88rem;
+      color: var(--text-mid);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: .25rem;
+    }
+
+    .meta-chip {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      letter-spacing: .1em;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .meta-chip .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent1);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .4; transform: scale(.7); }
+    }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .63rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-lo);
+      margin-bottom: 1.25rem;
+      padding-left: 1px;
+    }
+
+    /* ── CARD ── */
+    .convo-card {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem 1.6rem;
+      margin-bottom: 1px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem 1.4rem;
+      align-items: start;
+      transition: border-color .2s, background .2s;
+      cursor: default;
+    }
+
+    .convo-card:first-of-type {
+      border-color: rgba(201,168,76,.4);
+      background: #161b22;
+      box-shadow: 0 0 0 1px rgba(201,168,76,.08), inset 0 0 60px rgba(201,168,76,.03);
+    }
+
+    .convo-card:first-of-type::before {
+      content: 'MOST RECENT';
+      position: absolute;
+      top: -1px;
+      right: 1.6rem;
+      font-family: 'DM Mono', monospace;
+      font-size: .55rem;
+      letter-spacing: .18em;
+      background: var(--accent1);
+      color: #0a0c10;
+      padding: .25rem .6rem;
+      border-radius: 0 0 3px 3px;
+      font-weight: 500;
+    }
+
+    .convo-card:hover {
+      border-color: rgba(201,168,76,.3);
+      background: #14181f;
+    }
+
+    /* number column */
+    .convo-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--text-lo);
+      line-height: 1;
+      min-width: 2.2rem;
+      text-align: right;
+      padding-top: .1rem;
+    }
+
+    .convo-card:first-of-type .convo-num {
+      color: var(--accent1);
+    }
+
+    /* body column */
+    .convo-body { display: flex; flex-direction: column; gap: .45rem; }
+
+    .convo-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-hi);
+      line-height: 1.3;
+    }
+
+    .convo-id {
+      font-family: 'DM Mono', monospace;
+      font-size: .6rem;
+      color: var(--text-lo);
+      letter-spacing: .05em;
+    }
+
+    .convo-summary {
+      font-size: .82rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-top: .2rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .35rem;
+    }
+
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: .58rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .2rem .55rem;
+      border-radius: 2px;
+      border: 1px solid;
+    }
+
+    .tag-legal  { color: var(--accent3); border-color: rgba(201,76,76,.25); background: rgba(201,76,76,.06); }
+    .tag-tax    { color: var(--accent1); border-color: rgba(201,168,76,.25); background: rgba(201,168,76,.06); }
+    .tag-corp   { color: var(--accent2); border-color: rgba(76,143,201,.25); background: rgba(76,143,201,.06); }
+    .tag-fx     { color: #6ec9a8;        border-color: rgba(110,201,168,.25); background: rgba(110,201,168,.06); }
+
+    /* date column */
+    .convo-dates {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+      min-width: 130px;
+    }
+
+    .date-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .58rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-lo);
+    }
+
+    .date-val {
+      font-family: 'DM Mono', monospace;
+      font-size: .72rem;
+      color: var(--text-mid);
+    }
+
+    .date-block { display: flex; flex-direction: column; gap: .1rem; }
+
+    /* separator */
+    .separator {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: .75rem 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 1.5rem 2rem 2.5rem;
+      border-top: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+      font-size: .62rem;
+      letter-spacing: .12em;
+      color: var(--text-lo);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .convo-card {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+      }
+      .convo-dates {
+        grid-column: 2;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="badge">Antigravity · Agent Manager · Recovery</div>
+  <h1>Recovered Conversations</h1>
+  <p>UK Lanzarote Repatriation workspace — last 10 agent conversations, restored in full. Most recent listed first.</p>
+  <div class="meta-row">
+    <span class="meta-chip"><span class="dot"></span> 10 conversations recovered</span>
+    <span class="meta-chip">Workspace: dean349/lanzarote-repatriation-explainer</span>
+    <span class="meta-chip">Recovered: 1 Apr 2026, 22:16 EDT</span>
+  </div>
+</header>
+
+<main>
+  <div class="section-label">Conversations — newest → oldest</div>
+
+  <!-- 1 -->
+  <article class="convo-card" id="conv-01">
+    <div class="convo-num">1</div>
+    <div class="convo-body">
+      <div class="convo-title">Recovering Lost Agent Conversations</div>
+      <div class="convo-id">ID: 9dce9721-5048-4310-aaca-3e686c92ac20</div>
+      <div class="convo-summary">
+        Consolidating Lanzarote Repatriation Strategy — finalising a comprehensive, actionable repatriation plan by integrating forensic audit findings, legal claim documentation, and tax compliance requirements into a unified master briefing. Focus on verifying bank account details, ingesting historical corporate records to resolve DLA discrepancies, and ensuring all communication templates for Philip Harrison are legally robust before execution.
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-corp">DLA</span>
+        <span class="tag tag-corp">MVL</span>
+        <span class="tag tag-tax">CGT</span>
+        <span class="tag tag-legal">Wincham</span>
+      </div>
+    </div>
+    <div class="convo-dates">
+      <div class="date-block">
+        <div class="date-label">Created</div>
+        <div class="date-val">2026-04-02 00:48</div>
+      </div>
+      <div class="separator"></div>
+      <div class="date-block">
+        <div class="date-label">Last active</div>
+        <div class="date-val">2026-04-02 01:56</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2 -->
+  <article class="convo-card" id="conv-02">
+    <div class="convo-num">2</div>
+    <div class="convo-body">
+      <div class="convo-title">Documenting Wincham Transaction Error</div>
+      <div class="convo-id">ID: ac930708-e4b3-4384-8ff1-6ab7985909bb</div>
+      <div class="convo-summary">
+        Finalising the formal email for Philip Harrison to send to himself as a contemporaneous record of the financial error where Wincham incorrectly directed corporate property sale proceeds into a personal bank account. Ensures the discrepancy is documented for future legal and regulatory purposes, providing a final ready-to-send statement capturing all necessary details.
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-legal">Wincham</span>
+        <span class="tag tag-legal">Contemporaneous Record</span>
+        <span class="tag tag-corp">DLA</span>
+      </div>
+    </div>
+    <div class="convo-dates">
+      <div class="date-block">
+        <div class="date-label">Created</div>
+        <div class="date-val">2026-04-02 00:53</div>
+      </div>
+      <div class="separator"></div>
+      <div class="date-block">
+        <div class="date-label">Last active</div>
+        <div class="date-val">2026-04-02 01:04</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 3 -->
+  <article class="convo-card" id="conv-03">
+    <div class="convo-num">3</div>
+    <div class="convo-body">
+      <div class="convo-title">Verifying Los Romeros Ownership</div>
+      <div class="convo-id">ID: 8c0bd128-fd4d-410a-b29a-ed59383c2136</div>
+      <div class="convo-summary">
+        Finalising the forensic audit of Los Romeros Limited to confirm the exact shareholding structure and Person with Significant Control (PSC) status of Philip and Beryl Harrison. Goal: establish an irrefutable evidentiary basis for the upcoming MVL and ensure accurate CGT reporting by confirming both individuals retain their 50% ownership stakes.
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-corp">Los Romeros Ltd</span>
+        <span class="tag tag-corp">PSC</span>
+        <span class="tag tag-corp">MVL</span>
+        <span class="tag tag-tax">CGT</span>
+      </div>
+    </div>
+    <div class="convo-dates">
+      <div class="date-block">
+        <div class="date-label">Created</div>
+        <div class="date-val">2026-04-02 00:56</div>
+      </div>
+      <div class="separator"></div>
+      <div class="date-block">
+        <div class="date-label">Last active</div>
+        <div class="date-val">2026-04-02 00:58</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 4 -->
+  <article class="convo-card" id="conv-04">
+    <div class="convo-num">4</div>
+    <div class="convo-body">
+      <div class="convo-title">Repatriating Lanzarote Property Proceeds</div>
+      <div class="convo-id">ID: 1a3dfd72-e3fe-42a6-b272-3f9057c3158a</div>
+      <div class="convo-summary">
+        Urgently securing Philip Harrison's financial position following misdirected corporate property sale proceeds. Guidance on rectifying the Director's Loan Account, navigating the MVL process, and managing Spanish tax obligations (Modelo 210/211). Clarification on the distinction between share capital and distributable profits, the mechanics of the 3% retention, and a realistic compliance timeline ahead of Philip's return to the UK.
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-corp">MVL</span>
+        <span class="tag tag-corp">DLA</span>
+        <span class="tag tag-tax">Modelo 210/211</span>
+        <span class="tag tag-tax">3% Retention</span>
+      </div>
+    </div>
+    <div class="convo-dates">
+      <div class="date-block">
+        <div class="date-label">Created</div>
+        <div class="date-val">2026-04-02 00:56</div>
+      </div>
+      <div class="separator"></div>
+      <div class="date-block">
+        <div class="date-label">Last active</div>
+        <div class="date-val">2026-04-02 00:57</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 5 -->
+  <article class="convo-card" id="conv-05">
+    <div class="convo-num">5</div>
+    <div class="convo-body">
+      <div class="convo-title">Clarifying Property Transfer Tax</div>
+      <div class="convo-id">ID: a95af682-7064-4fa7-9368-e8b0d3f34104</div>
+      <div class="convo-summary">
+        Obtaining a clear, accurate explanation of ITP (Impuesto sobre Transmisiones Patrimoniales) property transfer tax in the Canary Islands, specifically confirming the 6.5% rate and distinguishing it from seller-side obligations (3% retention, Modelo 210/211 filings) relevant to the Los Romeros Limited disposal. Ensures precise tax terminology for effective management of the asset repatriation and legal case.
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-tax">ITP</span>
+        <span class="tag tag-tax">Canary Islands</span>
+        <span class="tag tag-tax">Modelo 210</span>
+        <span class="tag tag-corp">Los Romeros Ltd</span>
+      </div>
+    </div>
+    <div class="convo-dates">
+      <div class="date-block">
+        <div class="date-label">Created</div>
+        <div class="date-val">2026-04-02 00:53</div>
+      </div>
+      <div class="separator"></div>
+      <div class="date-block">
+        <div class="date-label">Last active</div>
+        <div class="date-val">2026-04-02 00:54</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 6 -->
+  <article class="convo-card" id="conv-06">
+    <div class="convo-num">6</div>
+    <div class="convo-body">
+      <div class="convo-title">Auditing Los Romeros Debt</div>
+      <div class="convo-id">ID: 1f42a7a7-325f-4e7c-9f17-6e305b79d61e</div>
+      <div class="convo-summary">
+        Forensic audit of Los Romeros Limited's financial records from 2019 to 2025 to reconcile the Director's Loan Account and determine the origin of the £25,069 debt. Goal: establish a clear, documented financial position to support the upcoming MVL and ensure correct repatriation of Lanzarote property sale proceeds.
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-corp">DLA Audit</span>
+        <span class="tag tag-corp">£25,069</span>
+        <span class="tag tag-corp">MVL</span>
+        <span class="tag tag-legal">Forensic</span>
+      </div>
+    </div>
+    <div class="convo-dates">
+      <div class="date-block">
+        <div class="date-label">Created</div>
+        <div class="date-val">2026-04-02 00:53</div>
+      </div>
+      <div class="separator"></div>
+      <div class="date-block">
+        <div class="date-label">Last active</div>
+        <div class="date-val">2026-04-02 00:54</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 7 -->
+  <article class="convo-card" id="conv-07">
+    <div class="convo-num">7</div>
+    <div class="convo-body">
+      <div class="convo-title">Documenting Wincham Transaction Error <span style="font-size:.8rem;color:var(--text-lo)">(earlier session)</span></div>
+      <div class="convo-id">ID: 8ff30e76-23b0-4de2-b89f-c512803b545e</div>
+      <div class="convo-summary">
+        Drafting a formal email for Philip Harrison to send to himself as a contemporaneous record confirming that Wincham incorrectly directed corporate property sale proceeds into a personal bank account instead of the required business account. Provides clear copy/paste instructions for the father to self-document the financial discrepancy for legal and regulatory purposes.
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-legal">Wincham</span>
+        <span class="tag tag-legal">Evidence Preservation</span>
+        <span class="tag tag-corp">DLA</span>
+      </div>
+    </div>
+    <div class="convo-dates">
+      <div class="date-block">
+        <div class="date-label">Created</div>
+        <div class="date-val">2026-04-02 00:04</div>
+      </div>
+      <div class="separator"></div>
+      <div class="date-block">
+        <div class="date-label">Last active</div>
+        <div class="date-val">2026-04-02 00:35</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 8 -->
+  <article class="convo-card" id="conv-08">
+    <div class="convo-num">8</div>
+    <div class="convo-body">
+      <div class="convo-title">Auditing Los Romeros Director Loan</div>
+      <div class="convo-id">ID: 9d347d91-4c2e-4e54-9c46-d31d1269fda1</div>
+      <div class="convo-summary">
+        Forensic analysis of Los Romeros Limited's annual accounts from 2019 to 2025 to reconcile the Director's Loan Account and identify the origin of the £25,069 debt. Determining whether the liability stems from legitimate annual fees or undisclosed pre-acquisition charges, and establishing a documented financial position to support the MVL and correct repatriation of proceeds.
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-corp">Annual Accounts</span>
+        <span class="tag tag-corp">DLA Reconciliation</span>
+        <span class="tag tag-corp">MVL</span>
+        <span class="tag tag-legal">Pre-acquisition Charges</span>
+      </div>
+    </div>
+    <div class="convo-dates">
+      <div class="date-block">
+        <div class="date-label">Created</div>
+        <div class="date-val">2026-04-01 23:21</div>
+      </div>
+      <div class="separator"></div>
+      <div class="date-block">
+        <div class="date-label">Last active</div>
+        <div class="date-val">2026-04-02 00:31</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 9 -->
+  <article class="convo-card" id="conv-09">
+    <div class="convo-num">9</div>
+    <div class="convo-body">
+      <div class="convo-title">Locating Father's Support Documentation</div>
+      <div class="convo-id">ID: 612971c6-6128-4535-b689-a3337f4c2e64</div>
+      <div class="convo-summary">
+        Identifying a previous conversation containing specific guidance provided to Philip Harrison regarding Gmail search techniques, PDF redaction procedures, and a structured request for essential documentation. Goal: recover these instructions to continue assisting the father with his financial and legal matters concerning the Wincham case and asset repatriation.
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-legal">Wincham</span>
+        <span class="tag tag-legal">PDF Redaction</span>
+        <span class="tag tag-legal">Documentation Request</span>
+      </div>
+    </div>
+    <div class="convo-dates">
+      <div class="date-block">
+        <div class="date-label">Created</div>
+        <div class="date-val">2026-04-01 22:48</div>
+      </div>
+      <div class="separator"></div>
+      <div class="date-block">
+        <div class="date-label">Last active</div>
+        <div class="date-val">2026-04-01 23:43</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 10 -->
+  <article class="convo-card" id="conv-10">
+    <div class="convo-num">10</div>
+    <div class="convo-body">
+      <div class="convo-title">Investigating Wincham Corporate Networks</div>
+      <div class="convo-id">ID: a0404328-6429-4520-a1d7-281b695738e5</div>
+      <div class="convo-summary">
+        Maintaining and verifying the integrity of the proprietary victim database for the Wincham legal action. Ensuring all documentation (MD, HTML, and PDF formats) reflects the corrected count of 782 companies and 1,564 individual victims, while locating and validating underlying CSV data sources to support ongoing legal lead-generation efforts.
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-legal">Wincham</span>
+        <span class="tag tag-legal">Victim Database</span>
+        <span class="tag tag-legal">782 Companies</span>
+        <span class="tag tag-legal">Class Action</span>
+      </div>
+    </div>
+    <div class="convo-dates">
+      <div class="date-block">
+        <div class="date-label">Created</div>
+        <div class="date-val">2026-03-31 23:58</div>
+      </div>
+      <div class="separator"></div>
+      <div class="date-block">
+        <div class="date-label">Last active</div>
+        <div class="date-val">2026-04-01 22:55</div>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  ANTIGRAVITY · LANZAROTE REPATRIATION WORKSPACE · CONVERSATION RECOVERY · 10 RECORDS · 2026-04-01
+</footer>
+
+</body>
+</html>

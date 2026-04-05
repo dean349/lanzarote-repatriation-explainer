@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "uk-law": {
+      "command": "node",
+      "args": [
+        "c:\\DAD\\UK_Lanzarote_Repatriation\\.agent\\mcp\\UK-law-mcp\\dist\\index.js"
+      ]
+    },
+    "companies-house": {
+      "command": "node",
+      "args": [
+        "c:\\DAD\\UK_Lanzarote_Repatriation\\.agent\\mcp\\companies-house\\server.js"
+      ],
+      "env": {
+        "COMPANIES_HOUSE_API_KEY": "37e01bb5-04e8-4d0d-9895-9037e31e2e36"
+      }
+    },
+    "uk-law-remote": {
+      "type": "url",
+      "url": "https://mcp.ansvar.eu/law-uk-law-mcp/mcp"
+    }
+  }
+}

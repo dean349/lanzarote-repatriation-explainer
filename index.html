@@ -3,149 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Philip Harrison - Financial & Divorce Settlement Report</title>
+    <title>Philip Harrison — Lanzarote Repatriation & Corporate Negligence Case</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+        
+        :root {
+            --navy: #0f1e3c; 
+            --gold: #c9a84c; 
+            --gold-light: #f0d98c;
+            --slate: #1e2d4a; 
+            --mid: #2d4168; 
+            --accent: #3a7bd5;
+            --light: #f8fafc; 
+            --white: #ffffff; 
+            --text: #1e293b; 
+            --muted: #64748b;
+            --subtle-border: #e2e8f0;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: var(--light); 
+            color: var(--text); 
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: #f5f5f7;
+            -webkit-font-smoothing: antialiased;
         }
-        .container {
-            background: #ffffff;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        
+        /* HEADER SECTION */
+        .hero { 
+            background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 60%, var(--mid) 100%);
+            color: white; 
+            padding: 5rem 1.5rem 4rem; 
+            position: relative; 
+            overflow: hidden; 
+            text-align: center;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 2rem auto;
-            border-radius: 8px;
+        
+        .hero::after { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(201,168,76,0.15) 0%, transparent 60%); 
+            pointer-events: none; 
         }
-        h1, h2, h3 {
-            color: #1a202c;
-            margin-top: 2rem;
+        
+        .hero-badge { 
+            display: inline-block; 
+            background: rgba(201,168,76,0.15); 
+            border: 1px solid rgba(201,168,76,0.5);
+            color: var(--gold-light); 
+            padding: 0.4rem 1.2rem; 
+            border-radius: 30px; 
+            font-size: 0.75rem;
+            letter-spacing: 0.12em; 
+            text-transform: uppercase; 
+            margin-bottom: 2rem; 
+            font-weight: 600; 
+            backdrop-filter: blur(4px);
         }
-        h1 {
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-            font-size: 2.25rem;
+        
+        .hero h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(2rem, 5vw, 3.5rem); 
+            line-height: 1.15; 
+            margin-bottom: 1.5rem; 
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-wrap: balance;
         }
-        h2 {
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 0.5rem;
+        
+        .hero p { 
+            color: rgba(255,255,255,0.85); 
+            font-size: clamp(1rem, 2vw, 1.25rem); 
+            max-width: 700px; 
+            margin: 0 auto 2rem; 
+            font-weight: 300;
         }
-        blockquote {
-            border-left: 4px solid #4299e1;
-            margin: 1.5rem 0;
-            padding: 1rem 1.5rem;
-            background-color: #ebf8ff;
-            border-radius: 0 8px 8px 0;
-            color: #2b6cb0;
+
+        /* CONTAINER */
+        .container { 
+            max-width: 1100px; 
+            margin: -3rem auto 3rem; 
+            padding: 0 1.5rem; 
+            position: relative;
+            z-index: 10;
         }
-        ul, ol {
+        
+        /* CARDS GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card { 
+            background: var(--white); 
+            border-radius: 12px; 
+            padding: 2rem; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+        
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .card h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.4rem; 
+            color: var(--navy); 
+            margin-bottom: 0.75rem; 
+        }
+
+        .card p { 
+            color: var(--muted); 
+            font-size: 0.95rem; 
+            line-height: 1.5;
             margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
+            flex-grow: 1;
         }
-        li {
+        
+        .card-meta {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-meta::after {
+            content: '→';
+            margin-left: 0.5rem;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .card:hover .card-meta::after {
+            transform: translateX(4px);
+        }
+
+        /* SECTION HEADER */
+        .section-header {
+            margin: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--navy);
             margin-bottom: 0.5rem;
         }
-        strong {
-            color: #2d3748;
+        
+        .section-header p {
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto;
         }
-        hr {
-            border: 0;
-            border-top: 1px solid #e2e8f0;
-            margin: 2rem 0;
+
+        /* SUMMARY BANNER */
+        .summary-banner {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            border: 1px solid var(--subtle-border);
+            margin-bottom: 3rem;
+        }
+        
+        .summary-banner h3 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .summary-banner p {
+            font-size: 1.05rem;
+            color: var(--text);
+            max-width: 800px;
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        footer { 
+            background: var(--navy); 
+            color: rgba(255,255,255,0.6); 
+            text-align: center; 
+            padding: 3rem 1.5rem;
+            font-size: 0.85rem; 
+            margin-top: 5rem;
+            border-top: 4px solid var(--gold);
+        }
+        
+        footer p { margin-bottom: 0.5rem; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 4rem 1rem 3rem; }
+            .container { margin-top: -2rem; padding: 0 1rem; }
+            .summary-banner { padding: 1.5rem; }
+            .card { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
+
+    <header class="hero">
+        <div class="hero-badge">Case Dossier & Evidence Hub</div>
+        <h1>Lanzarote Corporate Repatriation</h1>
+        <p>A comprehensive intelligence analysis and legal evidence repository detailing the systemic failures of the Wincham Spanish property scheme, prepared for Philip Harrison.</p>
+    </header>
+
     <div class="container">
-        <h1>Confidential Financial &amp; Divorce Settlement Report: Philip Harrison</h1>
-<p><strong>Date:</strong> 31 March 2026
-<strong>Subject:</strong> Asset Division &amp; Offsetting Strategy for Later-Life Divorce
-<strong>Entities:</strong> Philip Harrison, Beryl Harrison, Los Romeros Limited (No. 06993349)</p>
-<blockquote>
-<p>[!IMPORTANT]
-<strong>Executive Summary:</strong> Your parents are facing a "later life" divorce with no dependents and no future earning capacity. The court's primary objective will be ensuring both have a secure home and enough income to survive retirement, ideally through a "clean break." The existence of two major, distinct capital assets—the jointly-owned £200k UK property and the liquid cash inside Los Romeros Limited from the €315k Lanzarote sale—makes achieving this clean break highly feasible via <strong>offsetting</strong>.</p>
-</blockquote>
-<hr />
-<h2>1. The Matrimonial Asset Pool</h2>
-<p>In a UK divorce, all assets built up during the marriage are considered part of the "matrimonial pot," regardless of whose name is on the deed or the share certificate. </p>
-<p>Based on the files from the Los Romeros forensic workspace, the primary capital assets are:</p>
-<ol>
-<li><strong>The UK Family Home:</strong> <ul>
-<li>Jointly owned.</li>
-<li>Estimated net equity: <strong>£200,000</strong>.</li>
-<li>Asset type: Highly secure, illiquid (housing).</li>
-</ul>
-</li>
-<li><strong>Los Romeros Limited (The Lanzarote Proceeds):</strong> <ul>
-<li>Philip is the named Director.</li>
-<li>Following the Lanzarote sale for €315,000, settling Spanish CGT (~€18,783), and extracting the funds via a Members' Voluntary Liquidation (MVL), Philip will receive a substantial liquid capital payout (estimated in the region of <strong>£230,000 - £250,000</strong> net of MVL and CGT costs).</li>
-<li>This includes the tax-free return of Philip's £25,069 Director's Loan.</li>
-<li>Asset type: Liquid cash (post-MVL).</li>
-</ul>
-</li>
-<li><strong>Pensions &amp; Savings:</strong><ul>
-<li>Any private/workplace pensions and other bank accounts will also be added to this pot.</li>
-</ul>
-</li>
-</ol>
-<h2>2. The Impact of "Later Life" Divorce Principles</h2>
-<p>Because Philip and Beryl are retired, UK family courts apply different priorities than they would for a younger working couple:</p>
-<ul>
-<li><strong>No Earning Capacity:</strong> They cannot easily work to earn more money or secure new mortgages. The capital assets they hold right now must fund the rest of their lives.</li>
-<li><strong>Housing is Paramount:</strong> The court will not allow either party to be made homeless. </li>
-<li><strong>A "Clean Break" is Favored:</strong> The court prefers to divide physical assets and cash completely so the couple is permanently severed, rather than ordering one to pay the other an ongoing monthly allowance.</li>
-</ul>
-<h2>3. The "Offsetting" Solution</h2>
-<p>The current financial picture provides a near-perfect scenario for <strong>Offsetting</strong>. Because the two primary assets are roughly equal in value, a clean break can be negotiated without forcing the sale of either underneath them.</p>
-<blockquote>
-<p>[!TIP]
-<strong>Proposed Structure for Negotiation:</strong>
-*   <strong>Beryl retains 100% of the UK Family Home.</strong> She removes Philip's name from the deed. She gains housing security for the rest of her life (£200,000 value).
-*   <strong>Philip retains 100% of Los Romeros Limited and its cash proceeds.</strong> Beryl signs away any claim to the company shares or the MVL extraction. Philip gains ~£230,000+ in liquid cash to purchase a new property for himself or fund his retirement.</p>
-</blockquote>
-<p><strong>Why this works:</strong>
-It perfectly addresses the court's goals. Beryl's housing need is met immediately. Philip receives liquid capital to secure his own housing. The clean break is achieved instantly. </p>
-<h3>Visual Offsetting Flowchart</h3>
-<p>Below is a visual map of how this strategy works to secure the clean break:</p>
-<p><img alt="Visual Offsetting Flowchart" src="graph.png" /></p>
-<h2>4. Income, Pensions &amp; The "Needs" Principle</h2>
-<p>Because Beryl worked most of her life (as a professional figure skater and field sales rep), she is almost certainly entitled to a full UK State Pension (currently ~£11,500/year). However, her modest final salary (£15,000 - £18,000) suggests she holds very little, if any, substantial private pension provision.</p>
-<p>In UK family law, the court applies the <strong>"Needs Principle."</strong> They will not approve an offsetting agreement (like her keeping the house) if it leaves her unable to afford basic living costs like council tax, heating, and food. A State Pension alone is rarely sufficient to run a house. </p>
-<ul>
-<li><strong>Pension Sharing:</strong> To ensure Beryl can afford to live without relying on your dad every month, the court will likely look to his pensions. Your dad's solicitor should expect the court to order a <strong>Pension Sharing Order</strong>. This carves out a percentage of Philip's private or workplace pensions and transfers it into a new, independent pension fund for Beryl to draw an income from.</li>
-<li><strong>Securing the Clean Break:</strong> Giving up a slice of pension isn't ideal for Philip, but it is a highly strategic move. By satisfying the court that Beryl's monthly "Needs" are met through her State Pension plus a shared slice of his pension, the court will approve the clean break. This guarantees no ongoing Spousal Maintenance payments.</li>
-</ul>
-<h2>5. Addressing Beryl's Alcoholism &amp; Deliberate Dissipation of Assets</h2>
-<p>You mentioned that Beryl is a closet alcoholic and her excessive spending is often deliberate, designed specifically to diminish the financial pot and adversely affect the divorce outcome. This changes the legal and strategic approach significantly.</p>
-<ul>
-<li><strong>Financial Misconduct ("Add-Back" Strategy):</strong> In UK family law, general overspending is rarely penalized. However, <strong>"wanton or reckless dissipation of assets"</strong> is a major exception. If Beryl is intentionally spending out of spite to deplete the matrimonial pot, Philip's solicitor can argue for an "add-back." This means the court calculates the final split as if she <em>hadn't</em> spent that money, directly reducing her share of the remaining assets to compensate for the cash she deliberately wasted.</li>
-<li><strong>Mental Capacity &amp; Consent:</strong> If Beryl is frequently under the influence, it raises critical legal issues regarding her "capacity" to agree to a financial settlement. A solicitor must ensure any final consent order is legally watertight and cannot be later challenged by her claiming she was intoxicated when she agreed to it.</li>
-<li><strong>Strategic Protection:</strong> The offsetting strategy is the ultimate defense against this behavior. Allowing someone with an alcohol dependency and malicious spending tendencies access to liquid cash is highly dangerous. By forcing her to take her share via the <em>house</em> (an illiquid asset that is hard to squander quickly), Philip protects the Lanzarote <em>cash</em> completely for himself and limits her ability to inflict further financial damage.</li>
-</ul>
-<blockquote>
-<p>[!CAUTION]
-<strong>Immediate Action Required to Freeze Joint Access:</strong>
-Because there is a proven risk of malicious, spiteful spending, Philip must act immediately. Most importantly, he must ensure he is the <strong>sole signatory</strong> on the Los Romeros Limited UK bank account where the €315,000 sale proceeds will land. He must explicitly revoke any mandates that would allow his wife access to this cash while the divorce is being finalized.</p>
-</blockquote>
-<h2>6. Next Steps for Philip</h2>
-<ol>
-<li><strong>Do NOT Finalize the MVL Yet:</strong> Philip should immediately instruct an independent Family Law Solicitor and explain the situation. He should ask whether he should leave the cash safely locked inside Los Romeros Limited until the financial consent order is signed by the judge, or whether he should proceed with the MVL extraction now.</li>
-<li><strong>Assemble Documents:</strong> Bring the Los Romeros Accounts, the Spanish CGT Forensic Report, and a valuation of the UK family home to the initial solicitor meeting.</li>
-<li><strong>Pension Valuations:</strong> Request "Cash Equivalent Transfer Values" (CETVs) for all pensions held by both Philip and Beryl, as these must be factored into the final offsetting math.</li>
-</ol>
-<hr />
-<p><em>Disclaimer: This report synthesizes existing workspace data with UK family law principles. It is for strategic planning purposes only and does not constitute formal legal advice. Philip must engage a qualified UK family solicitor to ratify any settlement.</em></p>
+        
+        <div class="summary-banner">
+            <h3><span>⚡</span> Project Overview</h3>
+            <p>This repository documents the investigation into Los Romeros Limited, a UK shell company used to hold a Lanzarote property. It uncovers 18 breaches of UK/Spanish law by the corporate service provider (Wincham), provides a forensic timeline of the company, and presents a complete negligence claim overview and Group Litigation strategy for investors caught in this arrangement.</p>
+        </div>
+
+        <div class="section-header">
+            <h2>Key Documentation</h2>
+            <p>Explore the primary reports, timelines, and strategy documents generated during this investigation.</p>
+        </div>
+
+        <div class="grid">
+            
+            <a href="project_brief.html" class="card">
+                <span class="card-icon">📘</span>
+                <h2>Complete Project Brief & File Catalogue</h2>
+                <p>A plain-English synthesis of the entire investigation. It outlines the core problem, our legal strategy, a summary of all 18 legal breaches, and an index of all generated files across the workspace.</p>
+                <div class="card-meta">View Brief</div>
+            </a>
+            
+            <a href="Files and Information for Phil Harrison/los_romeros_timeline.html" class="card">
+                <span class="card-icon">⏱️</span>
+                <h2>Corporate Timeline (Los Romeros Ltd)</h2>
+                <p>A step-by-step forensic history of Los Romeros. Maps the exact chain of ownership, capital injections, secretarial shifts, and calculated deception spanning from its incorporation in 2009 to present.</p>
+                <div class="card-meta">View Timeline</div>
+            </a>
+
+            <a href="GLO_Lanzarote_Action.html" class="card">
+                <span class="card-icon">⚖️</span>
+                <h2>Group Litigation (GLO) Strategy</h2>
+                <p>A web landing page mock-up and strategic document outlining the "Lanzarote Repatriation Action" — a proposed class-action style lawsuit against the involved service providers for over 780 affected clients.</p>
+                <div class="card-meta">View GLO Strategy</div>
+            </a>
+            
+            <a href="Lanzarote Property Repatriation - Professional Negligence Case Overview.html" class="card">
+                <span class="card-icon">📑</span>
+                <h2>Professional Negligence Case Overview</h2>
+                <p>A deep-dive review of the professional negligence dimensions of the case. Details duty of care, breach mechanics across legal jurisdictions, loss calculations, and foreseeability tests.</p>
+                <div class="card-meta">View Case Overview</div>
+            </a>
+
+        </div>
+
     </div>
+
+    <footer>
+        <p>Prepared by Dean Harrison &bull; Advanced Strategic Intelligence System</p>
+        <p>Confidential &bull; Documentation relates to Los Romeros Limited (06993349)</p>
+    </footer>
+
 </body>
 </html>

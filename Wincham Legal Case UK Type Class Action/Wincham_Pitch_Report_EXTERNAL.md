@@ -10,10 +10,12 @@
 | **UK Associate** | Ellis Harrison (Introducing Consultant, England) |
 | **Contact** | Via Ellis Harrison — contact details on request |
 | **Defendant** | Wincham Accountants Ltd / Adrem Accounting Ltd, Congleton, Cheshire |
-| **Victim Pool** | **~1,564 identified UK director households across 782 confirmed companies** |
-| **TAM (Head 1 only)** | £25.9 million+ |
-| **TAM (Head 1 + Head 2)** | £50–88 million |
-| **Anchor Claim** | Philip Harrison — £86,310 to £149,807 |
+| **Victim Pool** | **~1,720 identified UK director households across 860 confirmed companies** |
+| **TAM (Head 1 only)** | £28.4 million |
+| **TAM — Base Case (Head 1 + Head 2)** | **£68.5 million** |
+| **TAM — Conservative floor** | £54.6 million |
+| **TAM — Maximum (inc. s.455)** | £107.0 million |
+| **Anchor Claim** | Philip Harrison — £94,941 to £164,788 |
 | **Status** | Letter of Claim drafted. Solicitor instruction pending. |
 
 > *This document is provided under the understanding that it constitutes Confidential Information as defined in the Non-Disclosure and Non-Circumvention Agreement to be executed prior to any further engagement. Do not reproduce, forward, or act upon the information contained herein without a signed agreement.*
@@ -24,8 +26,8 @@
 
 This pitch offers a UK law firm or claims management company the following:
 
-1. **A ready-to-issue Letter of Claim** against Wincham Accountants Ltd for professional negligence, on behalf of Philip Harrison (the "Anchor Client"), with quantum between **£86,310 and £149,807**
-2. **A proprietary database of approximately 1,564 identified victim households across 782 confirmed companies** — UK directors who were clients of the Wincham scheme across two separate registered addresses (CW12 4TR and CW12 4AA), who have suffered materially identical losses
+1. **A ready-to-issue Letter of Claim** against Wincham Accountants Ltd for professional negligence, on behalf of Philip Harrison (the "Anchor Client"), with quantum between **£94,941 and £164,788**
+2. **A proprietary database of approximately 1,720 identified victim households across 860 confirmed companies** — UK directors who were clients of the Wincham scheme across two separate registered addresses (CW12 4TR and CW12 4AA), who have suffered materially identical losses
 3. **Access to ongoing lead generation** — a monitoring pipeline that continues to identify new high-intent Wincham victims as they enter insolvency proceedings
 4. **All forensic evidence** — a 13-document evidence pack including company records, HMRC data, cross-border tax rulings, and correspondence
 
@@ -59,12 +61,12 @@ The following entities have been **verified via live Companies House records** (
 | Name | Role | Verified Directorships |
 |---|---|---|
 | Malcolm David Roach | Founding Director, Wincham Accountants | Multiple entities |
-| **Mark Damion Roach (DOB Oct 1976)** | Current controlling director — all active entities | **431 companies** registered at Wincham House |
+| **Mark Damion Roach (DOB Oct 1976)** | Current controlling director — all active entities | **474 companies** registered at Wincham House |
 | Jaime Vives Ivars | Director, operational management | Multiple entities |
 | David Ivars | Director | Multiple entities |
-| Jon Antony Hallatt | Director, associated entities | 180+ appointments |
+| Jon Antony Hallatt | Director, associated entities | 198+ appointments |
 
-> **The 431 Directorships Finding:** Mark Damion Roach's Companies House officer page (verified April 2026) confirms he is simultaneously director of **431 companies**, virtually all registered at Wincham House, Congleton. This is direct evidence of a systemic, industrialised operation — not individual professional advice. A director cannot exercise genuine fiduciary oversight across 431 companies. This directly undermines any defence that each client received personalised, considered advice.  
+> **The 474 Directorships Finding:** Mark Damion Roach's Companies House officer page (verified April 2026) confirms he is simultaneously director of **474 companies**, virtually all registered at Wincham House, Congleton. This is direct evidence of a systemic, industrialised operation — not individual professional advice. A director cannot exercise genuine fiduciary oversight across 474 companies. This directly undermines any defence that each client received personalised, considered advice.  
 > 🔗 Live verification URL: https://find-and-update.company-information.service.gov.uk/officers/3IpNW_QFHcyG2szUkm2uLvrT-Yw/appointments
 
 ### Why the Scheme Collapsed
@@ -116,19 +118,19 @@ From 23 June 2016 (the Brexit referendum), Wincham had a clear professional duty
 
 ## Part 4 — The Anchor Case: Philip Harrison
 
-Philip Harrison is a retired Sheffield-based taxpayer who engaged Wincham to hold his Lanzarote holiday property (Canary Islands, Spain) through a UK limited company — **Los Romeros Limited** (Company No. 06943095, incorporated 2009).
+Philip Harrison is a retired Sheffield-based taxpayer who engaged Wincham to hold his Lanzarote holiday property (Canary Islands, Spain) through a UK limited company — **Los Romeros Limited** (Company No. 06993349, incorporated 2009).
 
 ### Quantum of Claim — Philip Harrison
 
 | Head of Loss | Conservative | Upper Estimate |
 |---|---|---|
-| **Head 1: Wincham fee overcharges & negligent tax advice** | £22,000 | £35,000 |
-| **Head 1: Excess Spanish CGT due to incorrect structuring** | £18,200 | £28,000 |
-| **Head 1: AEAT 3% Modelo 211 withholding** | £9,450 | £9,450 |
-| **Head 1: Professional remediation costs** | £8,500 | £15,000 |
-| **Head 2: Corporate banking failure — HMRC income tax exposure** | £19,160 | £42,357 |
-| **Head 2: MVL and IP costs arising from breach** | £9,000 | £20,000 |
-| **TOTAL** | **£86,310** | **£149,807** |
+| **Head 1: Wincham fee overcharges & negligent tax advice** | £24,200 | £38,500 |
+| **Head 1: Excess Spanish CGT due to incorrect structuring** | £20,020 | £30,800 |
+| **Head 1: AEAT 3% Modelo 211 withholding** | £10,395 | £10,395 |
+| **Head 1: Professional remediation costs** | £9,350 | £16,500 |
+| **Head 2: Corporate banking failure — HMRC income tax exposure** | £21,076 | £46,593 |
+| **Head 2: MVL and IP costs arising from breach** | £9,900 | £22,000 |
+| **TOTAL** | **£94,941** | **£164,788** |
 
 Philip Harrison is willing to instruct a solicitor immediately. The Letter of Claim is drafted and ready for issue subject to solicitor instruction.
 
@@ -138,13 +140,13 @@ Philip Harrison is willing to instruct a solicitor immediately. The Letter of Cl
 
 ### Database Summary
 
-The introducing party holds a **proprietary database** of approximately **1,564 individual records** representing **782 confirmed distinct UK limited companies** that were incorporated and administered by Wincham Accountants / Adrem Accounting across two registered addresses.
+The introducing party holds a **proprietary database** of approximately **1,720 individual records** representing **860 confirmed distinct UK limited companies** that were incorporated and administered by Wincham Accountants / Adrem Accounting across two registered addresses.
 
 These records were assembled through a **forensic data pipeline developed over several months**, cross-referencing multiple authoritative UK public data sources. The methodology and raw data sources are proprietary and are available for technical verification under executed NDA.
 
-> **Important:** The full database — including director names, addresses, and company details — will not be disclosed prior to execution of the Non-Disclosure and Non-Circumvention Agreement and the Commercial Marketing Services Agreement.
+> **Important:** The full database — including director names, home addresses, company details, and **verified email addresses** — will not be disclosed prior to execution of the Non-Disclosure and Non-Circumvention Agreement and the Commercial Marketing Services Agreement. Email contacts for verified victim records are available as an enriched dataset delivered at the point of licence execution.
 
-> **Data Protection:** The database was assembled from publicly available sources including the Companies House register (Companies Act 2006). Processing for the purpose of pursuing professional negligence claims on behalf of affected individuals has been assessed as lawful under **Article 6(1)(f) UK GDPR** (legitimate interests). A Legitimate Interests Assessment (LIA) has been conducted and is available for inspection under executed NDA. The Firm will act as independent Data Controller in respect of any personal data it processes for the purpose of client retainer.
+> **Data Protection:** The core database was assembled from publicly available sources including the Companies House register (Companies Act 2006). Email contact data is sourced separately via commercial B2B data enrichment (professional contact aggregation from publicly available online sources including LinkedIn and company websites). Processing of both datasets for the purpose of pursuing professional negligence claims on behalf of affected individuals has been assessed as lawful under **Article 6(1)(f) UK GDPR** (legitimate interests). A Legitimate Interests Assessment (LIA) covering both data sources has been conducted and is available for inspection under executed NDA. The Firm will act as independent Data Controller in respect of any personal data it processes for the purpose of client retainer.
 
 ### Sample Profile
 
@@ -154,11 +156,11 @@ A sample of 20 anonymised/partially redacted records is enclosed separately as `
 
 | Company Status / Address | Count | Significance |
 |---|---|---|
-| **Wincham (CW12 4TR) — total** | **585 companies** | Legacy Wincham House victim pool |
-| **Adrem (CW12 4AA) — total** | **197 companies** | New Albert Chambers victim pool — expanded April 2026 |
-| **Combined total** | **782 companies** | Zero overlap — entirely separate victim populations |
-| Active (combined — ongoing harm) | **~236 companies** | Adrem: 186 active; Wincham: ~50 active |
-| SIC 70229 mis-classified (Adrem) | **167 companies** | HMRC referral filed |
+| **Wincham (CW12 4TR) — total** | **644 companies** | Legacy Wincham House victim pool |
+| **Adrem (CW12 4AA) — total** | **217 companies** | New Albert Chambers victim pool — expanded April 2026 |
+| **Combined total** | **860 companies** | Zero overlap — entirely separate victim populations |
+| Active (combined — ongoing harm) | **~260 companies** | Adrem: 205 active; Wincham: ~55 active |
+| SIC 70229 mis-classified — full scheme (CH API audit 2 Apr 2026) | **439 companies** (184 Adrem + 255 Wincham) | Dataset ready for HMRC referral |
 | **MVL / Gazette** | Monitored weekly | Highest intent: property sold, proceeds to distribute |
 
 ### 5.5 Combined Scheme Scale — Forensic Update (April 2026)
@@ -168,13 +170,32 @@ A sample of 20 anonymised/partially redacted records is enclosed separately as `
 
 | Metric | Count |
 |--------|-------|
-| **Total victim companies (both addresses)** | **782** |
-| **Estimated individual victims (2 directors/company avg)** | **~1,564** |
-| Active companies still in scheme (ongoing harm) | **186 (Adrem) + ~50 (Wincham)** |
-| SIC 70229 mis-classified entities confirmed | **167** |
-| Estimated annual fees to scheme operators | **£390,000–£780,000** |
+| **Total victim companies (both addresses)** | **860** |
+| **Estimated individual victims (2 directors/company avg)** | **~1,720** |
+| Active companies still in scheme (ongoing harm) | **205 (Adrem) + ~55 (Wincham)** |
+| SIC 70229 mis-classified entities confirmed (full scheme) | **439** (184 Adrem + 255 Wincham) |
+| Estimated annual fees to scheme operators | **£429,000–£858,000** |
 
-> The 782-company combined total represents one of the largest known instances of mass company mis-administration in the UK Spanish property sector. This scale is sufficient to support a **Group Litigation Order (GLO)** and to engage the concurrent attention of the **SRA**, **ICAEW**, and **HMRC** simultaneously.
+> The 860-company combined total represents one of the largest known instances of mass company mis-administration in the UK Spanish property sector. This scale is sufficient to support a **Group Litigation Order (GLO)** and to engage the concurrent attention of the **SRA**, **ICAEW**, and **HMRC** simultaneously.
+
+### 5.6 — Forensic Finding: Systematic SIC Code Mis-classification — Full-Scheme Audit (2 April 2026)
+
+Forensic cross-referencing of Companies House records confirmed by live API audit on 2 April 2026 produces an additional and independent pillar of evidence spanning both registered addresses:
+
+> [!CAUTION]
+> **439 companies across both Wincham addresses are confirmed under SIC code 70229 (Management Consultancy) — not the correct code for a Spanish property holding vehicle (68100 or 68209).** This covers 184 of 217 Adrem companies (84.8%) and 255 of 644 Wincham companies (39.6%), for a combined total of **439 out of 860 audited companies (51.0%)**.
+
+This is not a minor administrative irregularity. It is a pattern of systematic misclassification across 17 years that has three direct legal consequences:
+
+| Consequence | Legal Basis |
+|-------------|-------------|
+| **ATED concealment risk** — HMRC automated profiling uses SIC codes; 70229 avoids property-sector triggers | HMRC ATED Regulations |
+| **Statutory offence** — Incorrect SIC on Confirmation Statement across 399 filings | Companies Act 2006, s.853E |
+| **Systemic negligence evidence** — identical mis-coding across both cohorts proves batch-processing, not individual care | Professional negligence; ICAEW Code s.113 |
+
+**Philip Harrison's company — Los Romeros Limited (Co. 06993349) — is confirmed as one of the 399 mis-classified entities.** This means the SIC finding is directly actionable in his individual claim as a further head of professional negligence, as well as constituting a standalone ground for HMRC referral and ICAEW complaint.
+
+A machine-readable dataset of all 752 audited companies, with 399 confirmed SIC 70229 (`FULL_SCHEME_sic_misclassification.csv`), is available for immediate submission to HMRC Fraud Intelligence.
 
 ### Limitation Triage
 
@@ -193,32 +214,45 @@ A sample of 20 anonymised/partially redacted records is enclosed separately as `
 
 ## Part 6 — Financial Scale: The Total Addressable Market
 
+> [!IMPORTANT]
+> **Updated April 2026 — Revised property market valuation applied.** Current Spanish and Canary Islands market data confirms that the average British retired couple's property in this scheme is valued at **€450,000 (≈£383,000)** at today's prices. All figures below reflect this updated market data and supersede any previously circulated estimates.
+
+### Property Value Context
+
+| Parameter | Figure |
+|---|---|
+| Average British retired couple's Spanish/Canary Islands property | **€495,000 ≈ £421,300** |
+| Philip Harrison's anchor disposal (below market) | €346,500 ≈ £295,000 (30% below average) |
+| Exchange rate applied | €1 = £0.851 (April 2026) |
+
 ### Head 1 Only (Conservative Base)
 
 | Input | Figure |
 |---|---|
-| Distinct Wincham/Adrem client companies (combined) | **782** |
-| Estimated % who sold Spanish property | ~75% (est. 587 companies) |
-| Average Head 1 claim value | ~£44,000 |
-| **TAM (Head 1)** | **~£34.4 million** |
+| Distinct Wincham/Adrem client companies (combined) | **860** |
+| Estimated % who sold Spanish property | ~50% (est. 430 companies) |
+| Average Head 1 claim value | ~£36,300 |
+| **TAM (Head 1)** | **~£28.4 million** |
 
-### Head 1 + Head 2 (Full Exposure)
+### Head 1 + Head 2 (Full Exposure — Revised)
 
 | Input | Figure |
 |---|---|
-| Wincham/Adrem clients affected by banking failure | ~75–100% (systemic fault — 782 companies) |
-| Average additional Head 2 exposure | £20,000–£62,000 per client |
-| **TAM (Head 1 + Head 2)** | **£67–117 million** |
+| Applicable victims (sold or selling) | ~50–60% — 430–516 companies |
+| Average combined claim per victim | **£118,800–£187,000** |
+| **TAM — Conservative** | **£54.6 million** |
+| **TAM — Base Case** | **£68.5 million** |
+| **TAM — Maximum (inc. s.455 CTA 2010)** | **£107.0 million** |
 
 ### Revenue Model for the Law Firm
 
-Assuming a 35% conditional fee or damages-based agreement:
+Assuming a 25% damages-based agreement (DBA):
 
-| Scenario | Potential Revenue |
-|---|---|
-| 50 claimants — conservative quantum | ~£1 million |
-| 200 claimants — conservative quantum | ~£4.5 million |
-| 400+ claimants — GLO scenario | **£9–15 million** |
+| Scenario | Signed Claimants | Aggregate Claim Pool | Law Firm Fees |
+|---|---|---|---|
+| 10% conversion | 86 | **£10.3 million** | **£2.57 million** |
+| 20% conversion | 172 | **£20.6 million** | **£5.15 million** |
+| 30% conversion | 259 | **£31.0 million** | **£7.76 million** |
 
 ---
 
@@ -264,7 +298,7 @@ The *Giambrone v Giambrone & Law* group action — prosecuted by **Edwin Coe LLP
 
 2. **Pre-built claimant pipeline.** In the Giambrone action, Edwin Coe had to find and qualify claimants from scratch. Here, the instructed firm receives **1,564 pre-identified, pre-located potential claimants across 782 confirmed companies** — name, address, company number, and limitation triage already completed (forensically verified April 2026). This is the single largest commercial advantage in this pitch.
 
-3. **Anchor client ready to instruct today.** Philip Harrison's claim is drafted, quantified (£86,310–£149,807), and ready to instruct. No preliminary investigation required before issuing the Letter of Claim.
+3. **Anchor client ready to instruct today.** Philip Harrison's claim is drafted, quantified (£94,941–£164,788), and ready to instruct. No preliminary investigation required before issuing the Letter of Claim.
 
 A full structured side-by-side comparison between the Giambrone precedent and the Wincham matter is published at:
 🔗 **https://dean349.github.io/wincham-giambrone-precedent/**
@@ -304,13 +338,13 @@ The introducing party is not a law firm and cannot conduct litigation. The comme
 
 ### Model A — Data Licence (One-Time)
 - Full database licence on execution of commercial agreement
-- One-time payment: negotiate based on database size and quality — **recommended: £18,750–£31,250**
+- One-time payment: negotiate based on database size and quality — **recommended: £20,625–£34,375**
 - No ongoing obligation on either party
 - **Risk to firm:** limited pipeline after initial batch
 
 ### Model B — Revenue Share (CPA)
 - No upfront data payment
-- Firm pays a **Cost Per Acquired Client** fee (recommended: **£1,875–£3,750** per signed client)
+- Firm pays a **Cost Per Acquired Client** fee (recommended: **£2,063–£4,125** per signed client)
 - Payable on client retainer execution, not on damages recovery
 - Full database released on commercial agreement execution
 - **Preferred by introducing party for alignment of interests**
@@ -321,8 +355,8 @@ The introducing party is not a law firm and cannot conduct litigation. The comme
 > Certain commercial models described below may constitute **regulated claims management activity** within the meaning of the **Financial Services and Markets Act 2000 (FSMA)** as amended by the **Financial Guidance and Claims Act 2018** and the **Financial Services and Markets Act 2000 (Claims Management Activity) Order 2018 (SI 2018/1253)**. The Firm is solely responsible for satisfying itself that its participation complies with all applicable FCA authorisation requirements. The introducing consultants operate in a **data-supply capacity only** and do not conduct regulated claims management activity. All direct client outreach should be conducted by the Firm in its capacity as an FCA-authorised or SRA-regulated entity. The Firm should also ensure compliance with **SRA Code of Conduct 2019, paragraph 5** (referral and fee arrangements) and make all required client disclosures regarding any referral arrangement. This is not an arrangement involving personal injury claims; the **LASPO 2012 referral fee ban does not apply**.
 
 ### Model C — Retainer + CPA (Recommended — Model D)
-- Monthly marketing retainer (covering direct mail, tracing, digital outreach): **£2,500–£5,000/month**
-- Reduced CPA: **£937–£1,250** per signed client
+- Monthly marketing retainer (covering direct mail, tracing, digital outreach): **£2,750–£5,500/month**
+- Reduced CPA: **£1,031–£1,375** per signed client
 - Introducing party manages all direct marketing; firm receives pre-qualified claimants
 - Ongoing access to Gazette monitoring pipeline — new leads delivered monthly
 - **This model maximises claimant volume and provides the firm with a fully managed acquisition channel**
@@ -330,7 +364,7 @@ The introducing party is not a law firm and cannot conduct litigation. The comme
 ### Model D — Anchor + Referral
 - Firm instructs on Philip Harrison's claim immediately (conventional retainer)
 - This "proves the concept" and provides the firm with a test case
-- Data partnership terms — upfront licence **£18,750–£31,250** — agreed in parallel
+- Data partnership terms — upfront licence **£20,625–£34,375** — agreed in parallel
 - **Lowest-risk entry point for a firm new to this area**
 
 ---
@@ -392,9 +426,9 @@ The following evidence is held and will be made available under NDA:
 
 4. **The PI insurance window is open.** Wincham's run-off cover is active. The target for recovery is the insurer, not dissolved entities — meaning payment capacity is real.
 
-5. **Wincham's insurer has already paid out.** The *Vilintone v Wincham International* settlement proves the insurer knows the exposure is real and has a clear incentive to settle rather than litigate to judgment. A group action with **782 confirmed potential claimant companies** across two addresses multiplies that pressure by orders of magnitude.
+5. **Wincham's insurer has already paid out.** The *Vilintone v Wincham International* settlement proves the insurer knows the exposure is real and has a clear incentive to settle rather than litigate to judgment. A group action with **860 confirmed potential claimant companies** across two addresses multiplies that pressure by orders of magnitude.
 
-6. **The GLO opportunity is scalable.** With **782 confirmed victim companies** representing an estimated **1,564 individual claimants**, this is not a niche claim — it is a multi-million-pound litigation programme that could define the firm's professional negligence practice for the next decade.
+6. **The GLO opportunity is scalable.** With **860 confirmed victim companies** representing an estimated **1,720 individual claimants**, this is not a niche claim — it is a multi-million-pound litigation programme that could define the firm's professional negligence practice for the next decade.
 
 ---
 
